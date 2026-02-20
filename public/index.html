@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Prototype - iTaxSample</title>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span>iTaxSample</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item">Dashboard</a>
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Registration <span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                        <div class="nav-item dropdown-item">Taxpayer Profile <span class="arrow">></span></div>
+                        <div class="dropdown-menu">
+                            <a href="#" class="nav-item dropdown-item">View Taxpayer Profile</a>
+                            <a href="#" class="nav-item dropdown-item">Reprint Pin Certificate</a>
+                        </div>
+                    </div>
+                    <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                        <div class="nav-item dropdown-item">Amend PIN Details <span class="arrow">></span></div>
+                        <div class="dropdown-menu">
+                            <a href="#" class="nav-item dropdown-item">Amend Profile Details</a>
+                            <a href="#" class="nav-item dropdown-item">Change Tax Service Office</a>
+                            <a href="#" class="nav-item dropdown-item">Change Accounting Period</a>
+                            <a href="#" class="nav-item dropdown-item">Update Contact Details</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-item dropdown-item">e-Reactivation</a>
+                    <a href="#" class="nav-item dropdown-item">e-Dormance</a>
+                    <a href="#" class="nav-item dropdown-item">e-Cancellation</a>
+                    <a href="#" class="nav-item dropdown-item">VAT Application</a>
+                    <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                        <div class="nav-item dropdown-item">Excise,Remissions & Import Certificate <span
+                                class="arrow">></span></div>
+                        <div class="dropdown-menu">
+                            <a href="#" class="nav-item dropdown-item">Excise Goods License</a>
+                            <a href="#" class="nav-item dropdown-item">Excise Service License</a>
+                            <a href="#" class="nav-item dropdown-item">Import Certificate Application</a>
+                            <a href="#" class="nav-item dropdown-item">Remission of Excise Duty on Denatured Spirit</a>
+                            <a href="#" class="nav-item dropdown-item">Spirits and Illuminating Kerosene License</a>
+                            <a href="#" class="nav-item dropdown-item">Excise Goods License Cancellation</a>
+                            <a href="#" class="nav-item dropdown-item">Excise Service License Cancellation</a>
+                            <a href="#" class="nav-item dropdown-item">Spirits and Illuminating Kerosene License
+                                Cancellation</a>
+                            <a href="#" class="nav-item dropdown-item">Application for Destruction of Excisable
+                                Goods</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Returns <span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">File Return</a>
+                    <a href="#" class="nav-item dropdown-item">View Filed Return</a>
+                    <a href="#" class="nav-item dropdown-item">ITR for Companies</a>
+                </div>
+            </div>
+
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Debt & Enforcement<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">Waiver Application</a>
+                    <a href="#" class="nav-item dropdown-item">Payment Plan</a>
+                </div>
+            </div>
+
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Payments<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">Payment Registration</a>
+                    <a href="#" class="nav-item dropdown-item">Consult Receipt</a>
+                </div>
+            </div>
+
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Assessment Disputes<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">Objection Management</a>
+                </div>
+            </div>
+
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Refund<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">Application for Refund</a>
+                </div>
+            </div>
+
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Certificates<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">TCC Application</a>
+                    <a href="#" class="nav-item dropdown-item">Exemption Certificate</a>
+                </div>
+            </div>
+
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Useful Links<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">KRA Website</a>
+                </div>
+            </div>
+
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">E-Communication<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">My Emails</a>
+                </div>
+            </div>
+            <div class="has-dropdown" onclick="toggleDropdown(event, this)">
+                <div class="nav-item">Myledger<span class="arrow">></span></div>
+                <div class="dropdown-menu">
+                    <a href="#" class="nav-item dropdown-item">General Ledger</a>
+                </div>
+            </div>
+
+            <a href="#" class="nav-item">Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="search-box">
+                <h2 style="font-size: 1.1rem; font-weight: 600;">Dashboard</h2>
+            </div>
+            <div class="user-profile">
+                <span>John Doe</span>
+                <div class="user-avatar">JD</div>
+            </div>
+        </header>
+
+        <!-- Dynamic Content -->
+        <main class="content-area">
+            <div class="dashboard-grid">
+                <!-- Sales Card -->
+                <div class="stat-card">
+                    <div class="card-header">Sales</div>
+                    <div class="card-body">
+                        <div class="card-icon-container">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" />
+                                <path
+                                    d="M7 15h2v2H7v-2zm0-4h2v2H7v-2zm0-4h2v2H7V7zm10 8h-2v2h2v-2zm0-4h-2v2h2v-2zm0-4h-2v2h2V7z"
+                                    opacity=".3" />
+                                <path d="M12 22l-4-4h8l-4 4z" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-row">
+                                <div class="row-main">
+                                    <span class="row-label">Sales</span>
+                                    <span class="row-count">0</span>
+                                </div>
+                                <div class="row-sub"><span>Kes.</span> 0</div>
+                            </div>
+                            <div class="card-row">
+                                <div class="row-main">
+                                    <span class="row-label">Credit Notes</span>
+                                    <span class="row-count">0</span>
+                                </div>
+                                <div class="row-sub"><span>Kes.</span> 0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="footer-caret"></div>
+                    </div>
+                </div>
+
+                <!-- Purchases Card -->
+                <div class="stat-card">
+                    <div class="card-header">Purchases</div>
+                    <div class="card-body">
+                        <div class="card-icon-container">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-row">
+                                <div class="row-main">
+                                    <span class="row-label">Purchases</span>
+                                    <span class="row-count">0</span>
+                                </div>
+                                <div class="row-sub"><span>Kes.</span> 0</div>
+                            </div>
+                            <div class="card-row">
+                                <div class="row-main">
+                                    <span class="row-label">Credit Notes</span>
+                                    <span class="row-count">0</span>
+                                </div>
+                                <div class="row-sub"><span>Kes.</span> 0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="footer-caret"></div>
+                    </div>
+                </div>
+
+                <!-- Imports Card -->
+                <div class="stat-card">
+                    <div class="card-header">Imports</div>
+                    <div class="card-body">
+                        <div class="card-icon-container">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-row">
+                                <div class="row-main">
+                                    <span class="row-label">Imports</span>
+                                    <span class="row-count">0</span>
+                                </div>
+                                <div class="row-sub"><span>Kes.</span> 0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="footer-caret"></div>
+                    </div>
+                </div>
+
+                <!-- Download Card -->
+                <div class="stat-card">
+                    <div class="card-header">Download</div>
+                    <div class="card-body card-download">
+                        <svg class="card-icon download-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                        </svg>
+                        <span class="download-label">Download</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="footer-caret"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h3 style="margin-bottom: 16px;">Recent Activity</h3>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tax Return Filed</td>
+                            <td>Feb 12, 2026</td>
+                            <td><span class="status-completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>New User Registered</td>
+                            <td>Feb 11, 2026</td>
+                            <td><span class="status-pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleDropdown(event, element) {
+            event.stopPropagation();
+
+            const parent = element.parentElement;
+            const isActive = element.classList.contains('active');
+
+            // Close all other open menus at the SAME level (siblings)
+            Array.from(parent.children).forEach(sibling => {
+                if (sibling !== element && sibling.classList.contains('has-dropdown')) {
+                    sibling.classList.remove('active');
+                    const siblingMenu = sibling.querySelector('.dropdown-menu');
+                    if (siblingMenu) {
+                        siblingMenu.classList.remove('active');
+                    }
+                }
+            });
+
+            // Toggle the clicked one
+            element.classList.toggle('active', !isActive);
+            const menu = element.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.classList.toggle('active', !isActive);
+            }
+        }
+    </script>
+</body>
+
+</html>
