@@ -19,8 +19,22 @@
                 <div class="header-logo">
                     <img src="{{ asset('images/kra.png') }}" alt="Logo" class="logo-img" onerror="this.src='{{ asset('images/fallback-kra.png') }}'">
                 </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
                 
-                <nav class="top-nav" aria-label="Main navigation">
+                <!-- Sidebar Backdrop -->
+                <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+                <nav class="top-nav sidebar-nav" id="main-sidebar" aria-label="Main navigation">
+                    <div class="sidebar-header">
+                        <img src="{{ asset('images/kra.png') }}" alt="Logo" class="sidebar-logo">
+                        <button id="close-sidebar" class="close-sidebar-btn" aria-label="Close menu">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                     <!-- Dashboard -->
                     <a href="{{ route('dashboard') }}" class="nav-item" role="link" tabindex="0">
                         <span class="nav-label">Home</span>
@@ -349,6 +363,40 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Mobile Menu Toggle Logic
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const closeSidebar = document.getElementById('close-sidebar');
+        const sidebar = document.getElementById('main-sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        const body = document.body;
+
+        function toggleSidebar(show) {
+            const isVisible = show !== undefined ? show : !sidebar.classList.contains('active');
+            sidebar.classList.toggle('active', isVisible);
+            backdrop.classList.toggle('active', isVisible);
+            mobileToggle.setAttribute('aria-expanded', isVisible);
+            body.style.overflow = isVisible ? 'hidden' : '';
+        }
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => toggleSidebar(true));
+        }
+
+        if (closeSidebar) {
+            closeSidebar.addEventListener('click', () => toggleSidebar(false));
+        }
+
+        if (backdrop) {
+            backdrop.addEventListener('click', () => toggleSidebar(false));
+        }
+
+        // Close sidebar on window resize if switching to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && sidebar.classList.contains('active')) {
+                toggleSidebar(false);
+            }
+        });
+
         // Safely check if card elements exist (from child views)
         const cardFooters = document.querySelectorAll('.card-footer');
         if (cardFooters.length > 0) {
