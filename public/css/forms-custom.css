@@ -1,0 +1,371 @@
+/* Shared Form Styles for Taxpayer Profile and Reprint PIN Certificate */
+.mandatory-notice {
+    color: #ff0000;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.inner-profile-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid var(--kra-border-gray);
+    margin-bottom: 25px;
+    background-color: #ffffff;
+}
+
+.inner-profile-table td {
+    border: 1px solid var(--kra-border-gray);
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}
+
+.label-cell {
+    width: 40%;
+    background-color: #fff;
+    color: #000000;
+    font-weight: 500;
+}
+
+.input-cell {
+    width: 60%;
+}
+
+.form-select-custom,
+.form-input-custom {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #DA3832;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: #000000;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select-custom:focus,
+.form-input-custom:focus {
+    border-color: #DA3832;
+    box-shadow: 0 0 0 2px #DA3832;
+}
+
+.form-input-custom[readonly] {
+    background-color: #f3f4f6;
+    color: #000000;
+    border-color: var(--kra-border-gray);
+}
+
+.required-star {
+    color: #ff0000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn-custom {
+    color: #ffffff;
+    padding: 8px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-submit-green {
+    background-color: #28a745;
+}
+
+.btn-cancel-red {
+    background-color: #DA3832;
+}
+
+.btn-next-blue,
+.btn-add-blue {
+    background-color: #007bff;
+}
+
+.btn-custom:hover {
+    opacity: 0.8;
+}
+
+/* Results / Header Styles */
+.results-header {
+    background-color: #DA3832;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Reprint / Download Specific */
+.download-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.download-link {
+    color: #DA3832;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Certificate Preview Styling */
+.certificate-preview {
+    background: white;
+    padding: 40px;
+    border: 1px solid #DA3832;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(218, 56, 50, 0.1);
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #DA3832;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.cert-logo {
+    height: 60px;
+}
+
+.cert-title-box {
+    background: #f8d7da;
+    padding: 10px 40px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid #DA3832;
+}
+
+.cert-contact {
+    font-size: 10px;
+    text-align: right;
+}
+
+.cert-meta {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.cert-section-title {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 1.1rem;
+}
+
+.cert-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 11px;
+}
+
+.cert-table th,
+.cert-table td {
+    border: 1px solid #DA3832;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.cert-table th {
+    background: #eee;
+}
+
+.cert-address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #DA3832;
+    margin-bottom: 15px;
+    font-size: 11px;
+}
+
+.cert-address-item {
+    border: 0.5px solid #DA3832;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cert-address-label {
+    font-weight: bold;
+}
+
+.cert-footer-text {
+    font-size: 10px;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+.cert-disclaimer {
+    border-top: 1px solid #DA3832;
+    margin-top: 30px;
+    padding-top: 5px;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+/* Tabbed Interface Styles */
+.tabs-container {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: -1px;
+    z-index: 2;
+    position: relative;
+    padding-left: 10px;
+    align-items: flex-end;
+}
+
+.tab-item {
+    padding: 8px 15px;
+    background: #eaeded;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.tab-item.active {
+    background: #DA3832;
+    color: #fff;
+    border-color: #DA3832;
+    margin-bottom: 0px;
+    padding-bottom: 11px;
+}
+
+.tab-item.disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    background: #eaeded;
+    color: #555;
+}
+
+.tab-content-wrapper {
+    background: #fff;
+    border: 1px solid #DA3832;
+    padding: 0;
+    min-height: 400px;
+}
+
+/* Amendment Form Specifics */
+.amendment-header {
+    background: #DA3832;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.section-group {
+    border: 1px solid #ccc;
+    margin: 15px;
+    padding: 15px;
+    position: relative;
+}
+
+.section-group-title {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: #fff;
+    padding: 0 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #DA3832;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.form-table-compact {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.form-table-compact td {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+}
+
+.bg-light-gray {
+    background-color: #f5f5f5;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-black {
+    background-color: #DA3832;
+    color: #fff;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-black:hover {
+    background-color: #bd2a25;
+}
+
+.sub-section-header {
+    background: #DA3832;
+    color: #fff;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.tab-pane {
+    display: none;
+    padding: 0;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.field-required::after {
+    content: " *";
+    color: #ff0000;
+}

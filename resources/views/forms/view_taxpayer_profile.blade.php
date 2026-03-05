@@ -1,60 +1,258 @@
 @extends('layouts.app')
 
 @section('title', 'View Taxpayer Profile')
-@section('header', 'View Taxpayer Profile')
+@section('header', 'Tax Payer Profile')
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Taxpayer Details</span>
-        <i class="fas fa-user-circle"></i>
+<div id="formSectionContainer">
+    <div class="mandatory-notice">
+        All fields marked with <span class="required-star">*</span> are mandatory
     </div>
 
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">Basic Information</div>
-            <div class="form-group">
-                <label class="form-label">PIN</label>
-                <input type="text" class="form-control" value="A001234567Z" readonly>
-            </div>
-            <div class="form-group">
-                <label class="form-label">Taxpayer Name</label>
-                <input type="text" class="form-control" value="JOHN DOE" readonly>
-            </div>
-            <div class="form-group">
-                <label class="form-label">Email Address</label>
-                <input type="email" class="form-control" value="john.doe@example.com" readonly>
-            </div>
+    <div class="form-container">
+        <div class="form-header">
+            <span>Taxpayer Profile</span>
+            <i class="fas fa-user-circle"></i>
         </div>
 
-        <div class="form-section">
-            <div class="form-subheader">Tax Obligations</div>
-            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-                <thead>
-                    <tr style="background: var(--kra-light-blue); text-align: left;">
-                        <th style="padding: 10px; border: 1px solid var(--kra-border-gray);">Obligation Name</th>
-                        <th style="padding: 10px; border: 1px solid var(--kra-border-gray);">Effective From Date</th>
-                        <th style="padding: 10px; border: 1px solid var(--kra-border-gray);">Status</th>
-                    </tr>
-                </thead>
+        <div class="form-body">
+            <!-- 1. Selection Container -->
+            <div id="selectionBlock">
+                <table class="inner-profile-table">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
+                            <td class="input-cell">
+                                <select id="applicantTypeSelection" class="form-select-custom" required>
+                                    <option value="">--Select--</option>
+                                    <option value="Agent">Agent</option>
+                                    <option value="Taxpayer">Taxpayer</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 2. Agent Form Block -->
+            <div id="agentFormBlock" class="hidden">
+                <form id="agentProfileForm">
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell">Applicant PIN</td>
+                                <td class="input-cell">
+                                    <input type="text" id="agentApplicantPin" class="form-input-custom" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Applicant Name</td>
+                                <td class="input-cell">
+                                    <input type="text" id="agentApplicantName" class="form-input-custom" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
+                                <td class="input-cell">
+                                    <input type="text" id="agentTaxpayerPin" class="form-input-custom" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Taxpayer Name</td>
+                                <td class="input-cell">
+                                    <input type="text" id="agentTaxpayerName" class="form-input-custom" readonly>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
+                        <button type="reset" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 3. Taxpayer Form Block -->
+            <div id="taxpayerFormBlock" class="hidden">
+                <form id="taxpayerProfileFormOnly">
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell">Taxpayer PIN</td>
+                                <td class="input-cell">
+                                    <input type="text" id="directTaxpayerPin" class="form-input-custom" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Taxpayer Name</td>
+                                <td class="input-cell">
+                                    <input type="text" id="directTaxpayerName" class="form-input-custom" readonly>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
+                        <button type="reset" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 4. Profile Results Block -->
+<div id="profileResultsBlock" class="hidden">
+    <div class="form-container">
+        <div class="form-header">
+            <span>Taxpayer Profile Result</span>
+            <i class="fas fa-file-invoice"></i>
+        </div>
+        <div class="form-body">
+            <!-- Applicant Details section (Only for Agent searches) -->
+            <div id="res_applicant_section" class="hidden">
+                <div class="results-header">Applicant Details</div>
+                <table class="inner-profile-table">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell">Applicant PIN</td>
+                            <td id="res_app_pin" class="input-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Applicant Name</td>
+                            <td id="res_app_name" class="input-cell">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="results-header">Section A - Taxpayer Details</div>
+            <table class="inner-profile-table">
                 <tbody>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid var(--kra-border-gray);">Income Tax - Resident Individual</td>
-                        <td style="padding: 10px; border: 1px solid var(--kra-border-gray);">01/01/2014</td>
-                        <td style="padding: 10px; border: 1px solid var(--kra-border-gray); color: green; font-weight: 600;">Active</td>
+                        <td class="label-cell">PIN</td>
+                        <td id="res_pin" class="input-cell">-</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid var(--kra-border-gray);">Value Added Tax (VAT)</td>
-                        <td style="padding: 10px; border: 1px solid var(--kra-border-gray);">01/06/2018</td>
-                        <td style="padding: 10px; border: 1px solid var(--kra-border-gray); color: green; font-weight: 600;">Active</td>
+                        <td class="label-cell">Taxpayer Name</td>
+                        <td id="res_name" class="input-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Email Address</td>
+                        <td id="res_email" class="input-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Physical Address</td>
+                        <td id="res_address" class="input-cell">-</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="results-header">Section B - Registration Details</div>
+            <table class="inner-profile-table">
+                <tbody>
+                    <tr>
+                        <td class="label-cell">Date of Registration</td>
+                        <td id="res_reg_date" class="input-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Taxpayer Type</td>
+                        <td id="res_type" class="input-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Status</td>
+                        <td id="res_status" class="input-cell">-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Back to Search</button>
+            </div>
         </div>
     </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-times"></i> Close</button>
-    </div>
 </div>
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const typeSelect = document.getElementById('applicantTypeSelection');
+        const agentBlock = document.getElementById('agentFormBlock');
+        const taxpayerBlock = document.getElementById('taxpayerFormBlock');
+        const formSection = document.getElementById('formSectionContainer');
+        const resultsBlock = document.getElementById('profileResultsBlock');
+        
+        // Agent Fields
+        const agAppPin = document.getElementById('agentApplicantPin');
+        const agAppName = document.getElementById('agentApplicantName');
+        const agTaxPin = document.getElementById('agentTaxpayerPin');
+        const agTaxName = document.getElementById('agentTaxpayerName');
+
+        // Taxpayer Fields
+        const txTaxPin = document.getElementById('directTaxpayerPin');
+        const txTaxName = document.getElementById('directTaxpayerName');
+
+        typeSelect.addEventListener('change', function() {
+            const type = this.value;
+            
+            agentBlock.classList.add('hidden');
+            taxpayerBlock.classList.add('hidden');
+            
+            if (type === 'Agent') {
+                agentBlock.classList.remove('hidden');
+                agAppPin.value = 'A000000000P';
+                agAppName.value = 'AGENT_NAME_HERE';
+                agTaxPin.value = '';
+                agTaxName.value = '';
+            } else if (type === 'Taxpayer') {
+                taxpayerBlock.classList.remove('hidden');
+                txTaxPin.value = 'A000000000P';
+                txTaxName.value = 'TAXPAYER_NAME_HERE';
+            }
+        });
+
+        // Submission Logic
+        const handleSub = (e) => {
+            e.preventDefault();
+            
+            if (confirm("do you want to submit your request")) {
+                const type = typeSelect.value;
+                const enteredPin = type === 'Agent' ? agTaxPin.value : txTaxPin.value;
+
+                // Show/Hide Applicant Section
+                const appSection = document.getElementById('res_applicant_section');
+                if (type === 'Agent') {
+                    appSection.classList.remove('hidden');
+                    document.getElementById('res_app_pin').innerText = agAppPin.value;
+                    document.getElementById('res_app_name').innerText = agAppName.value;
+                } else {
+                    appSection.classList.add('hidden');
+                }
+
+                // Populate demo taxpayer data
+                document.getElementById('res_pin').innerText = enteredPin || 'A000000000P';
+                document.getElementById('res_name').innerText = 'TAXPAYER_NAME_HERE';
+                document.getElementById('res_email').innerText = 'taxpayer@example.com';
+                document.getElementById('res_address').innerText = 'P.O. BOX XXXX, NAIROBI';
+                document.getElementById('res_reg_date').innerText = '01/01/2020';
+                document.getElementById('res_type').innerText = 'Individual';
+                document.getElementById('res_status').innerText = 'Active';
+
+                // Switch views
+                formSection.classList.add('hidden');
+                resultsBlock.classList.remove('hidden');
+                
+                window.scrollTo(0, 0);
+            }
+        };
+        
+        document.getElementById('agentProfileForm').addEventListener('submit', handleSub);
+        document.getElementById('taxpayerProfileFormOnly').addEventListener('submit', handleSub);
+    });
+</script>
+@endpush
 @endsection

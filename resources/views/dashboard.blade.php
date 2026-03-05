@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Dashboard')
-@section('header', 'Hello User, Welcome to ITax !')
+@section('header', 'Hello User, Welcome to ITax User !')
 @section('content')
 <div class="dashboard-grid">
     <!-- Sales Card -->

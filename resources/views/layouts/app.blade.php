@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    @stack('styles')
 </head>
 <body>
     <!-- Top Header Navigation -->
@@ -425,7 +427,7 @@
                 });
                 
                 footer.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = 'black';
+                    this.style.backgroundColor = '#DA3832';
                 });
             });
         }

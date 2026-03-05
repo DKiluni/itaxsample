@@ -423,7 +423,7 @@ body {
 
 .row-label {
     font-size: 0.85rem;
-    color: #666;
+    color: #000000;
 }
 
 .row-count {
@@ -479,7 +479,7 @@ body {
     padding: 10px 15px;
     font-weight: 600;
     font-size: 0.95rem;
-    color: #333;
+    color: #000000;
     border-bottom: 1px solid var(--kra-border-gray);
     margin-bottom: 20px;
 }
@@ -502,7 +502,7 @@ body {
 
 .form-label {
     font-weight: 500;
-    color: var(--kra-label-gray);
+    color: #000000;
     font-size: 0.9rem;
 }
 
@@ -609,7 +609,7 @@ body {
 .footer-center {
     text-align: center;
     font-size: 0.75rem;
-    color: #666;
+    color: #000000;
     flex: 1;
 }
 
@@ -661,7 +661,7 @@ body {
 
 .step-label {
     font-size: 0.85rem;
-    color: #333;
+    color: #000000;
 }
 
 /* VAT Specific Styles */
