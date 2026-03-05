@@ -420,15 +420,6 @@
                         console.log('Card toggled:', card.classList.contains('collapsed') ? 'collapsed' : 'expanded');
                     }
                 });
-                
-                // Add hover effect for better UX (if not handled by CSS)
-                footer.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = '#DA3832';
-                });
-                
-                footer.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '#DA3832';
-                });
             });
         }
         

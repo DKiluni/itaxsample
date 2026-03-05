@@ -5,6 +5,8 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 
 @section('content')
@@ -106,16 +108,14 @@
                         <input type="checkbox" id="mainPinCheckbox"> <strong style="color: #000000;">PIN</strong>
                     </label>
                     <div id="amendmentOptionsGrid" class="checkbox-grid hidden" style="border-top: 1px solid #ddd; margin-top: 15px; padding-top: 15px; background-color: #ffffff;">
-                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info"> Basic Information</label>
-                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="sms_section"> SMS Notification</label>
+                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="basic_info_section"> Basic Information</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="alt_address_section"> Alternative Address and Contact Details</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="bank_details_section"> Bank Account Details</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="entity_section"> Partnership, Corporate and Trust Information</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="tributary_section"> Tributary Bonds</label>
-                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="upload_section"> Details Of Upload Document</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_income" data-pane="tab_income"> Source of Income</label>
-                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_agent" data-pane="tab_agent"> Tax Agent authorized to submit any application on behalf of the Taxpayer</label>
-                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_agent" data-pane="tab_agent"> Intermediary Agent to submit returns on behalf of the Taxpayer</label>
+                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_agent" data-pane="tab_agent" data-section="agent_authorized_section"> Tax Agent authorized to submit any application on behalf of the Taxpayer</label>
+                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_agent" data-pane="tab_agent" data-section="intermediary_agent_section"> Intermediary Agent to submit returns on behalf of the Taxpayer</label>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
             </div>
 
             <div style="margin: 15px;">
-                <button class="btn-custom btn-next-blue">Click Here to Know Conditions For Auto Approval Amendment</button>
+                <button type="button" id="btnKnowConditions" class="btn-custom btn-next-blue">Click Here to Know Conditions For Auto Approval Amendment</button>
             </div>
 
             <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1;">
@@ -141,7 +141,7 @@
 
         <!-- Tab 2: Basic Information -->
         <div class="tab-pane" id="tab_basic_info">
-            <div class="amendment-header">Section A : Basic Information</div>
+            <div class="amendment-header">Basic Information</div>
             
             <div class="section-group">
                 <div class="section-group-title">Residential Details</div>
@@ -159,309 +159,316 @@
                 </table>
             </div>
 
-            <div class="section-group">
-                <table class="inner-profile-table">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell">Do you want to register for TOT ?<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <label><input type="radio" name="tot"> Yes</label>
-                                <label style="margin-left: 20px;"><input type="radio" name="tot"> No</label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <!-- Section A : Basic Information -->
+            <div id="basic_info_section" class="disabled-section">
+                
+                
+                <div class="section-group">
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell">Do you want to register for TOT ?<span class="required-star">*</span></td>
+                                <td class="input-cell">
+                                    <label><input type="radio" name="tot"> Yes</label>
+                                    <label style="margin-left: 20px;"><input type="radio" name="tot"> No</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="section-group">
-                <div class="section-group-title">Employee's Profession</div>
-                <table class="inner-profile-table">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell">Major Group<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <select class="form-select-custom">
-                                    <option>4545</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Minor Group<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <select class="form-select-custom">
-                                    <option>4545</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Sub Group<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <select class="form-select-custom">
-                                    <option>4545</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="section-group">
+                    <div class="section-group-title">Employee's Profession</div>
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell">Major Group<span class="required-star">*</span></td>
+                                <td class="input-cell">
+                                    <select class="form-select-custom">
+                                        <option>4545</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Minor Group<span class="required-star">*</span></td>
+                                <td class="input-cell">
+                                    <select class="form-select-custom">
+                                        <option>4545</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Sub Group<span class="required-star">*</span></td>
+                                <td class="input-cell">
+                                    <select class="form-select-custom">
+                                        <option>4545</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="section-group">
-                <div class="section-group-title">National Id. Details</div>
-                <table class="inner-profile-table">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell" style="width: 25% !important;">National Id. Number<span class="required-star">*</span></td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                            <td class="label-cell" style="width: 25% !important;">Date of Birth</td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="section-group">
-                <div class="section-group-title">NSSF Number</div>
-                <table class="inner-profile-table">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell" style="width: 25% !important;">NSSF Number<span class="required-star">*</span></td>
-                            <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="section-group">
+                    <div class="section-group-title">National Id. Details</div>
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell" style="width: 25% !important;">National Id. Number<span class="required-star">*</span></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="label-cell" style="width: 25% !important;">Date of Birth</td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" style="width: 100%;" placeholder="DD/MM/YYYY"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="section-group">
+                    <div class="section-group-title">NSSF Number</div>
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell" style="width: 25% !important;">NSSF Number<span class="required-star">*</span></td>
+                                <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="section-group">
-                <div class="section-group-title">Individual Data</div>
-                <table class="inner-profile-table">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell" style="width: 25% !important;">First Name</td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                            <td class="label-cell" style="width: 25% !important;">Middle Name</td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Last Name</td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                            <td class="label-cell">Gender</td>
-                            <td class="input-cell">
-                                <label><input type="radio" name="gender"> Male</label>
-                                <label style="margin-left: 20px;"><input type="radio" name="gender"> Female</label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="section-group">
+                    <div class="section-group-title">Individual Data</div>
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell" style="width: 25% !important;">First Name</td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="label-cell" style="width: 25% !important;">Middle Name</td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Last Name</td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="label-cell">Gender</td>
+                                <td class="input-cell">
+                                    <label><input type="radio" name="gender"> Male</label>
+                                    <label style="margin-left: 20px;"><input type="radio" name="gender"> Female</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="section-group">
-                <div class="section-group-title">Principal Physical Address</div>
-                <table class="inner-profile-table">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell" style="width: 25% !important;">L.R. Number</td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
-                            <td class="label-cell" style="width: 25% !important;">Building<span class="required-star">*</span></td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" required style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Street/Road<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" required style="width: 100%;"></td>
-                            <td class="label-cell">City/Town<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" required style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">County<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <select class="form-select-custom" style="width: 100%;">
-                                    <option>Nairobi</option>
-                                </select>
-                            </td>
-                            <td class="label-cell">District<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <select class="form-select-custom" style="width: 100%;">
-                                    <option>Embakasi</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Tax Service Office(TSO)</td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
-                            <td class="label-cell">Tax Area/Locality<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <select class="form-select-custom" required style="width: 100%;">
-                                    <option>Embakasi</option>
-                                </select> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Descriptive Address</td>
-                            <td class="input-cell" colspan="3">
-                                <textarea class="form-input-custom" rows="4" style="width: 100%; height: auto;" onkeyup="document.getElementById('charCountPrincipal').textContent = 200 - this.value.length;"></textarea>
-                                <div style="font-size: 0.75rem; color: #666; margin-top: 2px;">
-                                    (Maximum characters: 200)<br>
-                                    You have <span id="charCountPrincipal">200</span> characters left.
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="section-group">
-                <div class="section-group-title">Principal Contact Details</div>
-                <table class="inner-profile-table">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell" style="width: 25% !important;">Telephone Number</td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                            <td class="label-cell" style="width: 25% !important;">Mobile Number (1)<span class="required-star">*</span></td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Mobile Number (2)<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                            <td class="label-cell">Mobile Number (3)<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Main Email Address<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                            <td class="label-cell">Secondary Email Address<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- SMS Notification -->
-            <div class="section-group" id="sms_section">
-                <div class="section-group-title">SMS Notification</div>
-                <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
-                    <tbody>
-                        <tr style="border: none;">
-                            <td class="label-cell" style="border: none; width: 50%;">Would you like to Subscribe/Unsubscribe of receiving alerts through SMS? <span class="required-star">*</span></td>
-                            <td class="input-cell" style="border: none;">
-                                <label><input type="radio" name="sms_sub"> Subscribe</label>
-                                <label style="margin-left: 20px;"><input type="radio" name="sms_sub" checked> Unsubscribe</label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Alternative Address and Contact Details -->
-            <div class="amendment-header">Alternative Address and Contact Details</div>
-            <div class="section-group" id="alt_address_section">
-                <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
-                    <tbody>
-                        <tr style="border: none;">
-                            <td class="label-cell" style="border: none; width: 50%;">Do you have an Alternative Address? <span class="required-star">*</span></td>
-                            <td class="input-cell" style="border: none;">
-                                <select class="form-select-custom" id="alt_address_select">
-                                    <option value="No">No</option>
-                                    <option value="Yes">Yes</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Dynamic Alternative Address Fields -->
-                <div id="alt_address_fields_container" class="hidden" style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 15px;">
-                    <!-- Physical Address -->
-                    <div style="font-weight: bold; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Alternative Physical Address</div>
+                <div class="section-group">
+                    <div class="section-group-title">Principal Physical Address</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">L.R. Number</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                                 <td class="label-cell" style="width: 25% !important;">Building<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" required style="width: 100%;"></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Street/Road<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" required style="width: 100%;"></td>
                                 <td class="label-cell">City/Town<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" required style="width: 100%;"></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">County<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
-                                        <option>--Select--</option>
+                                    <select class="form-select-custom" style="width: 100%;">
+                                        <option>Nairobi</option>
                                     </select>
                                 </td>
                                 <td class="label-cell">District<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
-                                        <option>--Select--</option>
+                                    <select class="form-select-custom" style="width: 100%;">
+                                        <option>Embakasi</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Tax Service Office(TSO)</td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" readonly></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                                 <td class="label-cell">Tax Area/Locality<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
-                                        <option>--Select--</option>
-                                    </select>
+                                    <select class="form-select-custom" required style="width: 100%;">
+                                        <option>Embakasi</option>
+                                    </select> 
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Descriptive Address</td>
                                 <td class="input-cell" colspan="3">
-                                    <textarea class="form-input-custom" rows="4" style="width: 100%; height: auto;" onkeyup="document.getElementById('charCount').textContent = 200 - this.value.length;"></textarea>
+                                    <textarea class="form-input-custom" rows="4" style="width: 100%; height: auto;" onkeyup="document.getElementById('charCountPrincipal').textContent = 200 - this.value.length;"></textarea>
                                     <div style="font-size: 0.75rem; color: #666; margin-top: 2px;">
                                         (Maximum characters: 200)<br>
-                                        You have <span id="charCount">200</span> characters left.
+                                        You have <span id="charCountPrincipal">200</span> characters left.
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
 
-                    <!-- Postal Address -->
-                    <div style="font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Alternative Postal Address</div>
-                    <table class="inner-profile-table">
-                        <tbody>
-                            <tr>
-                                <td class="label-cell" style="width: 25% !important;">Postal Code<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom">
-                                        <option>--Select--</option>
-                                    </select>
-                                </td>
-                                <td class="label-cell" style="width: 25% !important;">Town<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom">
-                                        <option>--Select--</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-cell">P.O.Box<span class="required-star">*</span></td>
-                                <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- Contact Details -->
-                    <div style="font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Alternative Contact Details</div>
+                <div class="section-group">
+                    <div class="section-group-title">Principal Contact Details</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Telephone Number</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
-                                <td class="label-cell" style="width: 25% !important;">Mobile Number<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="label-cell" style="width: 25% !important;">Mobile Number (1)<span class="required-star">*</span></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
                             </tr>
                             <tr>
-                                <td class="label-cell">Email Address<span class="required-star">*</span></td>
-                                <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
+                                <td class="label-cell">Mobile Number (2)<span class="required-star">*</span></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="label-cell">Mobile Number (3)<span class="required-star">*</span></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Main Email Address<span class="required-star">*</span></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="label-cell">Secondary Email Address<span class="required-star">*</span></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <!-- SMS Notification -->
+                <div class="section-group" id="sms_section">
+                    <div class="section-group-title">SMS Notification</div>
+                    <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
+                        <tbody>
+                            <tr style="border: none;">
+                                <td class="label-cell" style="border: none; width: 50%;">Would you like to Subscribe/Unsubscribe of receiving alerts through SMS? <span class="required-star">*</span></td>
+                                <td class="input-cell" style="border: none;">
+                                    <label><input type="radio" name="sms_sub"> Subscribe</label>
+                                    <label style="margin-left: 20px;"><input type="radio" name="sms_sub" checked> Unsubscribe</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section A : Alternative Address and Contact Details -->
+            <div class="amendment-header">Alternative Address and Contact Details</div>
+            <div id="alt_address_section" class="disabled-section">
+                <div class="section-group">
+                    <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
+                        <tbody>
+                            <tr style="border: none;">
+                                <td class="label-cell" style="border: none; width: 50%;">Do you have an Alternative Address? <span class="required-star">*</span></td>
+                                <td class="input-cell" style="border: none;">
+                                    <select class="form-select-custom" id="alt_address_select">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Dynamic Alternative Address Fields -->
+                    <div id="alt_address_fields_container" class="hidden" style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 15px;">
+                        <!-- Physical Address -->
+                        <div style="font-weight: bold; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Alternative Physical Address</div>
+                        <table class="inner-profile-table">
+                            <tbody>
+                                <tr>
+                                    <td class="label-cell" style="width: 25% !important;">L.R. Number</td>
+                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                    <td class="label-cell" style="width: 25% !important;">Building<span class="required-star">*</span></td>
+                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Street/Road<span class="required-star">*</span></td>
+                                    <td class="input-cell"><input type="text" class="form-input-custom"></td>
+                                    <td class="label-cell">City/Town<span class="required-star">*</span></td>
+                                    <td class="input-cell"><input type="text" class="form-input-custom"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">County<span class="required-star">*</span></td>
+                                    <td class="input-cell">
+                                        <select class="form-select-custom">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </td>
+                                    <td class="label-cell">District<span class="required-star">*</span></td>
+                                    <td class="input-cell">
+                                        <select class="form-select-custom">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Tax Service Office(TSO)</td>
+                                    <td class="input-cell"><input type="text" class="form-input-custom" readonly></td>
+                                    <td class="label-cell">Tax Area/Locality<span class="required-star">*</span></td>
+                                    <td class="input-cell">
+                                        <select class="form-select-custom">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Descriptive Address</td>
+                                    <td class="input-cell" colspan="3">
+                                        <textarea class="form-input-custom" rows="4" style="width: 100%; height: auto;" onkeyup="document.getElementById('charCount').textContent = 200 - this.value.length;"></textarea>
+                                        <div style="font-size: 0.75rem; color: #666; margin-top: 2px;">
+                                            (Maximum characters: 200)<br>
+                                            You have <span id="charCount">200</span> characters left.
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Postal Address -->
+                        <div style="font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Alternative Postal Address</div>
+                        <table class="inner-profile-table">
+                            <tbody>
+                                <tr>
+                                    <td class="label-cell" style="width: 25% !important;">Postal Code<span class="required-star">*</span></td>
+                                    <td class="input-cell" style="width: 25% !important;">
+                                        <select class="form-select-custom">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </td>
+                                    <td class="label-cell" style="width: 25% !important;">Town<span class="required-star">*</span></td>
+                                    <td class="input-cell" style="width: 25% !important;">
+                                        <select class="form-select-custom">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">P.O.Box<span class="required-star">*</span></td>
+                                    <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Contact Details -->
+                        <div style="font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Alternative Contact Details</div>
+                        <table class="inner-profile-table">
+                            <tbody>
+                                <tr>
+                                    <td class="label-cell" style="width: 25% !important;">Telephone Number</td>
+                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                    <td class="label-cell" style="width: 25% !important;">Mobile Number<span class="required-star">*</span></td>
+                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Email Address<span class="required-star">*</span></td>
+                                    <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -692,45 +699,45 @@
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
-                            <td class="label-cell"><label><input type="checkbox"> Income Tax Resident</label></td>
+                            <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Resident</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom" style="width: 150px;">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
                             </td>
                         </tr>
                         <tr>
-                            <td class="label-cell"><label><input type="checkbox"> Income Tax Non Resident</label></td>
+                            <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Non Resident</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="calender" class="form-input-custom" style="width: 150px;">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
                             </td>
                         </tr>
                         <tr>
-                            <td class="label-cell"><label><input type="checkbox"> Income Tax PAYE(for Employer only)</label></td>
+                            <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax PAYE(for Employer only)</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="calender" class="form-input-custom" style="width: 150px;">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
                             </td>
                         </tr>
                         <tr>
-                            <td class="label-cell"><label><input type="checkbox"> Income Tax Rent Income</label></td>
+                            <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Rent Income (MRI)</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="calender" class="form-input-custom" style="width: 150px;">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
                             </td>
                         </tr>
                         <tr>
-                            <td class="label-cell"><label><input type="checkbox"> Turnover Tax</label></td>
+                            <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Turnover Tax</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="calender" class="form-input-custom" style="width: 150px;">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
                             </td>
                         </tr>
                         <tr>
-                            <td class="label-cell"><label><input type="checkbox"> Significant Economic Presence Tax</label></td>
+                            <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Significant Economic Presence Tax</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="calender" class="form-input-custom" style="width: 150px;">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
                             </td>
                         </tr>
                     </tbody>
@@ -841,6 +848,7 @@
         <div class="tab-pane" id="tab_agent">
             <!-- Section E-I -->
             <div class="amendment-header">Section E-I : Tax Agent authorized to submit any application on behalf of Taxpayer</div>
+            <div id="agent_authorized_section" class="disabled-section">
             <div class="section-group" style="border: 1px solid #ccc; padding: 10px;">
                 <table class="inner-profile-table" style="margin-bottom: 5px;">
                     <tbody>
@@ -862,8 +870,8 @@
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom" style="width: calc(100% - 30px);">
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;">📅</span>
+                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
+                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
                                 </div>
                             </td>
                         </tr>
@@ -871,8 +879,8 @@
                             <td class="label-cell">Authorization Date Upto</td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom" style="width: calc(100% - 30px);">
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;">📅</span>
+                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
+                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
                                 </div>
                             </td>
                             <td colspan="2" style="background-color: transparent; border: none;"></td>
@@ -904,9 +912,11 @@
                     </table>
                 </div>
             </div>
+            </div>
 
             <!-- Section E-II -->
             <div class="amendment-header" style="margin-top: 15px;">Section E-II : Intermediary Agent to submit returns on behalf of the Taxpayer</div>
+            <div id="intermediary_agent_section" class="disabled-section">
             <div class="section-group" style="border: 1px solid #ccc; padding: 10px;">
                 <table class="inner-profile-table" style="margin-bottom: 5px;">
                     <tbody>
@@ -948,8 +958,8 @@
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom" style="width: calc(100% - 30px);">
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;">📅</span>
+                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
+                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
                                 </div>
                             </td>
                         </tr>
@@ -957,8 +967,8 @@
                             <td class="label-cell">Authorization Date Upto</td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom" style="width: calc(100% - 30px);">
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;">📅</span>
+                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
+                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
                                 </div>
                             </td>
                             <td colspan="2" style="background-color: transparent; border: none;"></td>
@@ -1000,6 +1010,36 @@
             <div style="text-align: center; padding: 10px;">
                 <button class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Conditions Modal -->
+<div id="conditionsModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="modal-close" id="closeConditionsModal">Close</span>
+        <div class="modal-title">VERIFICATION TASK WILL NOT BE GENERATED IF YOU MAKE CHANGES IN FOLLOWING FIELDS</div>
+        <div class="modal-body">
+            <ul>
+                <li>Section A: Basic Information
+                    <ul class="sub-list">
+                        <li>1. Trading /Business Name-If different than registered name</li>
+                        <li>2. Do you wish to declare Legal Representative?</li>
+                        <li>3. Principle Postal Address</li>
+                        <li>4. Principle Contact Details</li>
+                    </ul>
+                </li>
+                <li>Section A: Alternative Address and Contact Details</li>
+                <li>Section A: Bank Account Details</li>
+                <li>Section A: Details of Economic Activities</li>
+                <li>Section F: Agent Details
+                    <ul class="sub-list">
+                        <li>1. Details of Tax Agent</li>
+                        <li>2. Detail of Intermediary Agent</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -1217,13 +1257,15 @@
             const pane = document.getElementById(pId);
             if (pane) {
                 pane.querySelectorAll('input, select, textarea').forEach(el => {
-                    if (!el.hasAttribute('readonly')) el.disabled = true;
+                    if (!el.hasAttribute('readonly')) {
+                         el.disabled = true;
+                    }
                 });
             }
         });
         
-        // Also ensure individual sections that might be triggered are disabled
-        const sectionsToDisable = ['alt_address_section', 'bank_details_section', 'tributary_section', 'entity_section', 'sms_section', 'upload_section'];
+        // Ensure individual sections are also visually and functionally disabled
+        const sectionsToDisable = ['basic_info_section', 'alt_address_section', 'bank_details_section', 'entity_section', 'tributary_section', 'agent_authorized_section', 'intermediary_agent_section', 'upload_section'];
         sectionsToDisable.forEach(sId => {
             const section = document.getElementById(sId);
             if (section) {
@@ -1270,6 +1312,43 @@
                 document.getElementById('tab_link_obligation').classList.toggle('disabled', !this.checked);
             });
         }
+
+        // Conditions Modal Logic
+        const conditionsModal = document.getElementById('conditionsModal');
+        const btnKnowConditions = document.getElementById('btnKnowConditions');
+        const closeConditionsModal = document.getElementById('closeConditionsModal');
+
+        if (btnKnowConditions && conditionsModal) {
+            btnKnowConditions.addEventListener('click', function() {
+                conditionsModal.classList.add('active');
+            });
+        }
+
+        if (closeConditionsModal && conditionsModal) {
+            closeConditionsModal.addEventListener('click', function() {
+                conditionsModal.classList.remove('active');
+            });
+        }
+
+        // Close modal on click outside
+        window.addEventListener('click', function(event) {
+            if (event.target === conditionsModal) {
+                conditionsModal.classList.remove('active');
+            }
+        });
+    });
+</script>
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr(".datepicker", {
+            dateFormat: "d/m/Y",
+            allowInput: true,
+            altInput: true,
+            altFormat: "d/m/Y",
+            disableMobile: "true"
+        });
     });
 </script>
 @endpush
