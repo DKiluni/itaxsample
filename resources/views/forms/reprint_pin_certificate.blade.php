@@ -86,8 +86,8 @@
                         </tbody>
                     </table>
                     <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
-                        <button type="reset" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                        <button type="submit" class="btn-custom btn-submit-green" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Submit</button>
+                        <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -106,8 +106,8 @@
                         </tbody>
                     </table>
                     <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
-                        <button type="reset" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                        <button type="submit" class="btn-custom btn-submit-green" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Submit</button>
+                        <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -128,17 +128,17 @@
                 <p><span class="download-link" id="viewCertLink">click here to download you pin certificate</span></p>
                 
                 <div style="margin-top: 30px;">
-                    <button class="btn-custom btn-cancel-red" onclick="window.location.reload();">Back</button>
+                    <button class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- 5. Certificate High-Fidelity Preview (Hidden by default) -->
-<div id="certificatePreviewSection" class="hidden">
-    <div style="display: flex; justify-content: flex-end; gap: 10px; max-width: 800px; margin: 10px auto;">
-        <button class="btn-custom btn-submit-green" id="downloadCertBtn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+<!-- 5. Certificate High-Fidelity Preview (Off-screen for background capture) -->
+<div id="certificatePreviewSection" style="position: absolute; left: -9999px; top: 0; width: 800px;">
+    <div style="display: none;">
+        <button class="btn-custom btn-submit-green" id="downloadCertBtn" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;"><i class="fas fa-file-pdf"></i> Download PDF</button>
         <button class="btn-custom btn-cancel-red" id="closeCertPreview">Close</button>
     </div>
     
@@ -188,7 +188,7 @@
             <div class="cert-section-title">Registered Address</div>
             <div class="cert-address-grid">
                 <div class="cert-address-item"><span class="cert-address-label">L.R. Number :</span> <span id="cert_lr"></span></div>
-                <div class="cert-address-item"><span class="cert-address-label">Building :</span> <span id="cert-building"></span></div>
+                <div class="cert-address-item"><span class="cert-address-label">Building :</span> <span id="cert_building"></span></div>
                 <div class="cert-address-item"><span class="cert-address-label">Street/Road :</span> <span id="cert_street"></span></div>
                 <div class="cert-address-item"><span class="cert-address-label">City/Town :</span> <span id="cert_city"></span></div>
                 <div class="cert-address-item"><span class="cert-address-label">County :</span> <span id="cert_county"></span></div>
@@ -271,7 +271,7 @@
 
         const handleSubmit = (e) => {
             e.preventDefault();
-            if (confirm("do you want to submit your request")) {
+            if (confirm("Do you want to submit your request")) {
                 searchSection.classList.add('hidden');
                 downloadSection.classList.remove('hidden');
             }
@@ -281,12 +281,11 @@
         document.getElementById('taxpayerReprintFormOnly').addEventListener('submit', handleSubmit);
 
         document.getElementById('viewCertLink').addEventListener('click', function() {
-            // "Fields should be empty or null for now"
-            // We ensure the spans/tds are blank or contain null-indicating placeholders
+            // Populate fields
             document.getElementById('cert_date').innerText = '01/01/2026';
             document.getElementById('cert_pin').innerText = 'A000000000P';
-            document.getElementById('cert_name').innerText = '[BLANK]'; // Empty as requested
-            document.getElementById('cert_email').innerText = '[BLANK]'; // Empty as requested
+            document.getElementById('cert_name').innerText = '[BLANK]';
+            document.getElementById('cert_email').innerText = '[BLANK]';
             document.getElementById('cert_lr').innerText = '';
             document.getElementById('cert_building').innerText = '';
             document.getElementById('cert_street').innerText = '';
@@ -301,8 +300,8 @@
             document.getElementById('cert_time').innerText = 'Inactive';
             document.getElementById('cert_obligations').innerHTML = '<tr><td colspan="5">N/A</td></tr>';
 
-            downloadSection.classList.add('hidden');
-            previewSection.classList.remove('hidden');
+            // Trigger the download immediately
+            document.getElementById('downloadCertBtn').click();
         });
 
         document.getElementById('downloadCertBtn').addEventListener('click', function() {

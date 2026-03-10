@@ -47,7 +47,7 @@
     </div>
 
     <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary"><i class="fas fa-times-circle"></i> Cancel</button>
+        <button class="btn-kra btn-kra-secondary" onclick="window.location.href='{{ route('dashboard') }}'"><i class="fas fa-times-circle"></i> Cancel</button>
         <button class="btn-kra btn-kra-primary">Next <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-left: 5px;"></i></button>
     </div>
 </div>

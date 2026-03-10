@@ -1,6 +1,6 @@
 /* Shared Form Styles for Taxpayer Profile and Reprint PIN Certificate */
 .mandatory-notice {
-    color: #ff0000;
+    color: #DA3832;
     font-weight: bold;
     margin-bottom: 20px;
     font-size: 14px;
@@ -58,7 +58,7 @@
 }
 
 .required-star {
-    color: #ff0000;
+    color: #DA3832;
 }
 
 .hidden {
@@ -80,6 +80,10 @@
 
 .btn-submit-green {
     background-color: #28a745;
+}
+
+.btn-submit-green:hover {
+    background-color: #218838;
 }
 
 .btn-cancel-red {
@@ -351,7 +355,7 @@
 }
 
 .btn-black:hover {
-    background-color: #bd2a25;
+    background-color: #DA3832;
 }
 
 .sub-section-header {
@@ -374,7 +378,7 @@
 
 .field-required::after {
     content: " *";
-    color: #ff0000;
+    color: #DA3832;
 }
 
 /* Modal Styles */
@@ -528,4 +532,142 @@ span.flatpickr-weekday {
 
 .flatpickr-innerContainer {
     border-top: 1px solid #eee;
+}
+
+.empty-state-container {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.empty-state-container i {
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.table-header-black {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.table-header-black th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #444 !important;
+}
+
+.tso-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tso-btn:hover {
+    opacity: 0.8;
+}
+
+.tso-fieldset {
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+    margin: 0;
+    background-color: #fcfcfc;
+}
+
+.tso-legend {
+    font-weight: bold;
+    padding: 0 5px;
+    width: auto;
+    border: none;
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #DA3832;
+}
+
+.tso-tab-btn {
+    padding: 8px 15px;
+    background: #eaeded;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.tso-tab-active {
+    background: #DA3832;
+    color: #fff;
+    border-color: #DA3832;
+    margin-bottom: 0px;
+    padding-bottom: 11px;
+}
+
+.tso-tab-inactive {
+    opacity: 0.8;
+    background: #eaeded;
+    color: #555;
+}
+
+/* Warning Box Utilities */
+.warning-box {
+    border: 1px solid #DA3832;
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.warning-header {
+    background-color: #DA3832;
+    padding: 15px;
+    color: #fff;
+}
+
+.warning-header i {
+    font-size: 30px;
+    color: #ffc107;
+}
+
+.warning-body {
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid #DA3832;
+    font-weight: bold;
+    color: #000;
+}
+
+.back-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-theme-back {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 20px;
+    border: 2px solid #ccc;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0;
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+.btn-theme-back:hover {
+    background-color: #333;
 }

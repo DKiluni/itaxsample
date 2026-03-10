@@ -59,7 +59,7 @@
             
             <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
                 <button type="button" id="btnEntryNext" class="btn-custom btn-next-blue">Next</button>
-                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
             </div>
         </div>
     </div>
@@ -113,9 +113,11 @@
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="bank_details_section"> Bank Account Details</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="entity_section"> Partnership, Corporate and Trust Information</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="tributary_section"> Tributary Bonds</label>
-                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_income" data-pane="tab_income"> Source of Income</label>
+                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_obligation" data-pane="tab_obligation" data-section="obligation_section"> Taxpayer Obligation</label>
+                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_income" data-pane="tab_income" data-section="income_section"> Source of Income</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_agent" data-pane="tab_agent" data-section="agent_authorized_section"> Tax Agent authorized to submit any application on behalf of the Taxpayer</label>
                         <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_agent" data-pane="tab_agent" data-section="intermediary_agent_section"> Intermediary Agent to submit returns on behalf of the Taxpayer</label>
+                        <label class="checkbox-item"><input type="checkbox" class="amend-trigger" data-target="tab_link_basic" data-pane="tab_basic_info" data-section="upload_section"> Details of Upload Document</label>
                     </div>
                 </div>
             </div>
@@ -474,7 +476,8 @@
 
             <!-- Bank Account Details -->
             <div class="amendment-header">Bank Account Details</div>
-            <div class="section-group" id="bank_details_section">
+            <div id="bank_details_section" class="disabled-section">
+                <div class="section-group">
                 <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                     <tbody>
                         <tr style="border: none;">
@@ -528,10 +531,12 @@
                     </table>
                 </div>
             </div>
+            </div>
 
             <!-- Partner/Director/Trustee -->
             <div class="amendment-header">Are you a partner, director or trustee in any other entity?</div>
-            <div class="section-group" id="entity_section">
+            <div id="entity_section" class="disabled-section">
+                <div class="section-group">
                 <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                     <tbody>
                         <tr style="border: none;">
@@ -579,7 +584,7 @@
                     <!-- Table Grid -->
                     <div style="overflow-x: auto;">
                         <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 0.85rem;">
-                            <thead style="background: #333; color: #fff; text-align: center;">
+                            <thead class="table-header-black" style="text-align: center;">
                                 <tr>
                                     <th style="padding: 8px; border: 1px solid #fff;">Sr. No.</th>
                                     <th style="padding: 8px; border: 1px solid #fff;">Delete</th>
@@ -592,17 +597,24 @@
                             </thead>
                             <tbody style="text-align: center;">
                                 <tr>
-                                    <td colspan="7" style="padding: 10px; color: #666;">No Records Found</td>
+                                    <td colspan="7" style="padding: 0;">
+                                        <div class="empty-state-container">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span>No Records Found </span>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+            </div>
 
             <!-- Tributary Bonds -->
             <div class="amendment-header">Tributary Bonds</div>
-            <div class="section-group" id="tributary_section">
+            <div id="tributary_section" class="disabled-section">
+                <div class="section-group">
                 <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                     <tbody>
                         <tr style="border: none;">
@@ -639,7 +651,7 @@
                     </div>
                     <div style="overflow-x: auto;">
                         <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 0.85rem;">
-                            <thead style="background: #333; color: #fff; text-align: center;">
+                            <thead class="table-header-black" style="text-align: center;">
                                 <tr>
                                     <th style="padding: 8px; border: 1px solid #fff;">Sr. No.</th>
                                     <th style="padding: 8px; border: 1px solid #fff;">Delete</th>
@@ -651,18 +663,25 @@
                             </thead>
                             <tbody style="text-align: center;">
                                 <tr>
-                                    <td colspan="6" style="padding: 10px; color: #666;">No Records Found</td>
+                                    <td colspan="6" style="padding: 0;">
+                                        <div class="empty-state-container">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span>No Records Found</span>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+            </div>
 
             <!-- Details Of Upload Document -->
             <div class="amendment-header" style="margin-bottom: 10px;">Details Of Upload Document</div>
-            <div class="section-group" id="upload_section">
-                <div class="section-group-title">Upload Document</div>
+            <div id="upload_section" class="disabled-section">
+                <div class="section-group">
+                    <div class="section-group-title">Upload Document</div>
                 <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                     <tbody>
                         <tr style="border: none;">
@@ -673,11 +692,12 @@
                                     <input type="file" style="display: none;" onchange="this.nextElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen';">
                                     <span style="font-size: 0.85rem; color: #555;">No file chosen</span>
                                 </div>
-                                <div style="color: #ff0000; font-size: 0.8rem; margin-top: 5px;">All file types are allowed. Allowed File Size:-5 MB</div>
+                                <div style="color: #DA3832; font-size: 0.8rem; margin-top: 5px;">All file types are allowed. Allowed File Size:-5 MB</div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
             </div>
 
             <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1;">
@@ -686,15 +706,15 @@
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
             </div>
             <div style="text-align: center; padding: 10px;">
-                <button class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                <button class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
             </div>
         </div>
 
         <!-- Tab 3: Obligation Details -->
         <div class="tab-pane" id="tab_obligation">
             <div class="amendment-header">Section B : Taxpayer Obligation</div>
-            
-            <div class="section-group">
+            <div id="obligation_section" class="disabled-section">
+                <div class="section-group">
                 <div class="section-group-title">Income Tax</div>
                 <table class="inner-profile-table">
                     <tbody>
@@ -748,8 +768,8 @@
             <div class="section-group">
                 <div class="section-group-title">Turnover of Goods/Services of Taxable and Exempt Supplies in Kenya and of Exports</div>
                 <table class="form-table-compact" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-                    <thead>
-                        <tr style="background: #DA3832; color: #fff; font-size: 0.8rem;">
+                    <thead class="table-header-black">
+                        <tr style="font-size: 0.8rem;">
                             <th style="padding: 8px; border: 1px solid #ddd;">Turnover Year</th>
                             <th style="padding: 8px; border: 1px solid #ddd;">Taxable supplies in Kenya (Ksh)</th>
                             <th style="padding: 8px; border: 1px solid #ddd;">Exempt supplies in Kenya (Ksh)</th>
@@ -784,6 +804,7 @@
                     </tbody>
                 </table>
             </div>
+            </div>
 
             <div style="display: flex; justify-content: center; gap: 10px; padding: 20px; background: #f1f1f1;">
                 <button class="btn-custom btn-next-blue btn-prev" data-prev="tab_basic_info">Previous</button>
@@ -791,15 +812,15 @@
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
             </div>
             <div style="text-align: center; padding: 10px;">
-                <button class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                <button class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
             </div>
         </div>
 
         <!-- Tab 4: Source Income Details -->
         <div class="tab-pane" id="tab_income">
             <div class="amendment-header">Section C : What are your sources of income?</div>
-            
-            <div class="section-group">
+            <div id="income_section" class="disabled-section">
+                <div class="section-group">
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
@@ -832,6 +853,7 @@
                     </tbody>
                 </table>
             </div>
+            </div>
 
             <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1;">
                 <button class="btn-custom btn-next-blue btn-prev" data-prev="tab_obligation">Previous</button>
@@ -839,7 +861,7 @@
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
             </div>
             <div style="text-align: center; padding: 10px;">
-                <button class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                <button class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
             </div>
         </div>
 
@@ -895,7 +917,7 @@
 
                 <div style="overflow-x: auto;">
                     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 0.85rem;">
-                        <thead style="background: #DA3832; color: #fff; text-align: center;">
+                        <thead class="table-header-black" style="text-align: center;">
                             <tr>
                                 <th style="padding: 6px; border: 1px solid #fff;">Sr. No.</th>
                                 <th style="padding: 6px; border: 1px solid #fff;">Delete</th>
@@ -908,7 +930,16 @@
                                 <th style="padding: 6px; border: 1px solid #fff;">Authorization Date Upto</th>
                             </tr>
                         </thead>
-                        <tbody style="text-align: center;"><tr><td colspan="9" style="padding: 10px; color: #666; height: 30px;"></td></tr></tbody>
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <td colspan="9" style="padding: 0;">
+                                    <div class="empty-state-container">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>No Records Found</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -983,7 +1014,7 @@
 
                 <div style="overflow-x: auto;">
                     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 0.85rem;">
-                        <thead style="background: #DA3832; color: #fff; text-align: center;">
+                        <thead class="table-header-black" style="text-align: center;">
                             <tr>
                                 <th style="padding: 6px; border: 1px solid #fff;">Sr. No.</th>
                                 <th style="padding: 6px; border: 1px solid #fff;">Delete</th>
@@ -997,9 +1028,19 @@
                                 <th style="padding: 6px; border: 1px solid #fff;">Authorization Date Upto</th>
                             </tr>
                         </thead>
-                        <tbody style="text-align: center;"><tr><td colspan="10" style="padding: 10px; color: #666; height: 30px;"></td></tr></tbody>
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <td colspan="10" style="padding: 0;">
+                                    <div class="empty-state-container">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>No Records Found</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
+            </div>
             </div>
 
             <!-- Footer Buttons Area matching image -->
@@ -1008,7 +1049,7 @@
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
             </div>
             <div style="text-align: center; padding: 10px;">
-                <button class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                <button class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
             </div>
         </div>
     </div>
@@ -1065,6 +1106,30 @@
         
         const mainPinCheckbox = document.getElementById('mainPinCheckbox');
         const amendmentOptionsGrid = document.getElementById('amendmentOptionsGrid');
+
+        // Conditions Modal Logic (Moved to Top for better reliability)
+        const conditionsModal = document.getElementById('conditionsModal');
+        const btnKnowConditions = document.getElementById('btnKnowConditions');
+        const closeConditionsModal = document.getElementById('closeConditionsModal');
+
+        if (btnKnowConditions && conditionsModal) {
+            btnKnowConditions.addEventListener('click', function() {
+                conditionsModal.classList.add('active');
+            });
+        }
+
+        if (closeConditionsModal && conditionsModal) {
+            closeConditionsModal.addEventListener('click', function() {
+                conditionsModal.classList.remove('active');
+            });
+        }
+
+        // Close modal on click outside
+        window.addEventListener('click', function(event) {
+            if (event.target === conditionsModal) {
+                conditionsModal.classList.remove('active');
+            }
+        });
 
         // Transition from Entry to Tabs
         btnEntryNext.addEventListener('click', function() {
@@ -1144,23 +1209,10 @@
                         } else if (paneId) {
                             const pane = document.getElementById(paneId);
                             if (pane) {
+                                pane.classList.remove('disabled-section'); // Also remove from pane if target
                                 pane.querySelectorAll('input, select, textarea, button').forEach(el => {
                                     if (!el.hasAttribute('readonly')) el.disabled = false;
                                 });
-                            }
-                        }
-                        
-                        // Special case for Obligation Details if Basic Info is checked
-                        if (targetId === 'tab_link_basic') {
-                            const obligLink = document.getElementById('tab_link_obligation');
-                            if (obligLink) {
-                                obligLink.classList.remove('disabled');
-                                const obligPane = document.getElementById('tab_obligation');
-                                if (obligPane) {
-                                    obligPane.querySelectorAll('input, select, textarea').forEach(el => {
-                                        if (!el.hasAttribute('readonly')) el.disabled = false;
-                                    });
-                                }
                             }
                         }
                     } else {
@@ -1180,25 +1232,12 @@
 
                         if (otherTriggers.length === 0) {
                             targetTabLink.classList.add('disabled');
-// ... rest of the logic remains the same
                             if (paneId) {
                                 const pane = document.getElementById(paneId);
                                 if (pane) {
                                     pane.querySelectorAll('input, select, textarea').forEach(el => {
                                         el.disabled = true;
                                     });
-                                }
-                                if (targetId === 'tab_link_basic') {
-                                    const obligLink = document.getElementById('tab_link_obligation');
-                                    if (obligLink) {
-                                        obligLink.classList.add('disabled');
-                                        const obligPane = document.getElementById('tab_obligation');
-                                        if (obligPane) {
-                                            obligPane.querySelectorAll('input, select, textarea').forEach(el => {
-                                                el.disabled = true;
-                                            });
-                                        }
-                                    }
                                 }
                             }
                             if (targetTabLink.classList.contains('active')) {
@@ -1265,7 +1304,7 @@
         });
         
         // Ensure individual sections are also visually and functionally disabled
-        const sectionsToDisable = ['basic_info_section', 'alt_address_section', 'bank_details_section', 'entity_section', 'tributary_section', 'agent_authorized_section', 'intermediary_agent_section', 'upload_section'];
+        const sectionsToDisable = ['basic_info_section', 'alt_address_section', 'bank_details_section', 'entity_section', 'tributary_section', 'agent_authorized_section', 'intermediary_agent_section', 'upload_section', 'obligation_section', 'income_section'];
         sectionsToDisable.forEach(sId => {
             const section = document.getElementById(sId);
             if (section) {
@@ -1298,43 +1337,11 @@
         // Final Submit
         submitFinal.forEach(btn => {
             btn.addEventListener('click', function() {
-                if (confirm('do you want to submit your request')) {
+                if (confirm('Do you want to submit your request')) {
                     alert('Your amendment request has been submitted successfully!');
                     window.location.reload();
                 }
             });
-        });
-
-        // Custom linkage: Basic Info also enables Obligation Details for demo
-        const basicTrigger = document.querySelector('.amend-trigger[data-target="tab_link_basic"]');
-        if (basicTrigger) {
-            basicTrigger.addEventListener('change', function() {
-                document.getElementById('tab_link_obligation').classList.toggle('disabled', !this.checked);
-            });
-        }
-
-        // Conditions Modal Logic
-        const conditionsModal = document.getElementById('conditionsModal');
-        const btnKnowConditions = document.getElementById('btnKnowConditions');
-        const closeConditionsModal = document.getElementById('closeConditionsModal');
-
-        if (btnKnowConditions && conditionsModal) {
-            btnKnowConditions.addEventListener('click', function() {
-                conditionsModal.classList.add('active');
-            });
-        }
-
-        if (closeConditionsModal && conditionsModal) {
-            closeConditionsModal.addEventListener('click', function() {
-                conditionsModal.classList.remove('active');
-            });
-        }
-
-        // Close modal on click outside
-        window.addEventListener('click', function(event) {
-            if (event.target === conditionsModal) {
-                conditionsModal.classList.remove('active');
-            }
         });
     });
 </script>

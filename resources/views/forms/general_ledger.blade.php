@@ -15,15 +15,15 @@
     <div class="form-body">
         
         <div class="form-section">
-            <div class="form-subheader">Financial Data Grid</div>
-            <table class="data-table">
-                <thead>
+            <div class="form-subheader" style="color: #DA3832; font-weight: bold;">Financial Data Grid</div>
+            <table class="table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; border: 1px solid #ddd;">
+                <thead class="table-header-black" style="text-align: center;">
                     <tr>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th class="text-right">Debit (Kes)</th>
-                        <th class="text-right">Credit (Kes)</th>
-                        <th class="text-right">Balance (Kes)</th>
+                        <th style="padding: 8px; border: 1px solid #fff;">Date</th>
+                        <th style="padding: 8px; border: 1px solid #fff;">Description</th>
+                        <th class="text-right" style="padding: 8px; border: 1px solid #fff;">Debit (Kes)</th>
+                        <th class="text-right" style="padding: 8px; border: 1px solid #fff;">Credit (Kes)</th>
+                        <th class="text-right" style="padding: 8px; border: 1px solid #fff;">Balance (Kes)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +45,7 @@
             </table>
         </div>
         <div class="report-card">
-            <h4 style="margin-bottom: 15px; color: var(--kra-red); border-bottom: 1px solid #eee; padding-bottom: 8px;">Taxpayer Details</h4>
+            <h4 style="margin-bottom: 15px; color: #DA3832; border-bottom: 1px solid #DA3832; padding-bottom: 8px;">Taxpayer Details</h4>
             <div class="info-grid">
                 <div class="info-item">
                     <label>PIN</label>
@@ -67,9 +67,9 @@
         </div>
 
         <div class="form-section">
-            <div class="form-subheader">Report Data</div>
+            <div class="form-subheader" style="color: #DA3832; font-weight: bold;">Report Data</div>
             <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Select a period to view details.</p>
-             <div style="display: flex; gap: 10px; margin-bottom: 20px; align-items: center; background: #f9fafb; padding: 15px; border: 1px solid #eee;">
+             <div style="display: flex; gap: 10px; margin-bottom: 20px; align-items: center; background: #f9fafb; padding: 15px; border: 1px solid #DA3832;">
                 <label>From:</label>
                 <input type="date" class="form-control" style="width: auto;">
                 <label>To:</label>
@@ -77,20 +77,22 @@
                 <button class="btn-kra btn-kra-secondary">Generate Report</button>
             </div>
             
-            <table class="table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-                <thead>
-                    <tr style="background: #f1f2f3;">
-                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; color: #444;">Date</th>
-                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; color: #444;">Transaction Type</th>
-                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; color: #444;">Reference</th>
-                        <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd; color: #444;">Amount (Kes)</th>
+            <table class="table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; border: 1px solid #ddd;">
+                <thead class="table-header-black" style="text-align: center;">
+                    <tr>
+                        <th style="padding: 8px; border: 1px solid #fff;">Date</th>
+                        <th style="padding: 8px; border: 1px solid #fff;">Transaction Type</th>
+                        <th style="padding: 8px; border: 1px solid #fff;">Reference</th>
+                        <th style="padding: 8px; border: 1px solid #fff;">Amount (Kes)</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="text-align: center;">
                     <tr>
-                        <td colspan="4" style="text-align: center; padding: 40px; color: #999;">
-                            <i class="fas fa-inbox" style="font-size: 2rem; margin-bottom: 10px; display: block; opacity: 0.5;"></i>
-                            No data loaded. Please generate report.
+                        <td colspan="4" style="padding: 0;">
+                            <div class="empty-state-container">
+                                <i class="fas fa-file-alt"></i>
+                                <span>No Records Found</span>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

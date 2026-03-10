@@ -555,7 +555,7 @@ body {
 }
 
 .btn-kra-primary:hover {
-    background-color: #bd2a25;
+    background-color: #DA3832;
     transform: translateY(-1px);
     box-shadow: 0 4px 6px rgba(189, 42, 37, 0.2);
 }
@@ -608,9 +608,15 @@ body {
 
 .footer-center {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: #000000;
     flex: 1;
+    padding: 0 50px;
+}
+
+.footer-center p {
+    line-height: 1.2;
+    margin-bottom: 2px;
 }
 
 .footer-logo-left,
@@ -789,120 +795,64 @@ body {
 @media (max-width: 992px) {
     .main-header {
         height: auto;
-        position: fixed;
+        position: relative;
+        /* Remove fixed position to allow natural scroll and prevent covering content */
+        z-index: 1000;
     }
 
     .header-content {
-        padding: 0 15px;
-        height: var(--header-height);
-        flex-direction: row;
-        justify-content: space-between;
+        padding: 5px 10px;
+        height: auto;
+        flex-direction: column;
+        /* Stack logo and nav vertically on small screens */
+        justify-content: center;
+        align-items: center;
     }
 
     .header-left {
         flex-direction: row;
-        justify-content: flex-start;
-        width: auto;
-        margin-bottom: 0;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-        margin-left: 15px;
-    }
-
-    /* Sidebar Navigation Implementation */
-    .sidebar-nav {
-        position: fixed;
-        top: 0;
-        left: -280px;
-        width: 280px;
-        height: 100vh;
-        background: var(--pure-white);
-        z-index: 1002;
-        flex-direction: column;
-        align-items: flex-start;
-        display: flex;
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        padding: 0;
-        overflow-y: auto;
-    }
-
-    .sidebar-nav.active {
-        left: 0;
-    }
-
-    .sidebar-header {
+        justify-content: center;
         width: 100%;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #eee;
-        background: var(--kra-light-blue);
+        margin-bottom: 5px;
     }
 
-    .sidebar-logo {
-        max-height: 40px;
+    .top-nav {
+        flex-wrap: wrap;
+        /* Allow items to move to next line */
+        justify-content: center;
+        width: 100%;
+        gap: 4px;
     }
 
+    .nav-item {
+        padding: 6px 8px;
+        /* Bigger touch targets */
+        margin: 2px 0;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+        background: transparent;
+        font-size: 0.85rem;
+    }
+
+    /* Hide the mobile sidebar hamburger variables entirely, we're not using them anymore */
+    .mobile-menu-btn,
+    .sidebar-backdrop,
+    .sidebar-header,
     .close-sidebar-btn {
-        background: none;
-        border: none;
-        font-size: 1.2rem;
-        color: var(--kra-label-gray);
-        cursor: pointer;
-    }
-
-    .sidebar-nav .nav-item {
-        width: 100%;
-        padding: 15px 20px;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #eee;
-        border-right: none;
-        text-align: left;
-        justify-content: space-between;
-        min-height: 50px;
-    }
-
-    .sidebar-nav .has-dropdown {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        align-items: stretch;
-    }
-
-    .sidebar-nav .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        border: none;
-        background: #fbfbfb;
-        display: none;
-        padding-left: 15px;
-    }
-
-    .sidebar-nav .has-dropdown.active>.dropdown-menu {
-        display: block;
-    }
-
-    .sidebar-nav .has-dropdown.active>.nav-item {
-        background: rgba(218, 56, 50, 0.05);
-        color: var(--primary-red);
-    }
-
-    .sidebar-nav .has-dropdown.active>.nav-item .arrow {
-        transform: rotate(180deg);
+        display: none !important;
     }
 
     .main-wrapper {
-        margin-top: calc(var(--header-height) + 20px);
+        margin-top: 10px;
+        /* Reset the top margin since header isn't fixed anymore */
     }
 
-    /* Hide desktop dropdown content as we use sidebar accordions */
-    .nav-item .dropdown-content {
-        display: none !important;
+    /* Ensure dropdowns fit on screen */
+    .has-dropdown>.dropdown-menu {
+        width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Centered dropdowns under items to avoid screen edge clipping */
     }
 
     .form-group {
@@ -912,19 +862,7 @@ body {
 
     /* Footer Minimization for Mobile */
     .main-footer {
-        height: 55px;
-        /* Reduced from 75px */
-    }
-
-    .footer-center {
-        font-size: 0.6rem;
-        /* Minimized text */
-    }
-
-    .footer-logo-left,
-    .footer-logo-right {
-        max-height: 35px;
-        /* Reduced from 55px */
+        display: none !important;
     }
 
     body {

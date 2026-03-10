@@ -70,8 +70,8 @@
                         </tbody>
                     </table>
                     <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
-                        <button type="reset" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                        <button type="submit" class="btn-custom btn-submit-green" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Submit</button>
+                        <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -96,8 +96,8 @@
                         </tbody>
                     </table>
                     <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
-                        <button type="reset" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Cancel</button>
+                        <button type="submit" class="btn-custom btn-submit-green" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Submit</button>
+                        <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -171,7 +171,7 @@
             </table>
 
             <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.reload();">Back to Search</button>
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back to Home</button>
             </div>
         </div>
     </div>
@@ -219,7 +219,7 @@
         const handleSub = (e) => {
             e.preventDefault();
             
-            if (confirm("do you want to submit your request")) {
+            if (confirm("Do you want to submit your request")) {
                 const type = typeSelect.value;
                 const enteredPin = type === 'Agent' ? agTaxPin.value : txTaxPin.value;
 

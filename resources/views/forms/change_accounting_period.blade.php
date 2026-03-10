@@ -3,24 +3,23 @@
 @section('title', 'Change Accounting Period')
 @section('header', 'Change Accounting Period')
 
-@section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Change Accounting Period</span>
-        <i class="fas fa-edit"></i>
-    </div>
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
-    <div class="form-body">
-        <div class="wizard-steps">
-            <div class="step-item active"><div class="step-circle">1</div><div class="step-label">Basic Details</div></div>
-            <div class="step-item"><div class="step-circle">2</div><div class="step-label">Specifics</div></div>
-            <div class="step-item"><div class="step-circle">3</div><div class="step-label">Declaration</div></div>
+@section('content')
+<div class="form-container" style="border: none; box-shadow: none; background: transparent;">
+    <div class="warning-box">
+        <div class="warning-header">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="warning-body">
+            This facility is not available for Individual Taxpayers.
         </div>
     </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+    
+    <div class="back-btn-container">
+        <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
     </div>
 </div>
 @endsection
