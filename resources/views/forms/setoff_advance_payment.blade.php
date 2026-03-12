@@ -9,21 +9,21 @@
 
 @section('content')
 @php
-    $showUnauthorized = true; // Toggle this to show the unauthorized view
+    $showUnauthorized = false; // Toggle this to show the unauthorized view
 @endphp
 
 @if($showUnauthorized)
 <div class="form-container">
-    <div class="warning-box">
-        <div class="warning-header">
+    <div class="unauthorized-v2-container">
+        <div class="unauthorized-v2-header">
             <i class="fas fa-exclamation-triangle"></i>
         </div>
-        <div class="warning-body">
-            This facility is not available for Individual Taxpayers.
+        <div class="unauthorized-v2-body">
+            You are not allowed to perform this operation.
         </div>
-    </div>
-    <div class="back-btn-container">
-        <button type="button" class="btn-custom btn-cancel-red" onclick="window.history.back()">Cancel</button>
+        <div class="unauthorized-v2-footer">
+            <button type="button" class="btn-custom btn-cancel-red" onclick="window.history.back()">Back</button>
+        </div>
     </div>
 </div>
 @else
@@ -39,14 +39,22 @@
             <div class="section-group-title">Advance Payment PRN Details / Offset Voucher Details</div>
             <div class="radio-group-container-custom">
                 <label class="radio-label-custom">
-                    <input type="radio" name="offset_type" checked> Payment Registration No(PRN)
+                    <input type="radio" name="offset_type" value="PRN" checked onchange="toggleOffsetFields()"> Payment Registration No(PRN)
                 </label>
                 <label class="radio-label-custom">
-                    <input type="radio" name="offset_type"> Overpayment/Refund Adjustment Voucher(OAV/RAV)
+                    <input type="radio" name="offset_type" value="OAV" onchange="toggleOffsetFields()"> Overpayment/Refund Adjustment Voucher(OAV/RAV)
                 </label>
             </div>
             <table class="inner-profile-table">
                 <tbody>
+                    <tr id="offsetVoucherRow" style="display: none;">
+                        <td class="label-cell">Offset Voucher No:<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom">
+                        </td>
+                        <td class="label-cell"></td>
+                        <td class="input-cell"></td>
+                    </tr>
                     <tr>
                         <td class="label-cell">Taxpayer PIN</td>
                         <td class="input-cell">
@@ -90,4 +98,19 @@
     </div>
 </div>
 @endif
+
+@push('scripts')
+<script>
+    function toggleOffsetFields() {
+        const selectedValue = document.querySelector('input[name="offset_type"]:checked').value;
+        const offsetVoucherRow = document.getElementById('offsetVoucherRow');
+        
+        if (selectedValue === 'OAV') {
+            offsetVoucherRow.style.display = 'table-row';
+        } else {
+            offsetVoucherRow.style.display = 'none';
+        }
+    }
+</script>
+@endpush
 @endsection
