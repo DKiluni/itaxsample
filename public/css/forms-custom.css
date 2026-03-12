@@ -1,9 +1,8 @@
-/* Shared Form Styles for Taxpayer Profile and Reprint PIN Certificate */
 .mandatory-notice {
     color: #DA3832;
     font-weight: bold;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 0.85rem;
 }
 
 .inner-profile-table {
@@ -17,8 +16,8 @@
 
 .inner-profile-table td {
     border: 1px solid var(--kra-border-gray);
-    padding: 10px 15px;
-    font-size: 0.9rem;
+    padding: 6px 10px;
+    font-size: 0.8rem;
 }
 
 .label-cell {
@@ -35,11 +34,11 @@
 .form-select-custom,
 .form-input-custom {
     width: 100%;
-    padding: 6px 10px;
+    padding: 4px 8px;
     border: 1px solid #DA3832;
     border-radius: 2px;
     font-family: inherit;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #000000;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -311,6 +310,61 @@
     cursor: not-allowed;
     background: #eaeded;
     color: #555;
+}
+
+/* Glossy/Glossy Tab Styles */
+.glossy-tabs-container {
+    display: flex;
+    margin-bottom: 0;
+    padding-left: 2px;
+}
+
+.glossy-tab {
+    padding: 8px 15px;
+    background: linear-gradient(to bottom, #f9f9f9 0%, #e0e0e0 100%);
+    border: 1px solid #aaa;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 2px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.glossy-tab-active {
+    background: linear-gradient(to bottom, #444 0%, #000 100%);
+    color: #fff;
+    border-color: #000;
+}
+
+/* Amendment Form Style Tabs (Image 3) */
+.amendment-tabs-container {
+    display: flex;
+    background: #f0f0f0;
+    padding: 10px 10px 0 10px;
+    border-bottom: none;
+}
+
+.amendment-tab {
+    padding: 8px 20px;
+    background: #e9ecef;
+    border: 1px solid #ced4da;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #495057;
+    margin-right: 5px;
+    transition: all 0.2s;
+}
+
+.amendment-tab.active {
+    background: #DA3832;
+    color: #fff;
+    border-color: #DA3832;
 }
 
 .tab-content-wrapper {
@@ -626,6 +680,18 @@ span.flatpickr-weekday {
 .table-header-black {
     background-color: #000000 !important;
     color: #ffffff !important;
+}
+
+.empty-table-state {
+    padding: 30px;
+    text-align: center;
+    color: #999;
+}
+
+.empty-table-state i {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .table-header-black th {
@@ -984,5 +1050,69 @@ span.flatpickr-weekday {
     text-align: center;
     margin-bottom: 5px;
     font-weight: bold;
+}
+
+/* Standardized Table Headers */
+.table-header-black {
+    border: 1px solid #ddd !important;
+    border-collapse: collapse !important;
+}
+
+.table-header-black thead tr {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.table-header-black th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 4px;
+    border: 1px solid #444 !important;
+    font-size: 0.8rem;
+}
+
+.table-header-black td {
+    background-color: #ffffff !important;
+    border: 1px solid #ddd !important;
+    padding: 5px;
+    font-size: 0.8rem;
+}
+
+/* Standardized Empty State */
+.empty-table-state {
+    text-align: center;
+    padding: 15px;
+    color: #999;
+    font-size: 0.85rem;
+    background-color: #ffffff !important;
+}
+
+.empty-table-state i {
+    display: block;
+    font-size: 1.8rem;
+    color: #cccccc;
+    margin-bottom: 5px;
+}
+
+/* Legend-style Section Group */
+.section-group {
+    border: 1px solid #ddd;
+    padding: 15px 10px 10px;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.section-group-title {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #fff;
+    padding: 0 8px;
+    font-weight: bold;
+    color: #DA3832;
+    font-size: 0.85rem;
 }
 
