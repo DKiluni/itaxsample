@@ -6,9 +6,8 @@
 
 @section('content')
 <div class="form-container">
-    <div class="form-header">
-        <span>File Amended Return</span>
-        <i class="fas fa-tasks"></i>
+    <div class="form-header-banner">
+        File Amended Return
     </div>
 
     <div class="form-body">

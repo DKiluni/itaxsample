@@ -14,9 +14,8 @@
     </div>
 
     <div class="form-container">
-        <div class="form-header">
-            <span>Taxpayer Profile</span>
-            <i class="fas fa-user-circle"></i>
+        <div class="form-header-banner">
+            Taxpayer Profile
         </div>
 
         <div class="form-body">
@@ -108,70 +107,75 @@
 <!-- 4. Profile Results Block -->
 <div id="profileResultsBlock" class="hidden">
     <div class="form-container">
-        <div class="form-header">
-            <span>Taxpayer Profile Result</span>
-            <i class="fas fa-file-invoice"></i>
+        <div class="form-header-banner">
+            Taxpayer Profile Result
         </div>
         <div class="form-body">
             <!-- Applicant Details section (Only for Agent searches) -->
             <div id="res_applicant_section" class="hidden">
-                <div class="results-header">Applicant Details</div>
+                <div class="section-group">
+                    <div class="section-group-title">Applicant Details</div>
+                    <table class="inner-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="label-cell">Applicant PIN</td>
+                                <td id="res_app_pin" class="input-cell">-</td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Applicant Name</td>
+                                <td id="res_app_name" class="input-cell">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-group">
+                <div class="section-group-title">Taxpayer Details</div>
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
-                            <td class="label-cell">Applicant PIN</td>
-                            <td id="res_app_pin" class="input-cell">-</td>
+                            <td class="label-cell">PIN</td>
+                            <td id="res_pin" class="input-cell">-</td>
                         </tr>
                         <tr>
-                            <td class="label-cell">Applicant Name</td>
-                            <td id="res_app_name" class="input-cell">-</td>
+                            <td class="label-cell">Taxpayer Name</td>
+                            <td id="res_name" class="input-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Email Address</td>
+                            <td id="res_email" class="input-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Physical Address</td>
+                            <td id="res_address" class="input-cell">-</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="results-header">Section A - Taxpayer Details</div>
-            <table class="inner-profile-table">
-                <tbody>
-                    <tr>
-                        <td class="label-cell">PIN</td>
-                        <td id="res_pin" class="input-cell">-</td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">Taxpayer Name</td>
-                        <td id="res_name" class="input-cell">-</td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">Email Address</td>
-                        <td id="res_email" class="input-cell">-</td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">Physical Address</td>
-                        <td id="res_address" class="input-cell">-</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="results-header">Section B - Registration Details</div>
-            <table class="inner-profile-table">
-                <tbody>
-                    <tr>
-                        <td class="label-cell">Date of Registration</td>
-                        <td id="res_reg_date" class="input-cell">-</td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">Taxpayer Type</td>
-                        <td id="res_type" class="input-cell">-</td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">Status</td>
-                        <td id="res_status" class="input-cell">-</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="section-group">
+                <div class="section-group-title">Registration Details</div>
+                <table class="inner-profile-table">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell">Date of Registration</td>
+                            <td id="res_reg_date" class="input-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Taxpayer Type</td>
+                            <td id="res_type" class="input-cell">-</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Status</td>
+                            <td id="res_status" class="input-cell">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back to Home</button>
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
             </div>
         </div>
     </div>
@@ -204,14 +208,14 @@
             
             if (type === 'Agent') {
                 agentBlock.classList.remove('hidden');
-                agAppPin.value = 'A000000000P';
-                agAppName.value = 'AGENT_NAME_HERE';
+                agAppPin.value = 'A000000000A';
+                agAppName.value = 'DUMMY AGENT NAME';
                 agTaxPin.value = '';
                 agTaxName.value = '';
             } else if (type === 'Taxpayer') {
                 taxpayerBlock.classList.remove('hidden');
-                txTaxPin.value = 'A000000000P';
-                txTaxName.value = 'TAXPAYER_NAME_HERE';
+                txTaxPin.value = 'A000000000X';
+                txTaxName.value = 'DUMMY TAXPAYER NAME';
             }
         });
 
@@ -234,10 +238,10 @@
                 }
 
                 // Populate demo taxpayer data
-                document.getElementById('res_pin').innerText = enteredPin || 'A000000000P';
-                document.getElementById('res_name').innerText = 'TAXPAYER_NAME_HERE';
-                document.getElementById('res_email').innerText = 'taxpayer@example.com';
-                document.getElementById('res_address').innerText = 'P.O. BOX XXXX, NAIROBI';
+                document.getElementById('res_pin').innerText = enteredPin || 'A000000000X';
+                document.getElementById('res_name').innerText = 'DUMMY TAXPAYER NAME';
+                document.getElementById('res_email').innerText = 'TAXPAYER@EXAMPLE.COM';
+                document.getElementById('res_address').innerText = 'SAMPLE RESIDENTIAL ADDRESS, NAIROBI, KENYA';
                 document.getElementById('res_reg_date').innerText = '01/01/2020';
                 document.getElementById('res_type').innerText = 'Individual';
                 document.getElementById('res_status').innerText = 'Active';

@@ -3,54 +3,91 @@
 @section('title', 'Make Payment')
 @section('header', 'Make Payment')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
+<div class="mandatory-notice">
+    All fields marked with <span class="required-star">*</span> are mandatory
+</div>
+
 <div class="form-container">
-    <div class="form-header">
-        <span>Make Payment</span>
-        <i class="fas fa-edit"></i>
-    </div>
+    <div class="form-header-banner">Web Checkout Form</div>
 
     <div class="form-body">
-        <div class="form-section">
-    <div class="form-subheader">Transaction Details</div>
-    <div class="form-group">
-        <label class="form-label">Search Reference</label>
-        <div style="display: flex; gap: 10px;">
-            <input type="text" class="form-control" placeholder="Enter Reference No.">
-            <button class="btn-kra btn-kra-primary"><i class="fas fa-search"></i> Search</button>
+        <div class="section-group">
+            <div class="section-group-title">Basic Details</div>
+            <table class="inner-profile-table">
+                <tbody>
+                    <tr>
+                        <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom" value="A000000000X">
+                        </td>
+                        <td class="label-cell">Taxpayer Name<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom" value="DUMMY TAXPAYER NAME">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Taxpayer Address<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <textarea class="form-textarea-custom" rows="3">DUMMY PHYSICAL ADDRESS, NAIROBI, KENYA</textarea>
+                        </td>
+                        <td class="label-cell">Email Address<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom" value="DUMMY@EXAMPLE.COM">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Mode of Payment<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <select class="form-select-custom">
+                                <option>--Select--</option>
+                            </select>
+                        </td>
+                        <td class="label-cell"></td>
+                        <td class="input-cell"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-</div>
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A001234567Z" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
 
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
-            </div>
+        <div class="section-group">
+            <div class="section-group-title">Payment Details</div>
+            <table class="inner-profile-table">
+                <tbody>
+                    <tr>
+                        <td class="label-cell">Payment Registration Number<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom">
+                        </td>
+                        <td class="label-cell">Amount to be Paid (Ksh)<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Mobile Number<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <div class="search-filter-row-custom">
+                                <span>254</span>
+                                <input type="text" class="form-input-custom" style="width: 150px;">
+                            </div>
+                            <div style="font-size: 10px; color: red;">[Example- 2547xxxxxxxxx]</div>
+                        </td>
+                        <td class="label-cell"></td>
+                        <td class="input-cell"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
 
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+        <div class="form-footer-buttons">
+            <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+            <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+        </div>
     </div>
 </div>
 @endsection

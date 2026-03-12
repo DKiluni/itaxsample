@@ -5,9 +5,8 @@
 
 @section('content')
 <div class="form-container">
-    <div class="form-header">
-        <span>Rent Income Withholding Agent Amendment</span>
-        <i class="fas fa-edit"></i>
+    <div class="form-header-banner">
+        Rent Income Withholding Agent Amendment
     </div>
 
     <div class="form-body">

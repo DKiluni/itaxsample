@@ -3,54 +3,70 @@
 @section('title', 'e-Payment')
 @section('header', 'e-Payment')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
+<div class="mandatory-notice">
+    All fields marked with <span class="required-star">*</span> are mandatory
+</div>
+
 <div class="form-container">
-    <div class="form-header">
-        <span>e-Payment</span>
-        <i class="fas fa-edit"></i>
-    </div>
+    <div class="form-header-banner">e-Payment</div>
 
     <div class="form-body">
-        <div class="form-section">
-    <div class="form-subheader">Transaction Details</div>
-    <div class="form-group">
-        <label class="form-label">Search Reference</label>
-        <div style="display: flex; gap: 10px;">
-            <input type="text" class="form-control" placeholder="Enter Reference No.">
-            <button class="btn-kra btn-kra-primary"><i class="fas fa-search"></i> Search</button>
+        <div class="section-group">
+            <div class="section-group-title">Transaction Details</div>
+            <table class="inner-profile-table">
+                <tbody>
+                    <tr>
+                        <td class="label-cell">Search Reference</td>
+                        <td class="input-cell" colspan="3">
+                            <div class="search-filter-row-custom">
+                                <input type="text" class="form-input-custom" placeholder="Enter Reference No.">
+                                <button type="button" class="btn-custom btn-submit-orange">Search</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-</div>
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A001234567Z" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
 
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
-            </div>
+        <div class="section-group">
+            <div class="section-group-title">General Details</div>
+            <table class="inner-profile-table">
+                <tbody>
+                    <tr>
+                        <td class="label-cell">PIN<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom" value="A000000000X" disabled>
+                        </td>
+                        <td class="label-cell">Reference<span class="required-star">*</span></td>
+                        <td class="input-cell">
+                            <input type="text" class="form-input-custom" placeholder="Enter Reference">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Description</td>
+                        <td class="input-cell" colspan="3">
+                            <textarea class="form-textarea-custom" rows="5" placeholder="Enter description..."></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Attachment</td>
+                        <td class="input-cell" colspan="3">
+                            <input type="file" class="form-input-custom">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
 
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+        <div class="form-footer-buttons">
+            <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+            <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Reset</button>
+        </div>
     </div>
 </div>
 @endsection

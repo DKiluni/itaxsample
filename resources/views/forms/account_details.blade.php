@@ -7,9 +7,8 @@
 
 @section('content')
 <div class="form-container">
-    <div class="form-header">
-        <span>Account Details</span>
-        <i class="fas fa-file-alt"></i>
+    <div class="form-header-banner">
+        Account Details
     </div>
 
     <div class="form-body">
@@ -38,7 +37,7 @@
         <div class="form-section">
             <div class="form-subheader" style="color: #DA3832; font-weight: bold;">Report Data</div>
             <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Select a period to view details.</p>
-             <div style="display: flex; gap: 10px; margin-bottom: 20px; align-items: center; background: #f9fafb; padding: 15px; border: 1px solid #DA3832;">
+             <div class="form-search-filter">
                 <label>From:</label>
                 <input type="date" class="form-control" style="width: auto;">
                 <label>To:</label>

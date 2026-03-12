@@ -8,7 +8,7 @@
 @endpush
 
 @section('content')
-<div class="form-container" style="border: none; box-shadow: none; background: transparent;">
+<div class="form-container">
     <div class="warning-box">
         <div class="warning-header">
             <i class="fas fa-exclamation-triangle"></i>

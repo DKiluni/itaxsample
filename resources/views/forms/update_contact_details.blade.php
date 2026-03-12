@@ -16,7 +16,7 @@
 
 <div class="form-container" style="border: none; box-shadow: none; background: transparent; padding: 0;">
     <div class="form-body" style="padding: 0;">
-        <div class="tab-content-wrapper" style="min-height: auto; border-radius: 5px; overflow: hidden; border: 1px solid #DA3832; background: #fff; margin-top: 15px;">
+        <div class="tab-content-wrapper" style="min-height: auto; overflow: hidden; margin-top: 15px;">
             <div style="background-color: #DA3832; color: #fff; padding: 10px 15px; text-align: center; border-bottom: none; font-weight: bold; font-size: 1.1rem;">
                 Amend Contact Details
             </div>

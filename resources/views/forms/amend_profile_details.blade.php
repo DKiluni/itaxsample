@@ -18,9 +18,8 @@
 <!-- 1. Initial Entry Form (Shown first) -->
 <div id="amendmentEntrySection">
     <div class="form-container">
-        <div class="form-header">
-            <span>e-Amendment of Registration</span>
-            <i class="fas fa-file-edit"></i>
+        <div class="form-header-banner">
+            e-Amendment of Registration
         </div>
         <div class="form-body">
             <table class="inner-profile-table">
@@ -51,7 +50,7 @@
                     <tr>
                         <td class="label-cell">Taxpayer Name</td>
                         <td class="input-cell">
-                            <input type="text" id="entryTaxpayerName" class="form-input-custom" value="TAXPAYER_NAME_HERE" readonly>
+                            <input type="text" id="entryTaxpayerName" class="form-input-custom" value="TAXPAYER NAME" readonly>
                         </td>
                     </tr>
                 </tbody>
@@ -66,7 +65,7 @@
 </div>
 
 <!-- 2. Detailed Amendment Tabs (Hidden initially) -->
-<div id="amendmentTabsSection" class="hidden">
+<div id="amendmentTabsSection" class="form-container hidden">
     <!-- Tab Navigation -->
     <div class="tabs-container">
         <div class="tab-item active" data-tab="tab_amend_form">Amendment Form</div>
@@ -79,7 +78,7 @@
     <div class="tab-content-wrapper" id="tabContentContainer">
         <!-- Tab 1: Amendment Form -->
         <div class="tab-pane active" id="tab_amend_form">
-            <div class="amendment-header">Individual Registration Amendment Form</div>
+            <div class="form-header-banner" style="margin-bottom: 0;">Individual Registration Amendment Form</div>
             
             <div class="section-group">
                 <div class="section-group-title">PIN Details</div>
@@ -143,7 +142,7 @@
 
         <!-- Tab 2: Basic Information -->
         <div class="tab-pane" id="tab_basic_info">
-            <div class="amendment-header">Basic Information</div>
+            <div class="form-header-banner" style="margin-bottom: 0;">Basic Information</div>
             
             <div class="section-group">
                 <div class="section-group-title">Residential Details</div>
@@ -217,9 +216,9 @@
                         <tbody>
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">National Id. Number<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="12345678" style="width: 100%;"></td>
                                 <td class="label-cell" style="width: 25% !important;">Date of Birth</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" style="width: 100%;" placeholder="DD/MM/YYYY"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" value="01/01/1990" style="width: 100%;" placeholder="DD/MM/YYYY"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -242,16 +241,16 @@
                         <tbody>
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">First Name</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="DUMMY" style="width: 100%;"></td>
                                 <td class="label-cell" style="width: 25% !important;">Middle Name</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="TAXPAYER" style="width: 100%;"></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Last Name</td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="NAME" style="width: 100%;"></td>
                                 <td class="label-cell">Gender</td>
                                 <td class="input-cell">
-                                    <label><input type="radio" name="gender"> Male</label>
+                                    <label><input type="radio" name="gender" checked> Male</label>
                                     <label style="margin-left: 20px;"><input type="radio" name="gender"> Female</label>
                                 </td>
                             </tr>
@@ -291,18 +290,18 @@
                             </tr>
                             <tr>
                                 <td class="label-cell">Tax Service Office(TSO)</td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="DUMMY TSO" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                                 <td class="label-cell">Tax Area/Locality<span class="required-star">*</span></td>
                                 <td class="input-cell">
                                     <select class="form-select-custom" required style="width: 100%;">
-                                        <option>Embakasi</option>
+                                        <option>DUMMY AREA</option>
                                     </select> 
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Descriptive Address</td>
                                 <td class="input-cell" colspan="3">
-                                    <textarea class="form-input-custom" rows="4" style="width: 100%; height: auto;" onkeyup="document.getElementById('charCountPrincipal').textContent = 200 - this.value.length;"></textarea>
+                                    <textarea class="form-input-custom" rows="4" style="width: 100%; height: auto;" onkeyup="document.getElementById('charCountPrincipal').textContent = 200 - this.value.length;">DUMMY DESCRIPTIVE ADDRESS</textarea>
                                     <div style="font-size: 0.75rem; color: #666; margin-top: 2px;">
                                         (Maximum characters: 200)<br>
                                         You have <span id="charCountPrincipal">200</span> characters left.
@@ -319,21 +318,21 @@
                         <tbody>
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Telephone Number</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="0201234567" style="width: 100%;"></td>
                                 <td class="label-cell" style="width: 25% !important;">Mobile Number (1)<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="0712345678" style="width: 100%;"></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Mobile Number (2)<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="0722345678" style="width: 100%;"></td>
                                 <td class="label-cell">Mobile Number (3)<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="0733345678" style="width: 100%;"></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Main Email Address<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER@EXAMPLE.COM" style="width: 100%;"></td>
                                 <td class="label-cell">Secondary Email Address<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER2@EXAMPLE.COM" style="width: 100%;"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -357,9 +356,9 @@
             </div>
 
             <!-- Section A : Alternative Address and Contact Details -->
-            <div class="amendment-header">Alternative Address and Contact Details</div>
-            <div id="alt_address_section" class="disabled-section">
-                <div class="section-group">
+            <div class="section-group">
+                <div class="section-group-title">Alternative Address and Contact Details</div>
+                <div id="alt_address_section" class="disabled-section" style="padding: 10px;">
                     <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                         <tbody>
                             <tr style="border: none;">
@@ -475,22 +474,22 @@
             </div>
 
             <!-- Bank Account Details -->
-            <div class="amendment-header">Bank Account Details</div>
-            <div id="bank_details_section" class="disabled-section">
-                <div class="section-group">
-                <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
-                    <tbody>
-                        <tr style="border: none;">
-                            <td class="label-cell" style="border: none; width: 50%;">Do you wish to declare your Bank Account for tax refunds?<span class="required-star">*</span></td>
-                            <td class="input-cell" style="border: none;">
-                                <select class="form-select-custom" id="bank_declare_select">
-                                    <option value="No">No</option>
-                                    <option value="Yes">Yes</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="section-group">
+                <div class="section-group-title">Bank Account Details</div>
+                <div id="bank_details_section" class="disabled-section" style="padding: 10px;">
+                    <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
+                        <tbody>
+                            <tr style="border: none;">
+                                <td class="label-cell" style="border: none; width: 50%;">Do you wish to declare your Bank Account for tax refunds?<span class="required-star">*</span></td>
+                                <td class="input-cell" style="border: none;">
+                                    <select class="form-select-custom" id="bank_declare_select">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 <!-- Dynamic Bank Fields -->
                 <div id="bank_fields_container" class="hidden" style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 15px;">
@@ -500,13 +499,13 @@
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Bank<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="border: 1px solid #DA3832; width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;">
                                         <option>--Select--</option>
                                     </select>
                                 </td>
                                 <td class="label-cell" style="width: 25% !important;">Branch<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="border: 1px solid #DA3832; width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;">
                                         <option>--Select--</option>
                                     </select>
                                 </td>
@@ -514,17 +513,17 @@
                             <tr>
                                 <td class="label-cell">City<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" style="border: 1px solid #DA3832; width: 100%;">
+                                    <input type="text" class="form-input-custom" style="width: 100%;">
                                 </td>
                                 <td class="label-cell">Account Holder's Name<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" style="border: 1px solid #DA3832; width: 100%;">
+                                    <input type="text" class="form-input-custom" style="width: 100%;">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Account Number<span class="required-star">*</span></td>
                                 <td class="input-cell" colspan="3">
-                                    <input type="text" class="form-input-custom" style="border: 1px solid #DA3832; width: 48%;">
+                                    <input type="text" class="form-input-custom" style="width: 48%;">
                                 </td>
                             </tr>
                         </tbody>
@@ -534,20 +533,20 @@
             </div>
 
             <!-- Partner/Director/Trustee -->
-            <div class="amendment-header">Are you a partner, director or trustee in any other entity?</div>
-            <div id="entity_section" class="disabled-section">
-                <div class="section-group">
-                <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
-                    <tbody>
-                        <tr style="border: none;">
-                            <td class="label-cell" style="border: none; width: 50%;">Are you a partner, director or trustee in any other entity? <span class="required-star">*</span></td>
-                            <td class="input-cell" style="border: none;">
-                                <label><input type="radio" name="other_entity" class="dynamic-toggle" data-container="entity_fields_container" value="Yes"> Yes</label>
-                                <label style="margin-left: 20px;"><input type="radio" name="other_entity" class="dynamic-toggle" data-container="entity_fields_container" value="No" checked> No</label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="section-group">
+                <div class="section-group-title">Are you a partner, director or trustee in any other entity?</div>
+                <div id="entity_section" class="disabled-section" style="padding: 10px;">
+                    <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
+                        <tbody>
+                            <tr style="border: none;">
+                                <td class="label-cell" style="border: none; width: 50%;">Are you a partner, director or trustee in any other entity? <span class="required-star">*</span></td>
+                                <td class="input-cell" style="border: none;">
+                                    <label><input type="radio" name="other_entity" class="dynamic-toggle" data-container="entity_fields_container" value="Yes"> Yes</label>
+                                    <label style="margin-left: 20px;"><input type="radio" name="other_entity" class="dynamic-toggle" data-container="entity_fields_container" value="No" checked> No</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 <div id="entity_fields_container" class="hidden" style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 15px;">
                     <div style="font-weight: bold; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Entity Details</div>
@@ -556,13 +555,13 @@
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Entity Type<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="border: 1px solid #DA3832; width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;">
                                         <option>--Select--</option>
                                     </select>
                                 </td>
                                 <td class="label-cell" style="width: 25% !important;">PIN<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <input type="text" class="form-input-custom" style="border: 1px solid #DA3832; width: 100%;">
+                                    <input type="text" class="form-input-custom" style="width: 100%;">
                                 </td>
                             </tr>
                             <tr>
@@ -612,20 +611,20 @@
             </div>
 
             <!-- Tributary Bonds -->
-            <div class="amendment-header">Tributary Bonds</div>
-            <div id="tributary_section" class="disabled-section">
-                <div class="section-group">
-                <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
-                    <tbody>
-                        <tr style="border: none;">
-                            <td class="label-cell" style="border: none; width: 50%;">Would you like to declare your relationship with any other taxpayer? <span class="required-star">*</span></td>
-                            <td class="input-cell" style="border: none;">
-                                <label><input type="radio" name="tributary_relationship" class="dynamic-toggle" data-container="tributary_fields_container" value="Yes"> Yes</label>
-                                <label style="margin-left: 20px;"><input type="radio" name="tributary_relationship" class="dynamic-toggle" data-container="tributary_fields_container" value="No" checked> No</label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="section-group">
+                <div class="section-group-title">Tributary Bonds</div>
+                <div id="tributary_section" class="disabled-section" style="padding: 10px;">
+                    <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
+                        <tbody>
+                            <tr style="border: none;">
+                                <td class="label-cell" style="border: none; width: 50%;">Would you like to declare your relationship with any other taxpayer? <span class="required-star">*</span></td>
+                                <td class="input-cell" style="border: none;">
+                                    <label><input type="radio" name="tributary_relationship" class="dynamic-toggle" data-container="tributary_fields_container" value="Yes"> Yes</label>
+                                    <label style="margin-left: 20px;"><input type="radio" name="tributary_relationship" class="dynamic-toggle" data-container="tributary_fields_container" value="No" checked> No</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 <div id="tributary_fields_container" class="hidden" style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 15px;">
                     <div style="font-weight: bold; margin-bottom: 5px; color: #000; border-bottom: 1px solid #eee; padding-bottom: 5px;">Tributary Bond Details</div>
@@ -634,12 +633,12 @@
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Taxpayer PIN<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <input type="text" class="form-input-custom" style="border: 1px solid #DA3832; width: 100%;">
+                                    <input type="text" class="form-input-custom" value="A000000000X" style="border: 1px solid #DA3832; width: 100%;">
                                 </td>
                                 <td class="label-cell" style="width: 25% !important;">Relationship Type<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="border: 1px solid #DA3832; width: 100%;">
-                                        <option>--Select--</option>
+                                    <select class="form-select-custom" style="width: 100%;">
+                                        <option>DUMMY RELATIONSHIP</option>
                                     </select>
                                 </td>
                             </tr>
@@ -678,27 +677,29 @@
             </div>
 
             <!-- Details Of Upload Document -->
-            <div class="amendment-header" style="margin-bottom: 10px;">Details Of Upload Document</div>
-            <div id="upload_section" class="disabled-section">
-                <div class="section-group">
-                    <div class="section-group-title">Upload Document</div>
-                <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
-                    <tbody>
-                        <tr style="border: none;">
-                            <td class="label-cell" style="border: none; width: 40%;">Upload Supporting Document for Registration<span class="required-star">*</span></td>
-                            <td class="input-cell" style="border: none;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <button type="button" class="btn-custom" style="background-color: #f0f0f0; color: #000; border: 1px solid #ccc; padding: 4px 10px; font-weight: normal; border-radius: 0;" onclick="this.nextElementSibling.click();">Choose File</button>
-                                    <input type="file" style="display: none;" onchange="this.nextElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen';">
-                                    <span style="font-size: 0.85rem; color: #555;">No file chosen</span>
-                                </div>
-                                <div style="color: #DA3832; font-size: 0.8rem; margin-top: 5px;">All file types are allowed. Allowed File Size:-5 MB</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="section-group">
+                <div class="section-group-title">Details Of Upload Document</div>
+                <div id="upload_section" class="disabled-section" style="padding: 10px;">
+                    <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
+                        <tbody>
+                            <tr style="border: none;">
+                                <td class="label-cell" style="border: none; width: 40%;">Upload Supporting Document for Registration<span class="required-star">*</span></td>
+                                <td class="input-cell" style="border: none;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="display: flex; align-items: center; border: 1px solid #7f9db9; background: white; height: 24px;">
+                                            <button type="button" style="background: #eef; border: none; border-right: 1px solid #7f9db9; padding: 0 8px; font-size: 12px; height: 100%; cursor: pointer;" onclick="this.nextElementSibling.nextElementSibling.click();">Choose File</button>
+                                            <span style="padding: 0 8px; font-size: 12px; color: #000;">No file chosen</span>
+                                            <input type="file" style="display: none;" onchange="this.previousElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen';">
+                                        </div>
+                                    </div>
+                                    <div style="color: #DA3832; font-size: 0.8rem; margin-top: 5px;">All file types are allowed. Allowed File Size:-5 MB</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            </div>
+            
 
             <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1;">
                 <button class="btn-custom btn-next-blue btn-prev" data-prev="tab_amend_form">Previous</button>
@@ -712,7 +713,7 @@
 
         <!-- Tab 3: Obligation Details -->
         <div class="tab-pane" id="tab_obligation">
-            <div class="amendment-header">Section B : Taxpayer Obligation</div>
+            <div class="form-header-banner" style="margin-bottom: 0;">Taxpayer Obligation</div>
             <div id="obligation_section" class="disabled-section">
                 <div class="section-group">
                 <div class="section-group-title">Income Tax</div>
@@ -764,8 +765,8 @@
                 </table>
             </div>
 
-            <div class="amendment-header">Turnover Details (Applicable only for VAT/Turnover Tax)</div>
             <div class="section-group">
+                <div class="section-group-title">Turnover Details (Applicable only for VAT/Turnover Tax)</div>
                 <div class="section-group-title">Turnover of Goods/Services of Taxable and Exempt Supplies in Kenya and of Exports</div>
                 <table class="form-table-compact" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
                     <thead class="table-header-black">
@@ -818,9 +819,10 @@
 
         <!-- Tab 4: Source Income Details -->
         <div class="tab-pane" id="tab_income">
-            <div class="amendment-header">Section C : What are your sources of income?</div>
+            <div class="form-header-banner" style="margin-bottom: 0;">Source Income Details</div>
             <div id="income_section" class="disabled-section">
                 <div class="section-group">
+                    <div class="section-group-title">What are your sources of income?</div>
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
@@ -866,12 +868,11 @@
         </div>
 
         <!-- Tab 5: Agent Details -->
-        <!-- Tab 5: Agent Details -->
         <div class="tab-pane" id="tab_agent">
-            <!-- Section E-I -->
-            <div class="amendment-header">Section E-I : Tax Agent authorized to submit any application on behalf of Taxpayer</div>
+            <div class="form-header-banner" style="margin-bottom: 0;">Agent Details</div>
             <div id="agent_authorized_section" class="disabled-section">
-            <div class="section-group" style="border: 1px solid #ccc; padding: 10px;">
+                <div class="section-group">
+                    <div class="section-group-title">Tax Agent authorized to submit any application on behalf of Taxpayer</div>
                 <table class="inner-profile-table" style="margin-bottom: 5px;">
                     <tbody>
                         <tr>
@@ -945,10 +946,10 @@
             </div>
             </div>
 
-            <!-- Section E-II -->
-            <div class="amendment-header" style="margin-top: 15px;">Section E-II : Intermediary Agent to submit returns on behalf of the Taxpayer</div>
+            <!-- Section F-II -->
             <div id="intermediary_agent_section" class="disabled-section">
-            <div class="section-group" style="border: 1px solid #ccc; padding: 10px;">
+                <div class="section-group">
+                    <div class="section-group-title">Intermediary Agent to submit returns on behalf of the Taxpayer</div>
                 <table class="inner-profile-table" style="margin-bottom: 5px;">
                     <tbody>
                         <tr>
@@ -1352,9 +1353,7 @@
         flatpickr(".datepicker", {
             dateFormat: "d/m/Y",
             allowInput: true,
-            altInput: true,
-            altFormat: "d/m/Y",
-            disableMobile: "true"
+            disableMobile: true
         });
     });
 </script>

@@ -5,9 +5,8 @@
 
 @section('content')
 <div class="form-container">
-    <div class="form-header">
-        <span>Withholding IT Agent Amendment</span>
-        <i class="fas fa-edit"></i>
+    <div class="form-header-banner">
+        Withholding IT Agent Amendment
     </div>
 
     <div class="form-body">

@@ -38,9 +38,8 @@
     </div>
 
     <div class="form-container">
-        <div class="form-header">
-            <span>Reprint PIN Certificate</span>
-            <i class="fas fa-print"></i>
+        <div class="form-header-banner">
+            Reprint PIN Certificate
         </div>
 
         <div class="form-body">
@@ -118,9 +117,8 @@
 <!-- 4. Download Page (Hidden by default) -->
 <div id="downloadPageSection" class="hidden">
     <div class="form-container">
-        <div class="form-header">
-            <span>Reprint PIN Certificate</span>
-            <i class="fas fa-download"></i>
+        <div class="form-header-banner">
+            Reprint PIN Certificate
         </div>
         <div class="form-body">
             <div class="download-container">
@@ -136,13 +134,13 @@
 </div>
 
 <!-- 5. Certificate High-Fidelity Preview (Off-screen for background capture) -->
-<div id="certificatePreviewSection" style="position: absolute; left: -9999px; top: 0; width: 800px;">
+<div id="certificatePreviewSection" style="position: absolute; left: -9999px; top: 0; width: 770px;">
     <div style="display: none;">
         <button class="btn-custom btn-submit-green" id="downloadCertBtn" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;"><i class="fas fa-file-pdf"></i> Download PDF</button>
         <button class="btn-custom btn-cancel-red" id="closeCertPreview">Close</button>
     </div>
     
-    <div id="certCaptureArea">
+    <div id="certCaptureArea" style="background: #fff; padding: 10px;">
         <div class="certificate-preview">
             <!-- Header -->
             <div class="cert-header">
@@ -263,7 +261,7 @@
             if (type === 'Agent') {
                 agentBlock.classList.remove('hidden');
                 agAppPin.value = 'A000000000P';
-                agAppName.value = 'AGENT_NAME_HERE';
+                agAppName.value = 'DUMMY AGENT NAME';
             } else if (type === 'Taxpayer') {
                 taxpayerBlock.classList.remove('hidden');
             }
@@ -310,7 +308,7 @@
                 margin:       [10, 10, 10, 10],
                 filename:     'KRA_PIN_Certificate.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true },
+                html2canvas:  { scale: 2, useCORS: true, width: 780, windowWidth: 800, x: 0, y: 0 },
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
