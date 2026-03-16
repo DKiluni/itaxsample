@@ -3,23 +3,25 @@
 @section('title', 'Consult and Reprint TCC')
 @section('header', 'Consult and Reprint TCC')
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
+
 @section('content')
-<div class="mandatory-notice" style="color: red;">
+<div class="mandatory-notice">
     All fields marked with <span class="required-star">*</span> are mandatory
 </div>
 
-<div class="form-container" style="margin-top: 10px;">
-    <div style="font-weight: bold; text-align: center; margin-bottom: 15px; font-size: 1.1rem;">
-        Consult and Reprint Tax Compliance Certificate
+<div class="form-container">
+    <div class="form-header-banner">
+        CONSULT AND REPRINT TAX COMPLIANCE CERTIFICATE
     </div>
 
-    <table class="inner-profile-table table-4-col">
-        <thead>
-            <tr>
-                <th colspan="4" style="background-color: #333; color: white; padding: 5px; text-align: center;">Consult and Reprint Tax Compliance Certificate</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="form-body" style="padding: 10px;">
+        <div class="section-group">
+            <div class="section-group-title">Certificate Details</div>
+            <table class="inner-profile-table table-4-col">
+                <tbody>
             <tr>
                 <td class="label-cell" style="width: 25%;">Certificate Serial Number</td>
                 <td class="input-cell" style="width: 25%;">
@@ -33,25 +35,22 @@
             <tr>
                 <td class="label-cell">Date of expiry</td>
                 <td class="input-cell">
-                    <div style="display: flex; align-items: center; gap: 5px;">
-                        <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
-                        <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();"><i class="far fa-calendar-alt"></i></span>
-                    </div>
+                    <input type="text" class="form-input-custom datepicker" style="width: 292px;" placeholder="DD/MM/YYYY" required>
                 </td>
                 <td class="label-cell">Date of Certificate</td>
                 <td class="input-cell">
-                    <div style="display: flex; align-items: center; gap: 5px;">
-                        <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
-                        <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();"><i class="far fa-calendar-alt"></i></span>
-                    </div>
+                    <input type="text" class="form-input-custom datepicker" style="width: 292px;" placeholder="DD/MM/YYYY" required>
                 </td>
             </tr>
         </tbody>
-    </table>
+            </table>
+        </div>
 
-    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
-        <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 20px; text-transform: none; border: 1px solid #000; font-weight: bold;">Consult</button>
-        <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 20px; text-transform: none; border: 1px solid #000; font-weight: bold;" onclick="window.location.reload()">Clear</button>
+        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+            <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
+            <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+            <button type="button" class="btn-custom btn-submit-orange">Consult</button>
+        </div>
     </div>
 </div>
 

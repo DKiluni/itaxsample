@@ -129,7 +129,7 @@
                             <td class="label-cell">Opted Out Effective Date<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" style="width: 350px;" required>
+                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                                 </div>
                             </td>
                             <td class="label-cell">Application Remarks<span class="required-star">*</span></td>

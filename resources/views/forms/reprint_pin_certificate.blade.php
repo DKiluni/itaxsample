@@ -31,6 +31,10 @@
     </style>
 @endpush
 
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 @section('content')
 <div id="reprintSearchSection">
     <div class="mandatory-notice">
@@ -39,11 +43,10 @@
 
     <div class="form-container">
         <div class="form-header-banner">
-            Reprint PIN Certificate
+            REPRINT PIN CERTIFICATE
         </div>
 
-        <div class="form-body">
-            <!-- 1. Selection Container -->
+        <div class="form-body" style="padding: 10px;">
             <table class="inner-profile-table">
                 <tbody>
                     <tr>
@@ -84,9 +87,9 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                        <button type="submit" class="btn-custom btn-submit-green" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Submit</button>
+                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
+                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
                     </div>
                 </form>
             </div>
@@ -104,9 +107,9 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                        <button type="submit" class="btn-custom btn-submit-green" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Submit</button>
+                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
+                        <button type="submit" class="btn-custom btn-submit-green">Submit</button>
                     </div>
                 </form>
             </div>
@@ -118,7 +121,7 @@
 <div id="downloadPageSection" class="hidden">
     <div class="form-container">
         <div class="form-header-banner">
-            Reprint PIN Certificate
+            REPRINT PIN CERTIFICATE
         </div>
         <div class="form-body">
             <div class="download-container">

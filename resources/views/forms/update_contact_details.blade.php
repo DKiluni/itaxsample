@@ -8,54 +8,54 @@
 @endpush
 
 @section('content')
-<div id="mandatoryNotice">
-    <div class="mandatory-notice">
-        All fields marked with <span class="required-star" style="color: red;">*</span> are mandatory
-    </div>
+<div class="mandatory-notice">
+    All fields marked with <span class="required-star">*</span> are mandatory
 </div>
 
-<div class="form-container" style="border: none; box-shadow: none; background: transparent; padding: 0;">
-    <div class="form-body" style="padding: 0;">
-        <div class="tab-content-wrapper" style="min-height: auto; overflow: hidden; margin-top: 15px;">
-            <div style="background-color: #DA3832; color: #fff; padding: 10px 15px; text-align: center; border-bottom: none; font-weight: bold; font-size: 1.1rem;">
-                Amend Contact Details
-            </div>
-            
-            <table class="inner-profile-table" style="margin-bottom: 0; border: none; width: 100%;">
+<div class="form-container">
+    <div class="form-header-banner">
+        UPDATE CONTACT DETAILS
+    </div>
+    <div class="form-body" style="padding: 10px;">
+        <div class="section-group">
+            <div class="section-group-title">Contact Details</div>
+            <table class="inner-profile-table">
                 <tbody>
                     <tr>
-                        <td class="label-cell" style="width: 25%; border-top: none; border-left: none;">PIN</td>
-                        <td class="input-cell" style="width: 25%; border-top: none;">
-                            <input type="text" class="form-input-custom" value="A000000000A" readonly style="background-color: #f3f4f6; color: #000;">
+                        <td class="label-cell" style="width: 25%;">PIN</td>
+                        <td class="input-cell" style="width: 25%;">
+                            <input type="text" class="form-input-custom" value="A000000000A" readonly>
                         </td>
-                        <td class="label-cell" style="width: 25%; border-top: none;">Taxpayer Name</td>
-                        <td class="input-cell" style="width: 25%; border-top: none; border-right: none;">
-                            <input type="text" class="form-input-custom" value="JOHN DOE" readonly style="background-color: #f3f4f6; color: #000;">
+                        <td class="label-cell" style="width: 25%;">Taxpayer Name</td>
+                        <td class="input-cell" style="width: 25%;">
+                            <input type="text" class="form-input-custom" value="JOHN DOE" readonly>
                         </td>
                     </tr>
                     <tr>
-                        <td class="label-cell" style="border-left: none;">Main Email Address <span style="color: red;">*</span></td>
+                        <td class="label-cell">Main Email Address <span class="required-star">*</span></td>
                         <td class="input-cell">
                             <input type="text" class="form-input-custom" value="JOHNDOE@EXAMPLE.COM">
                         </td>
-                        <td class="label-cell" style="background: #fbfbfb;"></td>
-                        <td class="input-cell" style="border-right: none; background: #fbfbfb;"></td>
+                        <td class="label-cell"></td>
+                        <td class="input-cell"></td>
                     </tr>
                     <tr>
-                        <td class="label-cell" style="border-left: none; border-bottom: none;">Mobile Number (1) <span style="color: red;">*</span></td>
-                        <td class="input-cell" style="border-bottom: none;">
+                        <td class="label-cell">Mobile Number (1) <span class="required-star">*</span></td>
+                        <td class="input-cell">
                             <input type="text" class="form-input-custom" value="0711111111" style="width: 60%;">
                         </td>
-                        <td class="label-cell" style="border-bottom: none; background: #fbfbfb;"></td>
-                        <td class="input-cell" style="border-right: none; border-bottom: none; background: #fbfbfb;"></td>
+                        <td class="label-cell"></td>
+                        <td class="input-cell"></td>
                     </tr>
                 </tbody>
             </table>
-            
-            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; padding: 15px; background-color: #f0f0f0; border-top: 1px solid #ccc; margin-bottom: 1px;">
-                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Cancel</button>
-                <button type="button" class="btn-custom btn-submit-green" style="font-weight: bold; border-radius: 4px; padding: 6px 20px;">Submit</button>
-            </div>
+        </div>
+
+        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+            <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
+            <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+            <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+        </div>
         </div>
     </div>
 </div>

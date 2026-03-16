@@ -56,13 +56,13 @@
                         <td class="label-cell">From Date</td>
                         <td class="input-cell">
                             <div class="search-filter-row-custom">
-                               <input type="text" class="form-input-custom datepicker" style="width: 210px;" placeholder="DD/MM/YYYY">
+                               <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </div>
                         </td>
                         <td class="label-cell">To Date</td>
                         <td class="input-cell">
                             <div class="search-filter-row-custom">
-                                <input type="text" class="form-input-custom datepicker" style="width: 210px;" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </div>
                         </td>
                     </tr>

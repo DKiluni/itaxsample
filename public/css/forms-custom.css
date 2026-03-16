@@ -1,7 +1,8 @@
 .mandatory-notice {
+    padding: 10px 15px;
+    margin-bottom: 20px;
     color: #DA3832;
     font-weight: bold;
-    margin-bottom: 20px;
     font-size: 0.85rem;
 }
 
@@ -9,8 +10,7 @@
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-    border: 1px solid var(--kra-border-gray);
-    margin-bottom: 25px;
+    border: none;
     background-color: #ffffff;
 }
 
@@ -120,6 +120,13 @@
     opacity: 0.8;
 }
 
+/* Main Form Container */
+.form-container {
+    border: 1px solid #da3832;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
 /* Main Form Header Banner */
 .form-header-banner {
     background-color: #DA3832;
@@ -131,10 +138,12 @@
     margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-radius: 0;
-    /* Remove radius since it's no longer the top element */
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
     /* Subtle separation from tabs */
+}
+
+/* Form Body container */
+.form-body {
+    padding: 10px 0;
 }
 
 /* Red Background Header (used for main form sections titles) */
@@ -274,13 +283,12 @@
     margin-bottom: 0;
     z-index: 2;
     position: relative;
-    padding-left: 10px;
+    padding: 10px 10px 0 10px;
     align-items: flex-end;
     border-bottom: 1px solid #DA3832;
     background: transparent;
     /* Removed grayish background */
     border-radius: 5px 5px 0 0;
-    padding-top: 5px;
     overflow: visible;
     /* Removed scrollbars */
 }
@@ -352,6 +360,16 @@
     border-bottom: none;
 }
 
+.form-header-banner {
+    background: #DA3832;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.1rem;
+    border-radius: 0;
+}
+
 .amendment-tab {
     padding: 8px 20px;
     background: #e9ecef;
@@ -380,12 +398,7 @@
     min-height: 400px;
 }
 
-.form-container {
-    background: #fff;
-    border: 1px solid #DA3832;
-    margin-bottom: 25px;
-    border-radius: 5px;
-}
+
 
 .form-search-filter {
     display: flex;
@@ -408,17 +421,7 @@
     font-size: 1.1rem;
 }
 
-.section-group {
-    border: 1px solid #eee;
-    /* Lightened from #ccc */
-    margin: 20px;
-    /* Consistent margin */
-    padding: 20px;
-    /* Generous internal padding */
-    position: relative;
-    border-radius: 4px;
-    background: #fff;
-}
+
 
 .checkbox-item {
     display: flex;
@@ -435,17 +438,7 @@
     flex-shrink: 0;
 }
 
-.section-group-title {
-    position: absolute;
-    top: -12px;
-    left: 15px;
-    background: #fff;
-    padding: 0 10px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #DA3832;
-    z-index: 1;
-}
+
 
 /* Ensure tables inside section-group don't have redundant top margins */
 .section-group .inner-profile-table {
@@ -926,12 +919,7 @@ span.flatpickr-weekday {
     max-width: 200px;
 }
 
-.mandatory-notice {
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    color: #DA3832;
-    font-weight: bold;
-}
+
 
 /* Apply Payment Plan Specific Utilities */
 .tabs-container-custom {

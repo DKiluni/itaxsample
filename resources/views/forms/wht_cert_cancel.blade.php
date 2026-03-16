@@ -2,29 +2,33 @@
 
 @section('title', 'Withholding Certificate Cancellation')
 @section('header', 'Withholding Certificate Cancellation')
-
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
 <div class="mandatory-notice">
     Fields marked with <span class="required-star">*</span> are mandatory
 </div>
 
-<div class="form-container" style="margin-top: 10px;">
-    <div style="font-weight: bold; text-align: center; margin-bottom: 15px; font-size: 1.1rem;">
-        Cancellation of Withholding Certificate
-    </div>
-
-    <div class="amendment-tabs-container" style="margin-bottom: 5px;">
+<div class="form-container">
+    <div class="amendment-tabs-container">
         <div class="amendment-tab active" id="tab_single" onclick="switchTab('single-cert')">Single Certificate</div>
         <div class="amendment-tab" id="tab_multiple" onclick="switchTab('multiple-cert')">Multiple Certificates</div>
     </div>
 
-    <div class="tab-content-wrapper" style="border: 1px solid #ccc; padding: 10px;">
+    <div class="form-header-banner">
+        CANCELLATION OF WITHHOLDING CERTIFICATE
+    </div>
+
+    <div class="tab-content-wrapper" style="border-top: none; padding: 0;">
         <!-- Single Certificate Tab -->
         <div id="single-cert" class="tab-pane active">
-            <table class="inner-profile-table table-4-col" style="border: none;">
-                <tbody>
+            <div class="form-body" style="padding: 10px;">
+                <div class="section-group">
+                    <div class="section-group-title">Cancellation Details</div>
+                    <table class="inner-profile-table table-4-col">
+                        <tbody>
                     <tr>
                         <td class="label-cell" style="width: 25%;">Withholding Certificate Number<span class="required-star">*</span></td>
                         <td class="input-cell" style="width: 25%;">
@@ -32,10 +36,7 @@
                         </td>
                         <td class="label-cell" style="width: 25%;">Date of Transaction</td>
                         <td class="input-cell" style="width: 25%;">
-                            <div style="display: flex; align-items: center; gap: 5px;">
-                                <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
-                                <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();"><i class="far fa-calendar-alt"></i></span>
-                            </div>
+                            <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                         </td>
                     </tr>
                     <tr>
@@ -81,8 +82,9 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
 
-            <fieldset style="border: 1px solid #ccc; margin-top: 20px; padding: 15px; background: #fff;">
+            <fieldset style="border: 1px solid #ccc; margin: 20px 15px; padding: 15px; background: #fff;">
                 <legend style="font-size: 1rem; font-weight: bold; width: auto; border: none; margin-bottom: 0; padding: 0 5px;">Upload Document</legend>
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
                     <span style="font-weight: 500;">Upload Supporting Document for Cancellation <span class="required-star">*</span></span>
@@ -96,16 +98,20 @@
                     Allowed file types are:- .doc, .docx, .pdf, .xls, .xlsx, .jpeg, .png, .gif, .ods, .jfif, .tiff, .tif, .zip, .bmp, .txt
                 </div>
                 
-                <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px;">
-                    <button type="submit" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 30px; border: 1px solid #000; font-weight: bold;">Submit</button>
-                    <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 30px; border: 1px solid #000; font-weight: bold;" onclick="window.location.reload()">Clear</button>
-                </div>
             </fieldset>
+            
+            <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+                <button type="button" class="btn-custom btn-next-green" onclick="switchTab('multiple-cert')">Next</button>
+                <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+                <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+            </div>
+            </div>
         </div>
 
         <!-- Multiple Certificates Tab -->
         <div id="multiple-cert" class="tab-pane" style="display: none;">
-            <fieldset style="border: 1px solid #ccc; padding: 15px; background: #fff; margin-bottom: 20px;">
+            <div class="form-body" style="padding: 10px;">
+            <fieldset style="border: 1px solid #ccc; padding: 15px; background: #fff; margin: 20px 15px;">
                 <legend style="font-size: 1rem; font-weight: bold; width: auto; border: none; margin-bottom: 0; padding: 0 5px;">Consult Withholding Certificate(s)</legend>
                 <table class="inner-profile-table table-4-col" style="border: none;">
                     <tbody>
@@ -113,7 +119,7 @@
                             <td class="label-cell" style="border: none; width: 25%;">PRN Number <span class="required-star">*</span></td>
                             <td class="input-cell" style="border: none; width: 75%; display: flex; align-items: center; gap: 10px;">
                                 <input type="text" class="form-input-custom" style="width: 250px;" required>
-                                <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 3px 15px; border: 1px solid #000; font-weight: bold;">Consult</button>
+                                <button type="button" class="btn-custom btn-submit-orange">Consult</button>
                             </td>
                         </tr>
                         <tr>
@@ -130,7 +136,7 @@
                 </table>
             </fieldset>
 
-            <fieldset style="border: 1px solid #ccc; padding: 15px; background: #fff; margin-bottom: 20px;">
+            <fieldset style="border: 1px solid #ccc; padding: 15px; background: #fff; margin: 20px 15px;">
                 <legend style="font-size: 1rem; font-weight: bold; width: auto; border: none; margin-bottom: 0; padding: 0 5px;">Withholding Certificate(s) Details</legend>
                 <table class="inner-profile-table table-header-black" style="width: 100%;">
                     <thead>
@@ -166,11 +172,14 @@
                     Allowed file types are:- .doc, .docx, .pdf, .xls, .xlsx, .jpeg, .png, .gif, .ods, .jfif, .tiff, .tif, .zip, .bmp, .txt
                 </div>
                 
-                <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px;">
-                    <button type="submit" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 30px; border: 1px solid #000; font-weight: bold;">Submit</button>
-                    <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 30px; border: 1px solid #000; font-weight: bold;" onclick="window.location.reload()">Clear</button>
-                </div>
+                
             </fieldset>
+                <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+                    <button type="button" class="btn-custom btn-prev-green" onclick="switchTab('single-cert')">Previous</button>
+                    <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+                    <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

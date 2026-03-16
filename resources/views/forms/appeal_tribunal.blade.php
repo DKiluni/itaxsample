@@ -45,8 +45,8 @@
         </div>
 
         <div class="section-group">
-            <div class="section-group-title">Section B : Notice Details</div>
-            <table class="inner-profile-table table-4-col">
+            <div class="section-group-title" style="margin: 15px 15px 5px 15px;">Section B : Notice Details</div>
+            <table class="inner-profile-table table-4-col" style="border: 1px solid var(--kra-border-gray);">
                 <tbody>
                     <tr>
                         <td class="label-cell">Confirmed/Amended notice number from objection<span class="required-star">*</span></td>
@@ -80,9 +80,10 @@
             </table>
         </div>
 
-        <div class="form-footer-buttons">
-            <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
             <button type="button" class="btn-custom btn-cancel-red" onclick="window.history.back()">Cancel</button>
+            <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+            <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
         </div>
     </div>
 </div>

@@ -218,7 +218,7 @@
                                 <td class="label-cell" style="width: 25% !important;">National Id. Number<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="12345678" style="width: 100%;" required></td>
                                 <td class="label-cell" style="width: 25% !important;">Date of Birth</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" value="01/01/1990" style="width: 100%;" placeholder="DD/MM/YYYY"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required></td>
                             </tr>
                         </tbody>
                     </table>
@@ -892,19 +892,13 @@
                             <td class="input-cell"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY" required>
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
-                                </div>
+                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell">Authorization Date Upto</td>
                             <td class="input-cell">
-                                <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
-                                </div>
+                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                             <td colspan="2" style="background-color: transparent; border: none;"></td>
                         </tr>
@@ -989,19 +983,13 @@
                             <td class="input-cell"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY" required>
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
-                                </div>
+                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell">Authorization Date Upto</td>
                             <td class="input-cell">
-                                <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
-                                    <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
-                                </div>
+                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                             <td colspan="2" style="background-color: transparent; border: none;"></td>
                         </tr>

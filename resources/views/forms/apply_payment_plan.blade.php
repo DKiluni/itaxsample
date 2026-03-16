@@ -163,7 +163,7 @@
                             <tr>
                                 <td class="label-cell">Date of First Installment<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom datepicker" style="width: 320px;" placeholder="DD/MM/YYYY" required>
+                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                                 </td>
                                 <td class="label-cell"></td>
                                 <td class="input-cell"></td>
