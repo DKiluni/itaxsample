@@ -38,7 +38,7 @@
                             <tr>
                                 <td class="label-cell" style="width: 25%;">Applicant Type<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25%;">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>Taxpayer</option>
                                         <option>Agent</option>
                                     </select>
@@ -103,7 +103,7 @@
                             <tr>
                                 <td class="label-cell" style="width: 25%;">County<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25%;">
-                                    <select class="form-select-custom" id="newCounty" onchange="updateSubCounties()">
+                                    <select class="form-select-custom" id="newCounty" onchange="updateSubCounties()" required>
                                         <option value="">--Select County--</option>
                                         <option value="Mombasa">Mombasa</option>
                                         <option value="Kwale">Kwale</option>
@@ -156,7 +156,7 @@
                                 </td>
                                 <td class="label-cell" style="width: 25%;">District/Sub-county<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25%;">
-                                    <select class="form-select-custom" id="newSubCounty" onchange="updateLocalities()" disabled>
+                                    <select class="form-select-custom" id="newSubCounty" onchange="updateLocalities()" disabled required>
                                         <option value="">--Select Sub-county--</option>
                                     </select>
                                 </td>
@@ -168,7 +168,7 @@
                                 </td>
                                 <td class="label-cell">Tax Area/Locality<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom" id="newLocality" disabled>
+                                    <select class="form-select-custom" id="newLocality" disabled required>
                                         <option value="">--Select Locality--</option>
                                     </select>
                                 </td>
@@ -176,7 +176,7 @@
                             <tr>
                                 <td class="label-cell" style="vertical-align: top; padding-top: 15px;">Remarks<span class="required-star">*</span></td>
                                 <td class="input-cell" colspan="3">
-                                    <textarea class="form-input-custom" rows="4" style="width: 100%; max-width: 100%;" onkeyup="document.getElementById('remarkCharCount').value = 500 - this.value.length;"></textarea>
+                                    <textarea class="form-input-custom" rows="4" style="width: 100%; max-width: 100%;" onkeyup="document.getElementById('remarkCharCount').value = 500 - this.value.length;" required></textarea>
                                     <div style="font-size: 0.75rem; color: #666; margin-top: 5px;">
                                         (Maximum characters: 500)<br>
                                         You have<input type="text" id="remarkCharCount" value="500" readonly style="width: 35px; border: none; background: transparent; text-align: right; font-weight: bold; color: #DA3832;"> characters left.
@@ -196,7 +196,7 @@
                                         <div style="display: flex; align-items: center; border: 1px solid #7f9db9; background: white; height: 26px;">
                                             <button type="button" style="background: #eef; border: none; border-right: 1px solid #7f9db9; padding: 0 10px; font-size: 12px; height: 100%; cursor: pointer;" onclick="document.getElementById('tsoDocFixed').click();">Choose File</button>
                                             <span id="tsoDocNameFixed" style="padding: 0 10px; font-size: 12px; color: #000;">No file chosen</span>
-                                            <input type="file" id="tsoDocFixed" style="display: none;" onchange="document.getElementById('tsoDocNameFixed').textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen';">
+                                            <input type="file" id="tsoDocFixed" style="display: none;" onchange="document.getElementById('tsoDocNameFixed').textContent = this.files.length  required> 0 ? this.files[0].name : 'No file chosen';">
                                         </div>
                                     </div>
                                     <div style="color: #666; font-size: 0.75rem; margin-top: 5px;">Allowed types: .pdf, .doc, .docx, .jpeg, .png (Max: 5MB)</div>

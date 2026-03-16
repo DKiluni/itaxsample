@@ -39,7 +39,7 @@
             <div class="section-group-title">Advance Payment PRN Details / Offset Voucher Details</div>
             <div class="radio-group-container-custom">
                 <label class="radio-label-custom">
-                    <input type="radio" name="offset_type" value="PRN" checked onchange="toggleOffsetFields()"> Payment Registration No(PRN)
+                    <input type="radio" name="offset_type" value="PRN" checked onchange="toggleOffsetFields()" required> Payment Registration No(PRN)
                 </label>
                 <label class="radio-label-custom">
                     <input type="radio" name="offset_type" value="OAV" onchange="toggleOffsetFields()"> Overpayment/Refund Adjustment Voucher(OAV/RAV)
@@ -50,7 +50,7 @@
                     <tr id="offsetVoucherRow" style="display: none;">
                         <td class="label-cell">Offset Voucher No:<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom">
+                            <input type="text" class="form-input-custom" required>
                         </td>
                         <td class="label-cell"></td>
                         <td class="input-cell"></td>

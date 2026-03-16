@@ -24,7 +24,7 @@
                         <td class="label-cell">Search Reference</td>
                         <td class="input-cell" colspan="3">
                             <div class="search-filter-row-custom">
-                                <input type="text" class="form-input-custom" placeholder="Enter Reference No.">
+                                <input type="text" class="form-input-custom" placeholder="Enter Reference No." required>
                                 <button type="button" class="btn-custom btn-submit-orange">Search</button>
                             </div>
                         </td>
@@ -40,11 +40,11 @@
                     <tr>
                         <td class="label-cell">PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A000000000X" disabled>
+                            <input type="text" class="form-input-custom" value="A000000000X" disabled required>
                         </td>
                         <td class="label-cell">Reference<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" placeholder="Enter Reference">
+                            <input type="text" class="form-input-custom" placeholder="Enter Reference" required>
                         </td>
                     </tr>
                     <tr>

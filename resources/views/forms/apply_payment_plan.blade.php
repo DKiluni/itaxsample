@@ -32,7 +32,7 @@
                             <tr>
                                 <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                                 <td class="input-cell" colspan="3">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>Taxpayer</option>
                                     </select>
                                 </td>
@@ -40,7 +40,7 @@
                             <tr>
                                 <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" value="A000000000X">
+                                    <input type="text" class="form-input-custom" value="A000000000X" required>
                                 </td>
                                 <td class="label-cell">Taxpayer Name</td>
                                 <td class="input-cell">
@@ -50,7 +50,7 @@
                             <tr>
                                 <td class="label-cell">Mobile Number<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" value="0700000000">
+                                    <input type="text" class="form-input-custom" value="0700000000" required>
                                 </td>
                                 <td class="label-cell">Tax Service Office</td>
                                 <td class="input-cell">
@@ -75,7 +75,7 @@
                     <div class="section-group-title">PaymentPlan Details</div>
                     <div class="form-flex-center-gap">
                         <span>Tax Obligation(s)<span class="required-star">*</span></span>
-                        <select class="form-select-custom width-300">
+                        <select class="form-select-custom width-300" required>
                             <option>--Select--</option>
                         </select>
                     </div>
@@ -141,21 +141,21 @@
                             <tr>
                                 <td class="label-cell">Total Tax<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom text-right" value="0">
+                                    <input type="text" class="form-input-custom text-right" value="0" required>
                                 </td>
                                 <td class="label-cell">No. Of Installments<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom text-right" value="0">
+                                    <input type="text" class="form-input-custom text-right" value="0" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Amount per Installment<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom text-right" value="0">
+                                    <input type="text" class="form-input-custom text-right" value="0" required>
                                 </td>
                                 <td class="label-cell">Installment Frequency<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>Monthly</option>
                                     </select>
                                 </td>
@@ -163,7 +163,7 @@
                             <tr>
                                 <td class="label-cell">Date of First Installment<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom datepicker" style="width: 320px;" placeholder="DD/MM/YYYY">
+                                    <input type="text" class="form-input-custom datepicker" style="width: 320px;" placeholder="DD/MM/YYYY" required>
                                 </td>
                                 <td class="label-cell"></td>
                                 <td class="input-cell"></td>

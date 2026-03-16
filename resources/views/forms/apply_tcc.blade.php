@@ -6,50 +6,50 @@
 
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Application for Tax Compliance Certificate</span>
-        <i class="fas fa-tasks"></i>
-    </div>
-
-    <div class="form-body">
-        
-                <div class="wizard-steps">
-            <div class="step-item active"><div class="step-circle">1</div><div class="step-label">Specifics</div></div>
-            <div class="step-item"><div class="step-circle">2</div><div class="step-label">Declaration</div></div>
-        </div>
-        <!-- Wizard Navigation -->
-        
-    
-        <div class="form-section">
-            <div class="form-subheader">Step 1: Basic Information</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">Taxpayer PIN</label>
-                <input type="text" class="form-control" value="A001234567Z" readonly style="background: #eee;">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label mandatory">Taxpayer Name</label>
-                <input type="text" class="form-control" value="JOHN DOE" readonly style="background: #eee;">
-            </div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">Type of Application</label>
-                <select class="form-control">
-                    <option>Select Type...</option>
-                    <option>New Application</option>
-                    <option>Renewal</option>
-                    <option>Amendment</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary" onclick="window.location.href='{{ route('dashboard') }}'"><i class="fas fa-times-circle"></i> Cancel</button>
-        <button class="btn-kra btn-kra-primary">Next <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-left: 5px;"></i></button>
-    </div>
+<div class="mandatory-notice" style="color: red;">
+    All fields marked with <span class="required-star">*</span> are mandatory
 </div>
+
+<div class="form-container" style="margin-top: 10px;">
+    <div style="font-weight: bold; text-align: center; margin-bottom: 15px; font-size: 1.1rem;">
+        Tax Compliance Certificate
+    </div>
+
+    <table class="inner-profile-table table-4-col">
+        <thead>
+            <tr>
+                <th colspan="4" style="background-color: #333; color: white; padding: 5px; text-align: center;">Tax Compliance Certificate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="label-cell" style="width: 25%;">PIN of Taxpayer</td>
+                <td class="input-cell" style="width: 25%;">
+                    <input type="text" class="form-input-custom" value="A013758466Z" readonly>
+                </td>
+                <td class="label-cell" style="width: 25%;">Name of Taxpayer</td>
+                <td class="input-cell" style="width: 25%;">
+                    <input type="text" class="form-input-custom" value="David Kiluni Mwaniki" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Reason for Application<span class="required-star">*</span></td>
+                <td class="input-cell" colspan="4">
+                    <select class="form-select-custom" required>
+                        <option>--Select--</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <fieldset style="border: 1px solid #ccc; padding: 10px; margin-top: 15px; background: #fff;">
+        <legend style="font-size: 0.9rem; font-weight: bold; width: auto; border: none; margin-bottom: 5px; padding: 0 5px;">Details of Pending Returns</legend>
+        <div style="display: flex; justify-content: space-between; padding: 5px; background-color: #f9f9f9;">
+            <div style="width: 45%;">Income Tax - Rent Income (MRI)</div>
+            <div style="width: 45%; text-align: center; color: #666;">Details of Pending Liability</div>
+        </div>
+    </fieldset>
+</div>
+
 @endsection

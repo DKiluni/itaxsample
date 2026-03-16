@@ -31,7 +31,7 @@
                             <tr>
                                 <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                                 <td class="input-cell" colspan="3">
-                                    <select class="form-select-custom" style="width: 250px;">
+                                    <select class="form-select-custom" style="width: 250px;" required>
                                         <option>Taxpayer</option>
                                     </select>
                                 </td>
@@ -39,7 +39,7 @@
                             <tr style="background-color: #f9f9f9;">
                                 <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" value="A013758466Z">
+                                    <input type="text" class="form-input-custom" value="A013758466Z" required>
                                 </td>
                                 <td class="label-cell">Taxpayer Name</td>
                                 <td class="input-cell">
@@ -57,7 +57,7 @@
                             <tr>
                                 <td class="label-cell">Assessment Number <span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom">
+                                    <input type="text" class="form-input-custom" required>
                                 </td>
                                 <td class="label-cell">Assessment Type</td>
                                 <td class="input-cell">
@@ -67,7 +67,7 @@
                             <tr style="background-color: #f9f9f9;">
                                 <td class="label-cell">Upload for grounds of objection <span class="required-star">*</span></td>
                                 <td class="input-cell" colspan="3">
-                                    <input type="file" class="form-input-custom">
+                                    <input type="file" class="form-input-custom" required>
                                     <div style="font-size: 0.8rem; color: #666; margin-top: 5px;">(Max. size 2MB; Allowed formats: .pdf, .zip)</div>
                                 </td>
                             </tr>
@@ -93,13 +93,13 @@
                             <tr>
                                 <td class="label-cell">Tax Obligation<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25%;">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>Income Tax - Resident Individual</option>
                                     </select>
                                 </td>
                                 <td class="label-cell">Assessment Period<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25%;">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>--Select--</option>
                                     </select>
                                 </td>
@@ -107,7 +107,7 @@
                             <tr>
                                 <td class="label-cell">Type of Objection<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>--Select--</option>
                                     </select>
                                 </td>
@@ -116,17 +116,17 @@
                             <tr>
                                 <td class="label-cell">Assessment Amount (Ksh)<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom">
+                                    <input type="text" class="form-input-custom" required>
                                 </td>
                                 <td class="label-cell">Objected Amount (Ksh)<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom">
+                                    <input type="text" class="form-input-custom" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Remarks<span class="required-star">*</span></td>
                                 <td class="input-cell" colspan="3">
-                                    <textarea class="form-input-custom" rows="3" maxlength="400" id="remarks" style="width: 100%; max-width: 600px;"></textarea>
+                                    <textarea class="form-input-custom" rows="3" maxlength="400" id="remarks" style="width: 100%; max-width: 600px;" required></textarea>
                                     <div style="font-size: 0.8rem; color: #666; margin-top: 5px;">
                                         (Maximum characters: 400)<br>
                                         You have <input type="text" id="charsLeft" value="400" readonly style="width: 40px; text-align: center; border: 1px solid #ccc; background: #fff;"> characters left.

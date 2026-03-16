@@ -23,7 +23,7 @@
                     <tr>
                         <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                         <td class="input-cell" colspan="3">
-                            <select class="form-select-custom">
+                            <select class="form-select-custom" required>
                                 <option>Taxpayer</option>
                             </select>
                         </td>
@@ -31,7 +31,7 @@
                     <tr>
                         <td class="label-cell">PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A000000000X">
+                            <input type="text" class="form-input-custom" value="A000000000X" required>
                         </td>
                         <td class="label-cell">Payment Registration Number</td>
                         <td class="input-cell">

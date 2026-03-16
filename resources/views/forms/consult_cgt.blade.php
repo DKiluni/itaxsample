@@ -23,7 +23,7 @@
                     <tr>
                         <td class="label-cell">CGT Type</td>
                         <td class="input-cell">
-                            <select class="form-select-custom">
+                            <select class="form-select-custom" required>
                                 <option>-- Select --</option>
                             </select>
                         </td>

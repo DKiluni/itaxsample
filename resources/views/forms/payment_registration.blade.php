@@ -25,7 +25,7 @@
                         <tr>
                             <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                             <td class="input-cell" colspan="3">
-                                <select id="applicantType" class="form-select-custom">
+                                <select id="applicantType" class="form-select-custom" required>
                                     <option value="Taxpayer">Taxpayer</option>
                                     <option value="Agent">Agent</option>
                                 </select>
@@ -34,7 +34,7 @@
                         <tr>
                             <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <input type="text" id="taxpayerPin" class="form-input-custom" value="A000000000X">
+                                <input type="text" id="taxpayerPin" class="form-input-custom" value="A000000000X" required>
                             </td>
                             <td class="label-cell">Taxpayer Name</td>
                             <td class="input-cell">
@@ -60,9 +60,9 @@
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
-                            <td class="label-cell">PIN<span class="required-STAR">*</span></td>
+                            <td class="label-cell">PIN<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <input type="text" class="form-input-custom">
+                                <input type="text" class="form-input-custom" required>
                             </td>
                             <td class="label-cell">Taxpayer Name</td>
                             <td class="input-cell">
@@ -82,13 +82,13 @@
                         <tr>
                             <td class="label-cell">Tax Head<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <select class="form-select-custom">
+                                <select class="form-select-custom" required>
                                     <option>--Select--</option>
                                 </select>
                             </td>
                             <td class="label-cell">Tax Sub Head<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <select class="form-select-custom">
+                                <select class="form-select-custom" required>
                                     <option>--Select--</option>
                                 </select>
                             </td>
@@ -96,7 +96,7 @@
                         <tr>
                             <td class="label-cell">Payment Type<span class="required-star">*</span></td>
                             <td class="input-cell" colspan="3">
-                                <select class="form-select-custom">
+                                <select class="form-select-custom" required>
                                     <option>--Select--</option>
                                 </select>
                             </td>
@@ -112,7 +112,7 @@
                         <tr>
                             <td class="label-cell">Mode of Payment<span class="required-star">*</span></td>
                             <td class="input-cell" colspan="3">
-                                <select class="form-select-custom">
+                                <select class="form-select-custom" required>
                                     <option>--Select--</option>
                                 </select>
                             </td>

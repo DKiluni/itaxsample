@@ -25,7 +25,7 @@
                     <tr>
                         <td class="label-cell">Case Type<span class="required-star">*</span></td>
                         <td class="input-cell" colspan="3">
-                            <select class="form-select-custom">
+                            <select class="form-select-custom" required>
                                 <option>Payment</option>
                             </select>
                         </td>
@@ -33,7 +33,7 @@
                     <tr>
                         <td class="label-cell">PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A000000000X">
+                            <input type="text" class="form-input-custom" value="A000000000X" required>
                         </td>
                         <td class="label-cell">Payment Registration Number</td>
                         <td class="input-cell">
@@ -74,7 +74,7 @@
                                 <i class="fas fa-sync-alt" style="color: #4CAF50; display: block;"></i>
                             </div>
                             <span id="stampQuestion" style="color: red; font-weight: bold; font-size: 1.1rem;">114 - 13 ?</span>
-                                <input type="text" class="form-input-custom" style="width: 80px; background: #f0f0f0;">
+                                <input type="text" class="form-input-custom" style="width: 80px; background: #f0f0f0;" required>
                             </div>
                         </td>
                     </tr>

@@ -6,51 +6,91 @@
 
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Withholding VAT Certificate Cancellation</span>
-        <i class="fas fa-edit"></i>
+<div class="mandatory-notice">
+    Fields marked with <span class="required-star">*</span> are mandatory
+</div>
+
+<div class="form-container" style="margin-top: 10px;">
+    <div style="font-weight: bold; text-align: center; margin-bottom: 15px; font-size: 1.1rem;">
+        Withholding VAT Certificate Cancellation
     </div>
 
-    <div class="form-body">
-        <div class="form-section">
-    <div class="form-subheader">Transaction Details</div>
-    <div class="form-group">
-        <label class="form-label">Search Reference</label>
-        <div style="display: flex; gap: 10px;">
-            <input type="text" class="form-control" placeholder="Enter Reference No.">
-            <button class="btn-kra btn-kra-primary"><i class="fas fa-search"></i> Search</button>
-        </div>
+    <table class="inner-profile-table table-4-col">
+        <tbody>
+            <tr>
+                <td class="label-cell" style="width: 25%;">Withholding VAT Certificate number<span class="required-star">*</span></td>
+                <td class="input-cell" style="width: 25%;">
+                    <input type="text" class="form-input-custom" required>
+                </td>
+                <td class="label-cell" style="width: 25%;">Date of Transaction</td>
+                <td class="input-cell" style="width: 25%;">
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
+                        <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Withholder PIN</td>
+                <td class="input-cell">
+                    <input type="text" class="form-input-custom">
+                </td>
+                <td class="label-cell">Withholder Name</td>
+                <td class="input-cell">
+                    <input type="text" class="form-input-custom">
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Withholdee PIN</td>
+                <td class="input-cell">
+                    <input type="text" class="form-input-custom">
+                </td>
+                <td class="label-cell">Withholdee Name</td>
+                <td class="input-cell">
+                    <input type="text" class="form-input-custom">
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Withholding Amount (Ksh)</td>
+                <td class="input-cell">
+                    <input type="text" class="form-input-custom">
+                </td>
+                <td class="label-cell">Nature of Transaction</td>
+                <td class="input-cell">
+                    <input type="text" class="form-input-custom">
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Reason for Cancellation<span class="required-star">*</span></td>
+                <td class="input-cell">
+                    <select class="form-select-custom" required>
+                        <option>--Select--</option>
+                    </select>
+                </td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="label-cell" colspan="2" style="background-color: #f9f9f9; padding: 10px;">
+                    <div>Upload Document to support cancellation</div>
+                    <div style="font-style: italic; font-size: 0.85rem; margin-top: 5px;">
+                        (Allowed File Types:<br>pdf,jfif,png,bmp,gif,tiff,xls,<br>xlsx,doc,docx,jpg,bmp,txt)<span class="required-star">*</span>
+                    </div>
+                </td>
+                <td class="input-cell" colspan="2" style="vertical-align: middle;">
+                    <div style="display: flex; align-items: center; border: 1px solid #ccc; background-color: #f5f5f5; padding: 2px; width: 250px;">
+                        <div style="background-color: #eaeaea; border: 1px solid #ccc; padding: 2px 5px; cursor: pointer; margin-right: 5px;">Choose File</div>
+                        <span style="color: #666; font-size: 0.9rem;">No ...sen</span>
+                        <input type="file" style="display: none;" required>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+        <button type="submit" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 20px; text-transform: none; border: 1px solid #000; font-weight: bold;">Submit</button>
+        <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 20px; text-transform: none; border: 1px solid #000; font-weight: bold;" onclick="window.location.reload()">Clear</button>
     </div>
 </div>
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A001234567Z" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
 
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
-            </div>
-        </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
-    </div>
-</div>
 @endsection

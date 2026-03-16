@@ -27,7 +27,7 @@
                     <tr>
                         <td class="label-cell">Mode of Amendment<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <select class="form-select-custom">
+                            <select class="form-select-custom" required>
                                 <option>Online Form</option>
                             </select>
                         </td>
@@ -35,7 +35,7 @@
                     <tr>
                         <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <select id="entryApplicantType" class="form-select-custom">
+                            <select id="entryApplicantType" class="form-select-custom" required>
                                 <option value="Taxpayer">Taxpayer</option>
                                 <option value="Agent">Agent</option>
                             </select>
@@ -44,7 +44,7 @@
                     <tr>
                         <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" id="entryTaxpayerPin" class="form-input-custom" value="00000000000">
+                            <input type="text" id="entryTaxpayerPin" class="form-input-custom" value="00000000000" required>
                         </td>
                     </tr>
                     <tr>
@@ -151,7 +151,7 @@
                         <tr>
                             <td class="label-cell">Citizenship<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <label><input type="radio" name="citizenship"> Kenyan</label>
+                                <label><input type="radio" name="citizenship" required> Kenyan</label>
                                 <label style="margin-left: 20px;"><input type="radio" name="citizenship"> Non Kenyan Resident</label>
                                 <label style="margin-left: 20px;"><input type="radio" name="citizenship"> Non Kenyan Non Resident</label>
                             </td>
@@ -170,7 +170,7 @@
                             <tr>
                                 <td class="label-cell">Do you want to register for TOT ?<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <label><input type="radio" name="tot"> Yes</label>
+                                    <label><input type="radio" name="tot" required> Yes</label>
                                     <label style="margin-left: 20px;"><input type="radio" name="tot"> No</label>
                                 </td>
                             </tr>
@@ -185,7 +185,7 @@
                             <tr>
                                 <td class="label-cell">Major Group<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>4545</option>
                                     </select>
                                 </td>
@@ -193,7 +193,7 @@
                             <tr>
                                 <td class="label-cell">Minor Group<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>4545</option>
                                     </select>
                                 </td>
@@ -201,7 +201,7 @@
                             <tr>
                                 <td class="label-cell">Sub Group<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom">
+                                    <select class="form-select-custom" required>
                                         <option>4545</option>
                                     </select>
                                 </td>
@@ -216,7 +216,7 @@
                         <tbody>
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">National Id. Number<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="12345678" style="width: 100%;"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="12345678" style="width: 100%;" required></td>
                                 <td class="label-cell" style="width: 25% !important;">Date of Birth</td>
                                 <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" value="01/01/1990" style="width: 100%;" placeholder="DD/MM/YYYY"></td>
                             </tr>
@@ -229,7 +229,7 @@
                         <tbody>
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">NSSF Number<span class="required-star">*</span></td>
-                                <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
+                                <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;" required></td>
                             </tr>
                         </tbody>
                     </table>
@@ -277,13 +277,13 @@
                             <tr>
                                 <td class="label-cell">County<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom" style="width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;" required>
                                         <option>Nairobi</option>
                                     </select>
                                 </td>
                                 <td class="label-cell">District<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <select class="form-select-custom" style="width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;" required>
                                         <option>Embakasi</option>
                                     </select>
                                 </td>
@@ -320,19 +320,19 @@
                                 <td class="label-cell" style="width: 25% !important;">Telephone Number</td>
                                 <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="0201234567" style="width: 100%;"></td>
                                 <td class="label-cell" style="width: 25% !important;">Mobile Number (1)<span class="required-star">*</span></td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="0712345678" style="width: 100%;"></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="0712345678" style="width: 100%;" required></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Mobile Number (2)<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" value="0722345678" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="0722345678" style="width: 100%;" required></td>
                                 <td class="label-cell">Mobile Number (3)<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" value="0733345678" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="0733345678" style="width: 100%;" required></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Main Email Address<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER@EXAMPLE.COM" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER@EXAMPLE.COM" style="width: 100%;" required></td>
                                 <td class="label-cell">Secondary Email Address<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER2@EXAMPLE.COM" style="width: 100%;"></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER2@EXAMPLE.COM" style="width: 100%;" required></td>
                             </tr>
                         </tbody>
                     </table>
@@ -346,7 +346,7 @@
                             <tr style="border: none;">
                                 <td class="label-cell" style="border: none; width: 50%;">Would you like to Subscribe/Unsubscribe of receiving alerts through SMS? <span class="required-star">*</span></td>
                                 <td class="input-cell" style="border: none;">
-                                    <label><input type="radio" name="sms_sub"> Subscribe</label>
+                                    <label><input type="radio" name="sms_sub" required> Subscribe</label>
                                     <label style="margin-left: 20px;"><input type="radio" name="sms_sub" checked> Unsubscribe</label>
                                 </td>
                             </tr>
@@ -364,7 +364,7 @@
                             <tr style="border: none;">
                                 <td class="label-cell" style="border: none; width: 50%;">Do you have an Alternative Address? <span class="required-star">*</span></td>
                                 <td class="input-cell" style="border: none;">
-                                    <select class="form-select-custom" id="alt_address_select">
+                                    <select class="form-select-custom" id="alt_address_select" required>
                                         <option value="No">No</option>
                                         <option value="Yes">Yes</option>
                                     </select>
@@ -383,24 +383,24 @@
                                     <td class="label-cell" style="width: 25% !important;">L.R. Number</td>
                                     <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
                                     <td class="label-cell" style="width: 25% !important;">Building<span class="required-star">*</span></td>
-                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" required></td>
                                 </tr>
                                 <tr>
                                     <td class="label-cell">Street/Road<span class="required-star">*</span></td>
-                                    <td class="input-cell"><input type="text" class="form-input-custom"></td>
+                                    <td class="input-cell"><input type="text" class="form-input-custom" required></td>
                                     <td class="label-cell">City/Town<span class="required-star">*</span></td>
-                                    <td class="input-cell"><input type="text" class="form-input-custom"></td>
+                                    <td class="input-cell"><input type="text" class="form-input-custom" required></td>
                                 </tr>
                                 <tr>
                                     <td class="label-cell">County<span class="required-star">*</span></td>
                                     <td class="input-cell">
-                                        <select class="form-select-custom">
+                                        <select class="form-select-custom" required>
                                             <option>--Select--</option>
                                         </select>
                                     </td>
                                     <td class="label-cell">District<span class="required-star">*</span></td>
                                     <td class="input-cell">
-                                        <select class="form-select-custom">
+                                        <select class="form-select-custom" required>
                                             <option>--Select--</option>
                                         </select>
                                     </td>
@@ -410,7 +410,7 @@
                                     <td class="input-cell"><input type="text" class="form-input-custom" readonly></td>
                                     <td class="label-cell">Tax Area/Locality<span class="required-star">*</span></td>
                                     <td class="input-cell">
-                                        <select class="form-select-custom">
+                                        <select class="form-select-custom" required>
                                             <option>--Select--</option>
                                         </select>
                                     </td>
@@ -435,20 +435,20 @@
                                 <tr>
                                     <td class="label-cell" style="width: 25% !important;">Postal Code<span class="required-star">*</span></td>
                                     <td class="input-cell" style="width: 25% !important;">
-                                        <select class="form-select-custom">
+                                        <select class="form-select-custom" required>
                                             <option>--Select--</option>
                                         </select>
                                     </td>
                                     <td class="label-cell" style="width: 25% !important;">Town<span class="required-star">*</span></td>
                                     <td class="input-cell" style="width: 25% !important;">
-                                        <select class="form-select-custom">
+                                        <select class="form-select-custom" required>
                                             <option>--Select--</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="label-cell">P.O.Box<span class="required-star">*</span></td>
-                                    <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
+                                    <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;" required></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -461,11 +461,11 @@
                                     <td class="label-cell" style="width: 25% !important;">Telephone Number</td>
                                     <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
                                     <td class="label-cell" style="width: 25% !important;">Mobile Number<span class="required-star">*</span></td>
-                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom"></td>
+                                    <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" required></td>
                                 </tr>
                                 <tr>
                                     <td class="label-cell">Email Address<span class="required-star">*</span></td>
-                                    <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;"></td>
+                                    <td class="input-cell" colspan="3"><input type="text" class="form-input-custom" style="width: 48%;" required></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -482,7 +482,7 @@
                             <tr style="border: none;">
                                 <td class="label-cell" style="border: none; width: 50%;">Do you wish to declare your Bank Account for tax refunds?<span class="required-star">*</span></td>
                                 <td class="input-cell" style="border: none;">
-                                    <select class="form-select-custom" id="bank_declare_select">
+                                    <select class="form-select-custom" id="bank_declare_select" required>
                                         <option value="No">No</option>
                                         <option value="Yes">Yes</option>
                                     </select>
@@ -499,13 +499,13 @@
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Bank<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;" required>
                                         <option>--Select--</option>
                                     </select>
                                 </td>
                                 <td class="label-cell" style="width: 25% !important;">Branch<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;" required>
                                         <option>--Select--</option>
                                     </select>
                                 </td>
@@ -513,17 +513,17 @@
                             <tr>
                                 <td class="label-cell">City<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" style="width: 100%;">
+                                    <input type="text" class="form-input-custom" style="width: 100%;" required>
                                 </td>
                                 <td class="label-cell">Account Holder's Name<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" style="width: 100%;">
+                                    <input type="text" class="form-input-custom" style="width: 100%;" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Account Number<span class="required-star">*</span></td>
                                 <td class="input-cell" colspan="3">
-                                    <input type="text" class="form-input-custom" style="width: 48%;">
+                                    <input type="text" class="form-input-custom" style="width: 48%;" required>
                                 </td>
                             </tr>
                         </tbody>
@@ -541,7 +541,7 @@
                             <tr style="border: none;">
                                 <td class="label-cell" style="border: none; width: 50%;">Are you a partner, director or trustee in any other entity? <span class="required-star">*</span></td>
                                 <td class="input-cell" style="border: none;">
-                                    <label><input type="radio" name="other_entity" class="dynamic-toggle" data-container="entity_fields_container" value="Yes"> Yes</label>
+                                    <label><input type="radio" name="other_entity" class="dynamic-toggle" data-container="entity_fields_container" value="Yes" required> Yes</label>
                                     <label style="margin-left: 20px;"><input type="radio" name="other_entity" class="dynamic-toggle" data-container="entity_fields_container" value="No" checked> No</label>
                                 </td>
                             </tr>
@@ -555,13 +555,13 @@
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Entity Type<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;" required>
                                         <option>--Select--</option>
                                     </select>
                                 </td>
                                 <td class="label-cell" style="width: 25% !important;">PIN<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <input type="text" class="form-input-custom" style="width: 100%;">
+                                    <input type="text" class="form-input-custom" style="width: 100%;" required>
                                 </td>
                             </tr>
                             <tr>
@@ -619,7 +619,7 @@
                             <tr style="border: none;">
                                 <td class="label-cell" style="border: none; width: 50%;">Would you like to declare your relationship with any other taxpayer? <span class="required-star">*</span></td>
                                 <td class="input-cell" style="border: none;">
-                                    <label><input type="radio" name="tributary_relationship" class="dynamic-toggle" data-container="tributary_fields_container" value="Yes"> Yes</label>
+                                    <label><input type="radio" name="tributary_relationship" class="dynamic-toggle" data-container="tributary_fields_container" value="Yes" required> Yes</label>
                                     <label style="margin-left: 20px;"><input type="radio" name="tributary_relationship" class="dynamic-toggle" data-container="tributary_fields_container" value="No" checked> No</label>
                                 </td>
                             </tr>
@@ -633,11 +633,11 @@
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Taxpayer PIN<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <input type="text" class="form-input-custom" value="A000000000X" style="border: 1px solid #DA3832; width: 100%;">
+                                    <input type="text" class="form-input-custom" value="A000000000X" style="border: 1px solid #DA3832; width: 100%;" required>
                                 </td>
                                 <td class="label-cell" style="width: 25% !important;">Relationship Type<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <select class="form-select-custom" style="width: 100%;">
+                                    <select class="form-select-custom" style="width: 100%;" required>
                                         <option>DUMMY RELATIONSHIP</option>
                                     </select>
                                 </td>
@@ -689,7 +689,7 @@
                                         <div style="display: flex; align-items: center; border: 1px solid #7f9db9; background: white; height: 24px;">
                                             <button type="button" style="background: #eef; border: none; border-right: 1px solid #7f9db9; padding: 0 8px; font-size: 12px; height: 100%; cursor: pointer;" onclick="this.nextElementSibling.nextElementSibling.click();">Choose File</button>
                                             <span style="padding: 0 8px; font-size: 12px; color: #000;">No file chosen</span>
-                                            <input type="file" style="display: none;" onchange="this.previousElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen';">
+                                            <input type="file" style="display: none;" onchange="this.previousElementSibling.textContent = this.files.length  required> 0 ? this.files[0].name : 'No file chosen';">
                                         </div>
                                     </div>
                                     <div style="color: #DA3832; font-size: 0.8rem; margin-top: 5px;">All file types are allowed. Allowed File Size:-5 MB</div>
@@ -723,42 +723,42 @@
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Resident</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Non Resident</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax PAYE(for Employer only)</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Rent Income (MRI)</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Turnover Tax</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Significant Economic Presence Tax</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                     </tbody>
@@ -798,7 +798,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 5px; border: 1px solid #ddd;">Estimated Turnover Next Year<span class="required-star">*</span></td>
-                            <td style="padding: 5px; border: 1px solid #ddd;"><input type="text" class="form-input-custom"></td>
+                            <td style="padding: 5px; border: 1px solid #ddd;"><input type="text" class="form-input-custom" required></td>
                             <td style="padding: 5px; border: 1px solid #ddd;"><input type="text" class="form-input-custom"></td>
                             <td style="padding: 5px; border: 1px solid #ddd;"><input type="text" class="form-input-custom"></td>
                         </tr>
@@ -828,7 +828,7 @@
                         <tr>
                             <td class="label-cell">Employment Income<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <select class="form-select-custom">
+                                <select class="form-select-custom" required>
                                     <option>No</option>
                                     <option>Yes</option>
                                 </select>
@@ -837,7 +837,7 @@
                         <tr>
                             <td class="label-cell">Rental Income<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <select class="form-select-custom">
+                                <select class="form-select-custom" required>
                                     <option>No</option>
                                     <option>Yes</option>
                                 </select>
@@ -846,7 +846,7 @@
                         <tr>
                             <td class="label-cell">Business Income<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <select class="form-select-custom">
+                                <select class="form-select-custom" required>
                                     <option>No</option>
                                     <option>Yes</option>
                                 </select>
@@ -877,7 +877,7 @@
                     <tbody>
                         <tr>
                             <td class="label-cell" style="width: 25% !important;">PIN<span class="required-star">*</span></td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;" required></td>
                             <td class="label-cell" style="width: 25% !important;">Agent Name</td>
                             <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                         </tr>
@@ -893,7 +893,7 @@
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
+                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY" required>
                                     <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
                                 </div>
                             </td>
@@ -954,7 +954,7 @@
                     <tbody>
                         <tr>
                             <td class="label-cell" style="width: 25% !important;">PIN<span class="required-star">*</span></td>
-                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;"></td>
+                            <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" style="width: 100%;" required></td>
                             <td class="label-cell" style="width: 25% !important;">First Name</td>
                             <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                         </tr>
@@ -967,7 +967,7 @@
                         <tr>
                             <td class="label-cell">Type of Authorization<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                <select class="form-select-custom" style="width: 100%;">
+                                <select class="form-select-custom" style="width: 100%;" required>
                                     <option>--Select--</option>
                                 </select>
                             </td>
@@ -990,7 +990,7 @@
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY">
+                                    <input type="text" class="form-input-custom datepicker" style="width: calc(100% - 30px);" placeholder="DD/MM/YYYY" required>
                                     <span style="color: navy; cursor: pointer; font-size: 1.2rem;" onclick="this.previousElementSibling._flatpickr.open();">📅</span>
                                 </div>
                             </td>

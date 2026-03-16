@@ -78,7 +78,8 @@
 }
 
 .btn-submit-orange {
-    background-color: #f39c12; /* Orange */
+    background-color: #f39c12;
+    /* Orange */
 }
 
 .btn-submit-orange:hover {
@@ -130,8 +131,10 @@
     margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-radius: 0; /* Remove radius since it's no longer the top element */
-    border-top: 1px solid rgba(255,255,255,0.2); /* Subtle separation from tabs */
+    border-radius: 0;
+    /* Remove radius since it's no longer the top element */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    /* Subtle separation from tabs */
 }
 
 /* Red Background Header (used for main form sections titles) */
@@ -274,10 +277,12 @@
     padding-left: 10px;
     align-items: flex-end;
     border-bottom: 1px solid #DA3832;
-    background: transparent; /* Removed grayish background */
+    background: transparent;
+    /* Removed grayish background */
     border-radius: 5px 5px 0 0;
     padding-top: 5px;
-    overflow: visible; /* Removed scrollbars */
+    overflow: visible;
+    /* Removed scrollbars */
 }
 
 .tab-item {
@@ -330,7 +335,7 @@
     font-weight: bold;
     color: #333;
     margin-right: 2px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .glossy-tab-active {
@@ -342,7 +347,7 @@
 /* Amendment Form Style Tabs (Image 3) */
 .amendment-tabs-container {
     display: flex;
-    background: #f0f0f0;
+    background: #ffffff;
     padding: 10px 10px 0 10px;
     border-bottom: none;
 }
@@ -370,7 +375,8 @@
 .tab-content-wrapper {
     background: #fff;
     border: none;
-    padding: 0; /* Keep 0 to allow flush button footers */
+    padding: 0;
+    /* Keep 0 to allow flush button footers */
     min-height: 400px;
 }
 
@@ -403,9 +409,12 @@
 }
 
 .section-group {
-    border: 1px solid #eee; /* Lightened from #ccc */
-    margin: 20px; /* Consistent margin */
-    padding: 20px; /* Generous internal padding */
+    border: 1px solid #eee;
+    /* Lightened from #ccc */
+    margin: 20px;
+    /* Consistent margin */
+    padding: 20px;
+    /* Generous internal padding */
     position: relative;
     border-radius: 4px;
     background: #fff;
@@ -742,7 +751,8 @@ span.flatpickr-weekday {
     font-weight: 600;
     color: #000000;
     margin-right: 5px;
-    margin-bottom: -1px; /* Overlap the container border */
+    margin-bottom: -1px;
+    /* Overlap the container border */
     white-space: nowrap;
     transition: all 0.2s;
 }
@@ -753,7 +763,8 @@ span.flatpickr-weekday {
     border-color: #DA3832;
     margin-bottom: -1px;
     padding-bottom: 9px;
-    border-bottom: none; /* Ensure no internal bottom border */
+    border-bottom: none;
+    /* Ensure no internal bottom border */
 }
 
 .tso-tab-inactive {
@@ -1115,4 +1126,3 @@ span.flatpickr-weekday {
     color: #DA3832;
     font-size: 0.85rem;
 }
-

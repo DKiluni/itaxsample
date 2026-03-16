@@ -25,7 +25,7 @@
                     <tr>
                         <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                         <td class="input-cell" colspan="3">
-                            <select class="form-select-custom" style="width: 250px;">
+                            <select class="form-select-custom" style="width: 250px;" required>
                                 <option>Taxpayer</option>
                             </select>
                         </td>
@@ -33,7 +33,7 @@
                     <tr style="background-color: #f9f9f9;">
                         <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A013758466Z">
+                            <input type="text" class="form-input-custom" value="A013758466Z" required>
                         </td>
                         <td class="label-cell">Taxpayer Name</td>
                         <td class="input-cell">
@@ -51,7 +51,7 @@
                     <tr>
                         <td class="label-cell">Confirmed/Amended notice number from objection<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom">
+                            <input type="text" class="form-input-custom" required>
                         </td>
                         <td class="label-cell">Assessment Type</td>
                         <td class="input-cell">
@@ -61,7 +61,7 @@
                     <tr style="background-color: #f9f9f9;">
                         <td class="label-cell">Tax Obligation<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <select class="form-select-custom">
+                            <select class="form-select-custom" required>
                                 <option>--Select--</option>
                             </select>
                         </td>
@@ -71,7 +71,7 @@
                     <tr>
                         <td class="label-cell">Appellate Body<span class="required-star">*</span></td>
                         <td class="input-cell" colspan="3">
-                            <select class="form-select-custom" style="width: 250px;">
+                            <select class="form-select-custom" style="width: 250px;" required>
                                 <option>--Select--</option>
                             </select>
                         </td>

@@ -27,7 +27,7 @@
                     <tr>
                         <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <select id="applicantType" class="form-select-custom">
+                            <select id="applicantType" class="form-select-custom" required>
                                 <option value="">--Select--</option>
                                 <option value="Taxpayer">Taxpayer</option>
                                 <option value="Agent">Agent</option>
@@ -121,21 +121,21 @@
                     <tbody>
                         <tr>
                             <td class="label-cell">Monthly Turnover Declared in Last Return (Ksh)<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="0.0"></td>
+                            <td class="input-cell"><input type="text" class="form-input-custom" value="0.0" required></td>
                             <td class="label-cell">Expected Yearly Turnover (Ksh)<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="0.0"></td>
+                            <td class="input-cell"><input type="text" class="form-input-custom" value="0.0" required></td>
                         </tr>
                         <tr>
                             <td class="label-cell">Opted Out Effective Date<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" style="width: 350px;">
+                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" style="width: 350px;" required>
                                 </div>
                             </td>
                             <td class="label-cell">Application Remarks<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <div style="display: flex; flex-direction: column; gap: 5px;">
-                                    <textarea class="form-textarea-custom" rows="3"></textarea>
+                                    <textarea class="form-textarea-custom" rows="3" required></textarea>
                                     <div style="font-size: 10px; color: #666;">(Maximum characters: 500)</div>
                                     <div style="font-size: 10px; color: #333;">You have <input type="text" value="500" style="width: 30px; border: 1px solid #ccc; text-align: center;" readonly> characters left.</div>
                                 </div>
@@ -145,7 +145,7 @@
                             <td class="label-cell">Upload Document<span class="required-star">*</span></td>
                             <td class="input-cell" colspan="3">
                                 <div style="display: flex; flex-direction: column; gap: 5px;">
-                                    <input type="file" class="form-input-custom">
+                                    <input type="file" class="form-input-custom" required>
                                     <div style="font-size: 10px; color: #333; font-style: italic;">Only .pdf, .doc, .docx, .jpg, .gif, .png formats of maximum size of 400 KB.</div>
                                 </div>
                             </td>

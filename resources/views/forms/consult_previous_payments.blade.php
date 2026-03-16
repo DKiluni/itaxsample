@@ -24,7 +24,7 @@
                         <td class="label-cell">Search Criteria<span class="required-star">*</span></td>
                         <td class="input-cell" colspan="3">
                             <div class="search-filter-row-custom">
-                                <select class="form-select-custom search-select-200">
+                                <select class="form-select-custom search-select-200" required>
                                     <option>Reference Number</option>
                                     <option>PIN</option>
                                     <option>Date Range</option>

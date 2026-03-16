@@ -23,11 +23,11 @@
                     <tr>
                         <td class="label-cell">PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A000000000X" disabled>
+                            <input type="text" class="form-input-custom" value="A000000000X" disabled required>
                         </td>
                         <td class="label-cell">Reference<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" placeholder="Enter Reference">
+                            <input type="text" class="form-input-custom" placeholder="Enter Reference" required>
                         </td>
                     </tr>
                     <tr>
