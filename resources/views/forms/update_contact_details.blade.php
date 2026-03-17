@@ -24,17 +24,17 @@
                     <tr>
                         <td class="label-cell" style="width: 25%;">PIN</td>
                         <td class="input-cell" style="width: 25%;">
-                            <input type="text" class="form-input-custom" value="A000000000A" readonly>
+                            <input type="text" class="form-input-custom" value="A000000000X" readonly>
                         </td>
-                        <td class="label-cell" style="width: 25%;">Taxpayer Name</td>
+                        <td class="label-cell" style="width: 25%;">TAXPAYER NAME</td>
                         <td class="input-cell" style="width: 25%;">
-                            <input type="text" class="form-input-custom" value="JOHN DOE" readonly>
+                            <input type="text" class="form-input-custom" value="TAXPAYER NAME" readonly>
                         </td>
                     </tr>
                     <tr>
                         <td class="label-cell">Main Email Address <span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="JOHNDOE@EXAMPLE.COM">
+                            <input type="text" class="form-input-custom" value="taxpayer@example.com">
                         </td>
                         <td class="label-cell"></td>
                         <td class="input-cell"></td>
@@ -42,7 +42,7 @@
                     <tr>
                         <td class="label-cell">Mobile Number (1) <span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="0711111111" style="width: 60%;">
+                            <input type="text" class="form-input-custom" value="0712345678">
                         </td>
                         <td class="label-cell"></td>
                         <td class="input-cell"></td>
@@ -51,7 +51,7 @@
             </table>
         </div>
 
-        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
             <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
             <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
             <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
@@ -60,3 +60,5 @@
     </div>
 </div>
 @endsection
+
+

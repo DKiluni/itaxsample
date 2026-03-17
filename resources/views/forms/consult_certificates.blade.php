@@ -21,7 +21,7 @@
             <div class="form-group" style="grid-template-columns: 1fr; gap: 10px;">
                 <label class="form-label">Search Criteria</label>
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <select class="form-control" style="max-width: 200px;">
+                    <select class="form-control">
                         <option>Reference Number</option>
                         <option>PIN</option>
                         <option>Date Range</option>
@@ -42,3 +42,5 @@
     </div>
 </div>
 @endsection
+
+

@@ -25,7 +25,7 @@
                     <tr>
                         <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
                         <td class="input-cell" colspan="3">
-                            <select class="form-select-custom" style="width: 250px;" required>
+                            <select class="form-select-custom" required>
                                 <option>Taxpayer</option>
                             </select>
                         </td>
@@ -33,9 +33,9 @@
                     <tr style="background-color: #f9f9f9;">
                         <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A013758466Z" required>
+                            <input type="text" class="form-input-custom" value="A000000000X" required>
                         </td>
-                        <td class="label-cell">Taxpayer Name</td>
+                        <td class="label-cell">TAXPAYER NAME</td>
                         <td class="input-cell">
                             <input type="text" class="form-input-custom" value="David Kiluni Mwaniki" readonly>
                         </td>
@@ -71,7 +71,7 @@
                     <tr>
                         <td class="label-cell">Appellate Body<span class="required-star">*</span></td>
                         <td class="input-cell" colspan="3">
-                            <select class="form-select-custom" style="width: 250px;" required>
+                            <select class="form-select-custom" required>
                                 <option>--Select--</option>
                             </select>
                         </td>
@@ -80,7 +80,7 @@
             </table>
         </div>
 
-        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
             <button type="button" class="btn-custom btn-cancel-red" onclick="window.history.back()">Cancel</button>
             <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
             <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
@@ -88,3 +88,5 @@
     </div>
 </div>
 @endsection
+
+

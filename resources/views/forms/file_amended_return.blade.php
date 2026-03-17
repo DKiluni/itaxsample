@@ -24,12 +24,12 @@
             
              <div class="form-group">
                 <label class="form-label mandatory">Taxpayer PIN</label>
-                <input type="text" class="form-control" value="A001234567Z" readonly style="background: #eee;">
+                <input type="text" class="form-control" value="A000000000X" readonly style="background: #eee;">
             </div>
 
             <div class="form-group">
-                <label class="form-label mandatory">Taxpayer Name</label>
-                <input type="text" class="form-control" value="JOHN DOE" readonly style="background: #eee;">
+                <label class="form-label mandatory">TAXPAYER NAME</label>
+                <input type="text" class="form-control" value="TAXPAYER NAME" readonly style="background: #eee;">
             </div>
             
              <div class="form-group">
@@ -51,3 +51,5 @@
     </div>
 </div>
 @endsection
+
+

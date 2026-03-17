@@ -138,7 +138,7 @@
     margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    /* Subtle separation from tabs */
+    border-radius: 0;
 }
 
 /* Form Body container */
@@ -360,15 +360,7 @@
     border-bottom: none;
 }
 
-.form-header-banner {
-    background: #DA3832;
-    color: #fff;
-    padding: 10px 15px;
-    font-weight: bold;
-    text-align: left;
-    font-size: 1.1rem;
-    border-radius: 0;
-}
+/* Removed duplicate/conflicting form-header-banner definition */
 
 .amendment-tab {
     padding: 8px 20px;
@@ -492,6 +484,7 @@
     color: #fff;
     padding: 8px 15px;
     font-weight: bold;
+    text-align: center;
     font-size: 0.9rem;
     margin-top: 20px;
 }
@@ -1107,10 +1100,12 @@ span.flatpickr-weekday {
 .section-group-title {
     position: absolute;
     top: -10px;
-    left: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     background: #fff;
-    padding: 0 8px;
+    padding: 0 10px;
     font-weight: bold;
     color: #DA3832;
     font-size: 0.85rem;
+    white-space: nowrap;
 }

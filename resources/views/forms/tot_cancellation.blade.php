@@ -39,7 +39,7 @@
                     <tr class="row-agent row-subagent hidden">
                         <td class="label-cell">Applicant PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A000000000p" readonly>
+                            <input type="text" class="form-input-custom" value="A000000000X" readonly>
                         </td>
                     </tr>
                     <tr class="row-agent row-subagent hidden">
@@ -69,7 +69,7 @@
                         </td>
                     </tr>
                     <tr class="row-taxpayer row-agent row-subagent hidden">
-                        <td class="label-cell">Taxpayer Name</td>
+                        <td class="label-cell">TAXPAYER NAME</td>
                         <td class="input-cell">
                             <input type="text" id="taxpayerNameInput" class="form-input-custom" readonly>
                         </td>
@@ -99,12 +99,12 @@
                         <tr>
                             <td class="label-cell">PIN<span class="required-star">*</span></td>
                             <td class="input-cell"><input type="text" class="form-input-custom" value="A000000000X" readonly></td>
-                            <td class="label-cell">Taxpayer Name<span class="required-star">*</span></td>
+                            <td class="label-cell">TAXPAYER NAME<span class="required-star">*</span></td>
                             <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER NAME" readonly></td>
                         </tr>
                         <tr>
                             <td class="label-cell">Email Address<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER@EXAMPLE.COM" readonly></td>
+                            <td class="input-cell"><input type="text" class="form-input-custom" value="taxpayer@example.com" readonly></td>
                             <td class="label-cell">Descriptive Address<span class="required-star">*</span></td>
                             <td class="input-cell">
                                 <textarea class="form-textarea-custom" rows="4" readonly>SAMPLE RESIDENTIAL ADDRESS, NAIROBI, KENYA</textarea>
@@ -242,3 +242,6 @@
     </script>
 @endpush
 @endsection
+
+
+

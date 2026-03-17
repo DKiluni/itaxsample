@@ -18,11 +18,11 @@
             <div class="info-grid">
                 <div class="info-item">
                     <label>PIN</label>
-                    <span>A001234567Z</span>
+                    <span>A000000000X</span>
                 </div>
                 <div class="info-item">
                     <label>Name</label>
-                    <span>JOHN DOE</span>
+                    <span>TAXPAYER NAME</span>
                 </div>
                 <div class="info-item">
                     <label>Station</label>
@@ -73,3 +73,5 @@
     </div>
 </div>
 @endsection
+
+

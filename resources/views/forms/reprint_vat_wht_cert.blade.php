@@ -4,6 +4,8 @@
 @section('header', 'Reprint VAT Withholding Certificate')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 
 @section('content')
@@ -34,7 +36,7 @@
             <tr>
                 <td class="label-cell">Date of Certificate</td>
                 <td class="input-cell">
-                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                 </td>
                 <td class="label-cell">Withholdee PIN</td>
                 <td class="input-cell">
@@ -69,7 +71,7 @@
             </table>
         </div>
 
-        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
             <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
             <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
             <button type="button" class="btn-custom btn-submit-orange">Consult</button>
@@ -77,4 +79,18 @@
     </div>
 </div>
 
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr(".datepicker", {
+                dateFormat: "d/m/Y",
+                allowInput: true,
+                disableMobile: true
+            });
+        });
+    </script>
+@endpush
 @endsection
+
+

@@ -49,9 +49,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="label-cell">Taxpayer Name</td>
+                                <td class="label-cell">TAXPAYER NAME</td>
                                 <td class="input-cell" colspan="3">
-                                    <input type="text" class="form-input-custom" value="DUMMY TAXPAYER NAME" readonly>
+                                    <input type="text" class="form-input-custom" value="TAXPAYER NAME" readonly>
                                 </td>
                             </tr>
                         </tbody>
@@ -488,3 +488,5 @@
 </script>
 @endpush
 @endsection
+
+

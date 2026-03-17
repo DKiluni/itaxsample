@@ -36,9 +36,9 @@
                             <td class="input-cell">
                                 <input type="text" id="taxpayerPin" class="form-input-custom" value="A000000000X" required>
                             </td>
-                            <td class="label-cell">Taxpayer Name</td>
+                            <td class="label-cell">TAXPAYER NAME</td>
                             <td class="input-cell">
-                                <input type="text" id="taxpayerName" class="form-input-custom" value="DUMMY TAXPAYER NAME">
+                                <input type="text" id="taxpayerName" class="form-input-custom" value="TAXPAYER NAME">
                             </td>
                         </tr>
                     </tbody>
@@ -64,7 +64,7 @@
                             <td class="input-cell">
                                 <input type="text" class="form-input-custom" required>
                             </td>
-                            <td class="label-cell">Taxpayer Name</td>
+                            <td class="label-cell">TAXPAYER NAME</td>
                             <td class="input-cell">
                                 <input type="text" class="form-input-custom">
                             </td>
@@ -145,3 +145,5 @@
 </script>
 @endpush
 @endsection
+
+

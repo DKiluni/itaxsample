@@ -24,7 +24,7 @@
             <tr>
                 <td class="label-cell" style="width: 25%;">PIN of Taxpayer</td>
                 <td class="input-cell" style="width: 25%;">
-                    <input type="text" class="form-input-custom" value="A013758466Z" readonly>
+                    <input type="text" class="form-input-custom" value="A000000000X" readonly>
                 </td>
                 <td class="label-cell" style="width: 25%;">Name of Taxpayer</td>
                 <td class="input-cell" style="width: 25%;">
@@ -51,7 +51,7 @@
         </div>
     </fieldset>
 
-    <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 5px; margin-bottom: 15px;">
+    <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
         <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
         <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
         <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
@@ -60,3 +60,5 @@
 </div>
 
 @endsection
+
+

@@ -39,9 +39,9 @@
                             <tr style="background-color: #f9f9f9;">
                                 <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" value="A013758466Z">
+                                    <input type="text" class="form-input-custom" value="A000000000X">
                                 </td>
-                                <td class="label-cell">Taxpayer Name</td>
+                                <td class="label-cell">TAXPAYER NAME</td>
                                 <td class="input-cell">
                                     <input type="text" class="form-input-custom" value="David Kiluni Mwaniki" readonly>
                                 </td>
@@ -197,3 +197,5 @@
 </script>
 @endpush
 @endsection
+
+

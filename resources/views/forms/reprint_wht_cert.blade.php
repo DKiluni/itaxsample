@@ -4,6 +4,8 @@
 @section('header', 'Reprint Withholding Certificate')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 
 @section('content')
@@ -34,7 +36,7 @@
             <tr>
                 <td class="label-cell">Date of Certificate</td>
                 <td class="input-cell">
-                    <input type="text" class="form-input-custom datepicker" style="width: 355px;" placeholder="DD/MM/YYYY" required>
+                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                 </td>
                 <td class="label-cell">Withholdee PIN</td>
                 <td class="input-cell">
@@ -58,4 +60,27 @@
         </div>
     </div>
 </div>
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr(".datepicker", {
+                dateFormat: "d/m/Y",
+                allowInput: true,
+                disableMobile: true
+            });
+
+            // Standard file upload logic
+            document.querySelectorAll('input[type="file"]').forEach(input => {
+                input.addEventListener('change', function() {
+                    const fileName = this.files.length > 0 ? this.files[0].name : 'No file chosen';
+                    const label = this.parentElement.querySelector('span');
+                    if (label) label.textContent = fileName;
+                });
+            });
+        });
+    </script>
+@endpush
 @endsection
+
+

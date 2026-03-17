@@ -19,8 +19,8 @@
                 <input type="text" class="form-control" value="P05XXXXXXXX" disabled>
             </div>
             <div class="form-group">
-                <label class="form-label">Taxpayer Name</label>
-                <input type="text" class="form-control" value="John Doe Enterprises" disabled>
+                <label class="form-label">TAXPAYER NAME</label>
+                <input type="text" class="form-control" value="TAXPAYER NAME Enterprises" disabled>
             </div>
         </div>
 
@@ -73,3 +73,6 @@
     </div>
 </div>
 @endsection
+
+
+

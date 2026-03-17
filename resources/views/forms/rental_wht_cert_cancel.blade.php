@@ -4,6 +4,8 @@
 @section('header', 'Rental Income Withholding Certificate Cancellation')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 
 @section('content')
@@ -28,7 +30,7 @@
                 </td>
                 <td class="label-cell" style="width: 25%;">Payment Date</td>
                 <td class="input-cell">
-                    <input type="text" class="form-input-custom datepicker" style="width: 337px;" placeholder="DD/MM/YYYY" required>
+                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                 </td>
             </tr>
             <tr>
@@ -80,10 +82,10 @@
                     </div>
                 </td>
                 <td class="input-cell" colspan="2" style="vertical-align: middle;">
-                    <div style="display: flex; align-items: center; border: 1px solid #ccc; background-color: #f5f5f5; padding: 2px; width: 250px;">
-                        <div style="background-color: #eaeaea; border: 1px solid #ccc; padding: 2px 5px; cursor: pointer; margin-right: 5px;">Choose File</div>
-                        <span style="color: #666; font-size: 0.9rem;">No ...sen</span>
-                        <input type="file" style="display: none;" required>
+                    <div class="file-upload-custom" style="display: flex; align-items: center; border: 1px solid #ccc; background-color: #f5f5f5; padding: 2px; width: 250px;">
+                        <div class="file-upload-btn" style="background-color: #eaeaea; border: 1px solid #ccc; padding: 2px 5px; cursor: pointer; margin-right: 5px;" onclick="this.nextElementSibling.nextElementSibling.click()">Choose File</div>
+                        <span class="file-upload-name" style="color: #666; font-size: 0.9rem;">No file chosen</span>
+                        <input type="file" style="display: none;" required onchange="this.previousElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen'">
                     </div>
                 </td>
             </tr>
@@ -100,17 +102,28 @@
 </div>
 
 @push('scripts')
-<script>
-    const reasonCancel = document.getElementById('reason_cancel');
-    const charsLeftCancel = document.getElementById('charsLeftCancel');
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr(".datepicker", {
+                dateFormat: "d/m/Y",
+                allowInput: true,
+                disableMobile: true
+            });
 
-    if (reasonCancel && charsLeftCancel) {
-        reasonCancel.addEventListener('input', () => {
-            const remaining = 200 - reasonCancel.value.length;
-            charsLeftCancel.value = remaining;
+            const reasonCancel = document.getElementById('reason_cancel');
+            const charsLeftCancel = document.getElementById('charsLeftCancel');
+
+            if (reasonCancel && charsLeftCancel) {
+                reasonCancel.addEventListener('input', () => {
+                    const remaining = 200 - reasonCancel.value.length;
+                    charsLeftCancel.value = remaining;
+                });
+            }
         });
-    }
-</script>
+    </script>
 @endpush
 
 @endsection
+
+

@@ -4,6 +4,8 @@
 @section('header', 'Withholding Certificate Cancellation')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endpush
 
 @section('content')
@@ -36,7 +38,7 @@
                         </td>
                         <td class="label-cell" style="width: 25%;">Date of Transaction</td>
                         <td class="input-cell" style="width: 25%;">
-                            <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                            <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                         </td>
                     </tr>
                     <tr>
@@ -88,10 +90,10 @@
                 <legend style="font-size: 1rem; font-weight: bold; width: auto; border: none; margin-bottom: 0; padding: 0 5px;">Upload Document</legend>
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
                     <span style="font-weight: 500;">Upload Supporting Document for Cancellation <span class="required-star">*</span></span>
-                    <div style="display: flex; align-items: center; border: 1px solid #ccc; background-color: #f5f5f5; padding: 2px; width: 300px;">
-                        <div style="background-color: #eaeaea; border: 1px solid #ccc; padding: 2px 10px; cursor: pointer; margin-right: 5px;">Choose File</div>
-                        <span style="color: #666; font-size: 0.9rem;">No file chosen</span>
-                        <input type="file" style="display: none;" required>
+                    <div class="file-upload-custom" style="display: flex; align-items: center; border: 1px solid #ccc; background-color: #f5f5f5; padding: 2px; width: 300px;">
+                        <div class="file-upload-btn" style="background-color: #eaeaea; border: 1px solid #ccc; padding: 2px 10px; cursor: pointer; margin-right: 5px;" onclick="this.nextElementSibling.nextElementSibling.click()">Choose File</div>
+                        <span class="file-upload-name" style="color: #666; font-size: 0.9rem;">No file chosen</span>
+                        <input type="file" style="display: none;" required onchange="this.previousElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen'">
                     </div>
                 </div>
                 <div style="color: red; font-size: 0.9rem; margin-bottom: 15px;">
@@ -162,10 +164,10 @@
                 <legend style="font-size: 1rem; font-weight: bold; width: auto; border: none; margin-bottom: 0; padding: 0 5px;">Upload Document</legend>
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
                     <span style="font-weight: 500;">Upload Supporting Document for Cancellation <span class="required-star">*</span></span>
-                    <div style="display: flex; align-items: center; border: 1px solid #ccc; background-color: #f5f5f5; padding: 2px; width: 300px;">
-                        <div style="background-color: #eaeaea; border: 1px solid #ccc; padding: 2px 10px; cursor: pointer; margin-right: 5px;">Choose File</div>
-                        <span style="color: #666; font-size: 0.9rem;">No file chosen</span>
-                        <input type="file" style="display: none;" required>
+                    <div class="file-upload-custom" style="display: flex; align-items: center; border: 1px solid #ccc; background-color: #f5f5f5; padding: 2px; width: 300px;">
+                        <div class="file-upload-btn" style="background-color: #eaeaea; border: 1px solid #ccc; padding: 2px 10px; cursor: pointer; margin-right: 5px;" onclick="this.nextElementSibling.nextElementSibling.click()">Choose File</div>
+                        <span class="file-upload-name" style="color: #666; font-size: 0.9rem;">No file chosen</span>
+                        <input type="file" style="display: none;" required onchange="this.previousElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen'">
                     </div>
                 </div>
                 <div style="color: red; font-size: 0.9rem; margin-bottom: 15px;">
@@ -185,7 +187,32 @@
 </div>
 
 @push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr(".datepicker", {
+            dateFormat: "d/m/Y",
+            allowInput: true,
+            disableMobile: true
+        });
+
+        const reasonSingle = document.getElementById('reason_single');
+        const charsLeftSingle = document.getElementById('charsLeftSingle');
+        if (reasonSingle && charsLeftSingle) {
+            reasonSingle.addEventListener('input', () => {
+                charsLeftSingle.value = 500 - reasonSingle.value.length;
+            });
+        }
+
+        const reasonMulti = document.getElementById('reason_multi');
+        const charsLeftMulti = document.getElementById('charsLeftMulti');
+        if (reasonMulti && charsLeftMulti) {
+            reasonMulti.addEventListener('input', () => {
+                charsLeftMulti.value = 500 - reasonMulti.value.length;
+            });
+        }
+    });
+
     function switchTab(tabId) {
         document.querySelectorAll('.tab-pane').forEach(pane => {
             pane.style.display = 'none';
@@ -203,23 +230,9 @@
             document.getElementById('tab_multiple').classList.add('active');
         }
     }
-
-    const reasonSingle = document.getElementById('reason_single');
-    const charsLeftSingle = document.getElementById('charsLeftSingle');
-    if (reasonSingle && charsLeftSingle) {
-        reasonSingle.addEventListener('input', () => {
-            charsLeftSingle.value = 500 - reasonSingle.value.length;
-        });
-    }
-
-    const reasonMulti = document.getElementById('reason_multi');
-    const charsLeftMulti = document.getElementById('charsLeftMulti');
-    if (reasonMulti && charsLeftMulti) {
-        reasonMulti.addEventListener('input', () => {
-            charsLeftMulti.value = 500 - reasonMulti.value.length;
-        });
-    }
 </script>
 @endpush
 
 @endsection
+
+

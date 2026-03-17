@@ -48,7 +48,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="label-cell">Taxpayer Name</td>
+                        <td class="label-cell">TAXPAYER NAME</td>
                         <td class="input-cell">
                             <input type="text" id="entryTaxpayerName" class="form-input-custom" value="TAXPAYER NAME" readonly>
                         </td>
@@ -56,7 +56,7 @@
                 </tbody>
             </table>
             
-            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
                 <button type="button" id="btnEntryNext" class="btn-custom btn-next-blue">Next</button>
                 <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
             </div>
@@ -89,7 +89,7 @@
                             <td class="input-cell"><input type="text" id="dispPin" class="form-input-custom" readonly style="color: #000000;"></td>
                         </tr>
                         <tr>
-                            <td class="label-cell">Taxpayer Name<span class="required-star">*</span></td>
+                            <td class="label-cell">TAXPAYER NAME<span class="required-star">*</span></td>
                             <td class="input-cell"><input type="text" id="dispName" class="form-input-custom" readonly style="color: #000000;"></td>
                         </tr>
                         <tr>
@@ -134,7 +134,7 @@
                 <button type="button" id="btnKnowConditions" class="btn-custom btn-next-blue">Click Here to Know Conditions For Auto Approval Amendment</button>
             </div>
 
-            <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1;">
+            <div style="display: flex; justify-content: center; gap: 10px; padding: 20px; background: #f1f1f1;">
                 <button class="btn-custom btn-next-blue btn-next" data-next="tab_basic_info">Next</button>
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
             </div>
@@ -218,7 +218,7 @@
                                 <td class="label-cell" style="width: 25% !important;">National Id. Number<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom" value="12345678" style="width: 100%;" required></td>
                                 <td class="label-cell" style="width: 25% !important;">Date of Birth</td>
-                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required></td>
+                                <td class="input-cell" style="width: 25% !important;"><input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required></td>
                             </tr>
                         </tbody>
                     </table>
@@ -324,13 +324,13 @@
                             </tr>
                             <tr>
                                 <td class="label-cell">Mobile Number (2)<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" value="0722345678" style="width: 100%;" required></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="0712345678" style="width: 100%;" required></td>
                                 <td class="label-cell">Mobile Number (3)<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" value="0733345678" style="width: 100%;" required></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="0712345678" style="width: 100%;" required></td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Main Email Address<span class="required-star">*</span></td>
-                                <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER@EXAMPLE.COM" style="width: 100%;" required></td>
+                                <td class="input-cell"><input type="text" class="form-input-custom" value="taxpayer@example.com" style="width: 100%;" required></td>
                                 <td class="label-cell">Secondary Email Address<span class="required-star">*</span></td>
                                 <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER2@EXAMPLE.COM" style="width: 100%;" required></td>
                             </tr>
@@ -576,7 +576,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div style="display: flex; justify-content: center; gap: 5px; margin: 15px 0;">
+                    <div style="display: flex; justify-content: center; gap: 10px; margin: 15px 0;">
                         <button type="button" class="btn-custom" style="background: #28a745; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Add</button>
                         <button type="button" class="btn-custom" style="background: #DA3832; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Clear</button>
                     </div>
@@ -644,7 +644,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div style="display: flex; justify-content: center; gap: 5px; margin: 15px 0;">
+                    <div style="display: flex; justify-content: center; gap: 10px; margin: 15px 0;">
                         <button type="button" class="btn-custom" style="background: #28a745; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Add</button>
                         <button type="button" class="btn-custom" style="background: #DA3832; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Clear</button>
                     </div>
@@ -656,7 +656,7 @@
                                     <th style="padding: 8px; border: 1px solid #fff;">Delete</th>
                                     <th style="padding: 8px; border: 1px solid #fff;">Modify</th>
                                     <th style="padding: 8px; border: 1px solid #fff;">Taxpayer PIN</th>
-                                    <th style="padding: 8px; border: 1px solid #fff;">Taxpayer Name</th>
+                                    <th style="padding: 8px; border: 1px solid #fff;">TAXPAYER NAME</th>
                                     <th style="padding: 8px; border: 1px solid #fff;">Relationship Type</th>
                                 </tr>
                             </thead>
@@ -685,11 +685,11 @@
                             <tr style="border: none;">
                                 <td class="label-cell" style="border: none; width: 40%;">Upload Supporting Document for Registration<span class="required-star">*</span></td>
                                 <td class="input-cell" style="border: none;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div class="file-upload-custom" style="display: flex; align-items: center; gap: 10px;">
                                         <div style="display: flex; align-items: center; border: 1px solid #7f9db9; background: white; height: 24px;">
                                             <button type="button" style="background: #eef; border: none; border-right: 1px solid #7f9db9; padding: 0 8px; font-size: 12px; height: 100%; cursor: pointer;" onclick="this.nextElementSibling.nextElementSibling.click();">Choose File</button>
-                                            <span style="padding: 0 8px; font-size: 12px; color: #000;">No file chosen</span>
-                                            <input type="file" style="display: none;" onchange="this.previousElementSibling.textContent = this.files.length  required> 0 ? this.files[0].name : 'No file chosen';">
+                                            <span class="file-upload-name" style="padding: 0 8px; font-size: 12px; color: #000;">No file chosen</span>
+                                            <input type="file" style="display: none;" required onchange="this.previousElementSibling.textContent = this.files.length > 0 ? this.files[0].name : 'No file chosen';">
                                         </div>
                                     </div>
                                     <div style="color: #DA3832; font-size: 0.8rem; margin-top: 5px;">All file types are allowed. Allowed File Size:-5 MB</div>
@@ -701,7 +701,7 @@
             </div>
             
 
-            <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1;">
+            <div style="display: flex; justify-content: center; gap: 10px; padding: 20px; background: #f1f1f1;">
                 <button class="btn-custom btn-next-blue btn-prev" data-prev="tab_amend_form">Previous</button>
                 <button class="btn-custom btn-next-blue btn-next" data-next="tab_obligation">Next</button>
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
@@ -723,42 +723,42 @@
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Resident</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Non Resident</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax PAYE(for Employer only)</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Income Tax Rent Income (MRI)</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Turnover Tax</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell"><label class="checkbox-item"><input type="checkbox"> Significant Economic Presence Tax</label></td>
                             <td class="input-cell" style="display: flex; align-items: center; justify-content: space-between;">
                                 <span>Registration Date<span class="required-star">*</span></span>
-                                <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                     </tbody>
@@ -857,7 +857,7 @@
             </div>
             </div>
 
-            <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1;">
+            <div style="display: flex; justify-content: center; gap: 10px; padding: 20px; background: #f1f1f1;">
                 <button class="btn-custom btn-next-blue btn-prev" data-prev="tab_obligation">Previous</button>
                 <button class="btn-custom btn-next-blue btn-next" data-next="tab_agent">Next</button>
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
@@ -892,20 +892,20 @@
                             <td class="input-cell"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell">Authorization Date Upto</td>
                             <td class="input-cell">
-                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                             <td colspan="2" style="background-color: transparent; border: none;"></td>
                         </tr>
                     </tbody>
                 </table>
                 
-                <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 10px;">
+                <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
                     <button type="button" class="btn-custom" style="background: #28a745; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Add</button>
                     <button type="button" class="btn-custom" style="background: #DA3832; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Clear</button>
                 </div>
@@ -983,20 +983,20 @@
                             <td class="input-cell"><input type="text" class="form-input-custom" readonly style="width: 100%; background-color: #f5f5f5;"></td>
                             <td class="label-cell">Authorization Date Since<span class="required-star">*</span></td>
                             <td class="input-cell">
-                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="label-cell">Authorization Date Upto</td>
                             <td class="input-cell">
-                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
+                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY" required>
                             </td>
                             <td colspan="2" style="background-color: transparent; border: none;"></td>
                         </tr>
                     </tbody>
                 </table>
                 
-                <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 10px;">
+                <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
                     <button type="button" class="btn-custom" style="background: #28a745; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Add</button>
                     <button type="button" class="btn-custom" style="background: #DA3832; color: #fff; padding: 5px 25px; border-radius: 0; border: none; font-weight: bold;">Clear</button>
                 </div>
@@ -1033,7 +1033,7 @@
             </div>
 
             <!-- Footer Buttons Area matching image -->
-            <div style="display: flex; justify-content: center; gap: 15px; padding: 20px; background: #f1f1f1; margin-top: 10px;">
+            <div style="display: flex; justify-content: center; gap: 10px; padding: 20px; background: #f1f1f1; margin-top: 10px;">
                 <button class="btn-custom btn-next-blue btn-prev" data-prev="tab_income">Previous</button>
                 <button class="btn-custom btn-submit-green btn-submit-final">Submit</button>
             </div>
@@ -1347,3 +1347,5 @@
 </script>
 @endpush
 @endsection
+
+

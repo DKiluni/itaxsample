@@ -25,9 +25,9 @@
                         <td class="input-cell">
                             <input type="text" class="form-input-custom" value="A000000000X" required>
                         </td>
-                        <td class="label-cell">Taxpayer Name<span class="required-star">*</span></td>
+                        <td class="label-cell">TAXPAYER NAME<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="DUMMY TAXPAYER NAME" required>
+                            <input type="text" class="form-input-custom" value="TAXPAYER NAME" required>
                         </td>
                     </tr>
                     <tr>
@@ -91,3 +91,5 @@
     </div>
 </div>
 @endsection
+
+

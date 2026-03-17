@@ -42,15 +42,15 @@
                                 <td class="input-cell">
                                     <input type="text" class="form-input-custom" value="A000000000X" required>
                                 </td>
-                                <td class="label-cell">Taxpayer Name</td>
+                                <td class="label-cell">TAXPAYER NAME</td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" value="DUMMY TAXPAYER NAME">
+                                    <input type="text" class="form-input-custom" value="TAXPAYER NAME">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-cell">Mobile Number<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" class="form-input-custom" value="0700000000" required>
+                                    <input type="text" class="form-input-custom" value="0712345678" required>
                                 </td>
                                 <td class="label-cell">Tax Service Office</td>
                                 <td class="input-cell">
@@ -220,3 +220,5 @@
 </script>
 @endpush
 @endsection
+
+

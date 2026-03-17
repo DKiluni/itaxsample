@@ -61,7 +61,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="label-cell">Taxpayer Name</td>
+                                <td class="label-cell">TAXPAYER NAME</td>
                                 <td class="input-cell">
                                     <input type="text" id="agentTaxpayerName" class="form-input-custom" readonly>
                                 </td>
@@ -87,7 +87,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="label-cell">Taxpayer Name</td>
+                                <td class="label-cell">TAXPAYER NAME</td>
                                 <td class="input-cell">
                                     <input type="text" id="directTaxpayerName" class="form-input-custom" readonly>
                                 </td>
@@ -139,7 +139,7 @@
                             <td id="res_pin" class="input-cell">-</td>
                         </tr>
                         <tr>
-                            <td class="label-cell">Taxpayer Name</td>
+                            <td class="label-cell">TAXPAYER NAME</td>
                             <td id="res_name" class="input-cell">-</td>
                         </tr>
                         <tr>
@@ -208,14 +208,14 @@
             
             if (type === 'Agent') {
                 agentBlock.classList.remove('hidden');
-                agAppPin.value = 'A000000000A';
-                agAppName.value = 'DUMMY AGENT NAME';
+                agAppPin.value = 'A000000000X';
+                agAppName.value = 'TAXPAYER NAME';
                 agTaxPin.value = '';
                 agTaxName.value = '';
             } else if (type === 'Taxpayer') {
                 taxpayerBlock.classList.remove('hidden');
                 txTaxPin.value = 'A000000000X';
-                txTaxName.value = 'DUMMY TAXPAYER NAME';
+                txTaxName.value = 'TAXPAYER NAME';
             }
         });
 
@@ -239,8 +239,8 @@
 
                 // Populate demo taxpayer data
                 document.getElementById('res_pin').innerText = enteredPin || 'A000000000X';
-                document.getElementById('res_name').innerText = 'DUMMY TAXPAYER NAME';
-                document.getElementById('res_email').innerText = 'TAXPAYER@EXAMPLE.COM';
+                document.getElementById('res_name').innerText = 'TAXPAYER NAME';
+                document.getElementById('res_email').innerText = 'taxpayer@example.com';
                 document.getElementById('res_address').innerText = 'SAMPLE RESIDENTIAL ADDRESS, NAIROBI, KENYA';
                 document.getElementById('res_reg_date').innerText = '01/01/2020';
                 document.getElementById('res_type').innerText = 'Individual';
@@ -260,3 +260,6 @@
 </script>
 @endpush
 @endsection
+
+
+

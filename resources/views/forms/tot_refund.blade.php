@@ -18,7 +18,7 @@
             
              <div class="form-group">
                 <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A001234567Z" disabled>
+                <input type="text" class="form-control" value="A000000000X" disabled>
             </div>
             
             <div class="form-group">
@@ -44,3 +44,5 @@
     </div>
 </div>
 @endsection
+
+

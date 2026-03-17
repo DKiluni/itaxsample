@@ -87,7 +87,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
                         <button type="submit" class="btn-custom btn-submit-green">Submit</button>
                     </div>
@@ -102,12 +102,12 @@
                             <tr>
                                 <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                                 <td class="input-cell">
-                                    <input type="text" id="directTaxpayerPin" class="form-input-custom" value="A000000000P" readonly>
+                                    <input type="text" id="directTaxpayerPin" class="form-input-custom" value="A000000000X" readonly>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
                         <button type="submit" class="btn-custom btn-submit-green">Submit</button>
                     </div>
@@ -165,7 +165,7 @@
             <div class="cert-meta">
                 <div><strong>Certificate Date:</strong> <span id="cert_date"></span></div>
                 <div><strong>Personal Identification Number:</strong></div>
-                <div style="font-size: 14px; margin-top: 3px;" id="cert_pin">A000000000P</div>
+                <div style="font-size: 14px; margin-top: 3px;" id="cert_pin">A000000000X</div>
             </div>
 
             <div style="text-align: center; font-size: 12px; margin-bottom: 20px;">
@@ -176,7 +176,7 @@
             <div class="cert-section-title">Taxpayer Information</div>
             <table class="cert-table">
                 <tr>
-                    <th style="width: 40%;">Taxpayer Name</th>
+                    <th style="width: 40%;">TAXPAYER NAME</th>
                     <td id="cert_name"></td>
                 </tr>
                 <tr>
@@ -263,8 +263,8 @@
             
             if (type === 'Agent') {
                 agentBlock.classList.remove('hidden');
-                agAppPin.value = 'A000000000P';
-                agAppName.value = 'DUMMY AGENT NAME';
+                agAppPin.value = 'A000000000X';
+                agAppName.value = 'TAXPAYER NAME';
             } else if (type === 'Taxpayer') {
                 taxpayerBlock.classList.remove('hidden');
             }
@@ -284,7 +284,7 @@
         document.getElementById('viewCertLink').addEventListener('click', function() {
             // Populate fields
             document.getElementById('cert_date').innerText = '01/01/2026';
-            document.getElementById('cert_pin').innerText = 'A000000000P';
+            document.getElementById('cert_pin').innerText = 'A000000000X';
             document.getElementById('cert_name').innerText = '[BLANK]';
             document.getElementById('cert_email').innerText = '[BLANK]';
             document.getElementById('cert_lr').innerText = '';
@@ -328,3 +328,5 @@
 </script>
 @endpush
 @endsection
+
+
