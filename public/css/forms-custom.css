@@ -1550,3 +1550,55 @@ span.flatpickr-weekday {
     opacity: 0.9;
     transform: translateY(-1px);
 }
+
+/* Warning / Alert Panel (Image 1564) */
+.alert-panel {
+    border: 1px solid #DA3832;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.alert-panel-header {
+    background: #DA3832;
+    color: #f1c40f;
+    text-align: center;
+    padding: 12px;
+    font-size: 1.4rem;
+}
+
+.alert-panel-body {
+    padding: 15px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.alert-panel-action {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Pending Liabilities Warning (Image 1629) */
+.liability-warning-banner {
+    background-color: #f8f9fa;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    color: #000;
+}
+
+.table-header-black {
+    background-color: #222 !important;
+    color: #fff !important;
+    text-align: center;
+}
+
+.table-header-black th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    color: #fff;
+}

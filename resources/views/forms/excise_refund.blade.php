@@ -13,8 +13,31 @@
     </div>
 
     <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
+        <div class="liability-warning-banner">
+            Please note that you cannot apply for a tax refund because of liability to be paid. Find below the details of the pending liabilities and then pay before proceeding with the application. Kindly liaise with your respective tax service office for further assistance to be facilitated with the refund application.
+        </div>
+
+        <div class="section-field" style="margin-top: 20px; margin-bottom: 30px;">
+            <div class="section-title-legend">Pending Liabilities</div>
+            <table class="inner-profile-table">
+                <thead class="table-header-black">
+                    <tr>
+                        <th>Obligation Name</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="text-align: center;">No Records Found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-field">
+            <div class="section-title-legend">General Details</div>
             
              <div class="form-group">
                 <label class="form-label mandatory">PIN</label>

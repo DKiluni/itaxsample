@@ -8,17 +8,17 @@
 @endpush
 
 @section('content')
-<div class="form-container" style="padding: 10px;">
-    <div class="unauthorized-v2-container" style="border: none; margin-bottom: 0;">
-        <div class="unauthorized-v2-header">
+<div class="form-container" style="padding: 20px;">
+    <div class="alert-panel">
+        <div class="alert-panel-header">
             <i class="fas fa-exclamation-triangle"></i>
         </div>
-        <div class="unauthorized-v2-body">
+        <div class="alert-panel-body">
             You Do not have Turnover tax (TOT) Obligation.
         </div>
-        <div class="unauthorized-v2-footer" style="padding-bottom: 20px;">
-            <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 25px; border: none; font-weight: bold;" onclick="window.history.back()">Back</button>
-        </div>
+    </div>
+    <div class="alert-panel-action">
+        <button type="button" class="btn-custom btn-cancel-red" onclick="window.history.back()">Cancel</button>
     </div>
 </div>
 @endsection
