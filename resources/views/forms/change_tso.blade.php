@@ -186,8 +186,9 @@
                             </tr>
                         </tbody>
                     </table>
-
-                    <div style="font-weight: bold; margin: 15px 0 10px; color: #DA3832; border-bottom: 1px solid #eee; padding-bottom: 5px;">Supporting Documents</div>
+                </div>
+                <div class="section-field">
+                    <div class="section-title-legend">Supporting Documents</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>

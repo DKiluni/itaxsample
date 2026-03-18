@@ -130,7 +130,7 @@
 
 /* Main Form Container */
 .form-container {
-    border: 1px solid #ccc;
+    border: 1px solid #DA3832;
     background-color: #fff;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -799,133 +799,7 @@
     color: #DA3832;
 }
 
-/* Section Legend Design (Ref. Image 593) */
-.section-field {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    position: relative;
-    margin-top: 30px;
-    background-color: #fff;
-}
-
-.section-title-legend {
-    position: absolute;
-    top: -12px;
-    left: 15px;
-    background: #fff;
-    padding: 0 10px;
-    color: #DA3832;
-    font-weight: bold;
-    font-size: 0.95rem;
-    white-space: nowrap;
-}
-
-/* Global table borders for all forms */
-.inner-profile-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.inner-profile-table td {
-    border: 1px solid #ccc !important;
-    padding: 8px 10px;
-    height: 35px;
-}
-
-/* Wizard Header & Navigation (Ref. Image 691) */
-/* Redundant border removed from .header-wizard-container */
-
-.tabs-nav-row {
-    display: flex;
-    background: #fff;
-    padding: 8px 10px 0 10px;
-    gap: 5px;
-    align-items: flex-end;
-}
-
-.wizard-form-label {
-    background: #DA3832;
-    color: #fff;
-    padding: 8px 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    border-radius: 4px 4px 0 0; /* Rounded top only */
-    margin-bottom: 0;
-}
-
-.tab-item {
-    padding: 8px 15px;
-    background: #f1f3f3;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-    cursor: pointer;
-    font-weight: bold;
-    color: #666;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    transition: all 0.2s;
-}
-
-.tab-item.active {
-    background: #DA3832;
-    color: #fff;
-    border-color: #DA3832;
-}
-
-/* Wizard Specific Banner (Flush below tabs) */
-.form-header-banner-wizard {
-    background: #DA3832;
-    color: #fff;
-    text-align: center;
-    padding: 12px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    border-top: 1px solid #fff; /* Slight separator */
-}
-
-/* Redundant .form-container-red removed */
-
-/* Wizard Content & Panning */
-.tab-content-wrapper {
-    background: #fff;
-    padding: 0;
-}
-
-.tab-pane {
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-/* Wizard Footer & Navigation Buttons */
-.form-footer-wizard {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    background: transparent;
-}
-
-.btn-wizard {
-    padding: 8px 30px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.btn-wizard-next, .btn-wizard-prev { background: #007bff; color: #fff; }
-.btn-wizard-submit { background: #f39c12; color: #fff; }
-.btn-wizard-cancel { background: #DA3832; color: #fff; }
-.btn-wizard-clear { background: #ccc; color: #333; }
+/* Outdated Wizard styles removed to prevent conflicts with Premium Standard at end of file */
 
 /* Modal Styles */
 .modal-overlay {
@@ -1537,7 +1411,8 @@ span.flatpickr-weekday {
 .form-container-red {
     border: 1px solid #da3832;
     padding: 0;
-    border-radius: 8px; /* Fully rounded as per standard */
+    border-radius: 8px;
+    /* Fully rounded as per standard */
     background: #fff;
     margin-bottom: 30px;
     overflow: hidden;
@@ -1581,7 +1456,8 @@ span.flatpickr-weekday {
     gap: 5px;
     padding: 10px 15px 0 15px;
     background: #fff;
-    border-bottom: 1px solid #da3832; /* Separator line between tabs and banner */
+    border-bottom: 1px solid #da3832;
+    /* Separator line between tabs and banner */
 }
 
 .tab-item {
@@ -1597,7 +1473,8 @@ span.flatpickr-weekday {
     display: flex;
     align-items: center;
     transition: all 0.2s;
-    margin-bottom: -1px; /* Overlap the red bottom border of nav-row */
+    margin-bottom: -1px;
+    /* Overlap the red bottom border of nav-row */
     z-index: 1;
 }
 
@@ -1631,4 +1508,45 @@ span.flatpickr-weekday {
 .tab-content-wrapper {
     background: #fff;
     min-height: 300px;
-}
+}
+
+/* Wizard Footer & Navigation Buttons */
+.form-footer-wizard {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: transparent;
+}
+
+.btn-wizard {
+    padding: 10px 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.btn-wizard-next, .btn-wizard-prev { 
+    background: #007bff; 
+    color: #fff; 
+}
+
+.btn-wizard-submit { 
+    background: #f39c12; 
+    color: #fff; 
+}
+
+.btn-wizard-cancel { 
+    background: #DA3832; 
+    color: #fff; 
+}
+
+.btn-wizard-next:hover, .btn-wizard-prev:hover, .btn-wizard-submit:hover, .btn-wizard-cancel:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
