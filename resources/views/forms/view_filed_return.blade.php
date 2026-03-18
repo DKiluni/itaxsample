@@ -3,40 +3,96 @@
 @section('title', 'View Filed Return')
 @section('header', 'View Filed Return')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>View Filed Return</span>
-        <i class="fas fa-search"></i>
-    </div>
+<div id="formSectionContainer">
+    <div class="form-container">
+        <div class="form-header-banner">Consult e-Returns</div>
 
-    <div class="form-body">
-        <div class="search-panel">
-            <div class="form-group" style="grid-template-columns: 1fr; gap: 10px;">
-                <label class="form-label">Search Criteria</label>
-                <div style="display: flex; gap: 10px; align-items: center;">
-                    <select class="form-control" style="max-width: 200px;">
-                        <option>Reference Number</option>
-                        <option>PIN</option>
-                        <option>Date Range</option>
-                    </select>
-                    <input type="text" class="form-control" placeholder="Enter search term...">
-                    <button class="btn-kra btn-kra-primary"><i class="fas fa-search"></i> Consult</button>
-                </div>
+        <div class="form-body form-body-padded">
+            <div class="section-group">
+                <table class="inner-profile-table">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell" style="width: 20%;">Acknowledgement No</td>
+                            <td class="input-cell" style="width: 30%;">
+                                <input type="text" class="form-input-custom">
+                            </td>
+                            <td class="label-cell" style="width: 20%;">Type of Return</td>
+                            <td class="input-cell" style="width: 30%;">
+                                <select class="form-select-custom">
+                                    <option value="">-- Select --</option>
+                                    <option value="Original">Original</option>
+                                    <option value="Amended">Amended</option>
+                                    <option value="Resubmission NSSF">Resubmission NSSF</option>
+                                    <option value="Supplementary">Supplementary</option>
+                                    <option value="Both (Supplementary/Amended)">Both (Supplementary/Amended)</option>
+                                    <option value="Additional Assessment">Additional Assessment</option>
+                                    <option value="Default Assessment">Default Assessment</option>
+                                    <option value="Appended">Appended</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Tax Obligation</td>
+                            <td class="input-cell">
+                                <select class="form-select-custom">
+                                    <option value="">-- Select --</option>
+                                    <option value="Income Tax Withholding">Income Tax Withholding</option>
+                                    <option value="Income Tax - Rent Income (MRI)">Income Tax - Rent Income (MRI)</option>
+                                    <option value="Income Tax - Resident Individual">Income Tax - Resident Individual</option>
+                                    <option value="Income Tax - Non-Resident Individual">Income Tax - Non-Resident Individual</option>
+                                </select>
+                            </td>
+                            <td class="label-cell">Entity Type</td>
+                            <td class="input-cell">
+                                <select class="form-select-custom">
+                                    <option value="">-- Select --</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Return Period from</td>
+                            <td class="input-cell">
+                                <div class="search-filter-row-custom" style="padding: 0;">
+                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY">
+                                </div>
+                            </td>
+                            <td class="label-cell">Return Period to</td>
+                            <td class="input-cell">
+                                <div class="search-filter-row-custom" style="padding: 0;">
+                                    <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
 
-        <div class="form-section">
-            <div class="form-subheader">Search Results</div>
-            
-            <div class="no-results">
-                <i class="fas fa-info-circle"></i> No records found. Please enter search criteria above.
+            <div class="btn-row" style="justify-content: center; gap: 10px; margin-top: 20px;">
+                <button type="submit" class="btn-custom btn-submit-orange">Consult</button>
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.reload()">Clear</button>
             </div>
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr(".datepicker", {
+            dateFormat: "d/m/Y",
+            allowInput: true,
+            disableMobile: true
+        });
+    });
+</script>
+@endpush
 @endsection
+
 
 

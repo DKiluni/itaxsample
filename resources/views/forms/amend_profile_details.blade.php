@@ -16,9 +16,9 @@
 </div>
 
 <!-- 1. Initial Entry Form (Shown first) -->
-<div id="amendmentEntrySection">
-    <div class="form-container">
-        <div class="form-header-banner">
+<div id="amendmentEntrySection" class="header-wizard-container">
+    <div class="form-container-red">
+        <div class="form-header-banner-wizard">
             e-Amendment of Registration
         </div>
         <div class="form-body">
@@ -64,24 +64,23 @@
     </div>
 </div>
 
-<!-- 2. Detailed Amendment Tabs (Hidden initially) -->
-<div id="amendmentTabsSection" class="form-container hidden">
-    <!-- Tab Navigation -->
-    <div class="tabs-container">
-        <div class="tab-item active" data-tab="tab_amend_form">Amendment Form</div>
-        <div class="tab-item disabled" data-tab="tab_basic_info" id="tab_link_basic">(A) Basic_information</div>
-        <div class="tab-item disabled" data-tab="tab_obligation" id="tab_link_obligation">(B) Obligation_Details</div>
-        <div class="tab-item disabled" data-tab="tab_income" id="tab_link_income">(C) Source_Income_Details</div>
-        <div class="tab-item disabled" data-tab="tab_agent" id="tab_link_agent">(F) Agent_Details</div>
-    </div>
-
-    <div class="tab-content-wrapper" id="tabContentContainer">
-        <!-- Tab 1: Amendment Form -->
-        <div class="tab-pane active" id="tab_amend_form">
-            <div class="form-header-banner" style="margin-bottom: 0;">Individual Registration Amendment Form</div>
+<div id="amendmentTabsSection" class="header-wizard-container hidden">
+    <div class="form-container-red">
+        <div class="tabs-nav-row">
+            <div class="tab-item active" data-tab="tab_amend_form">Amendment Form</div>
+            <div class="tab-item disabled" data-tab="tab_basic_info" id="tab_link_basic">(A) Basic_information</div>
+            <div class="tab-item disabled" data-tab="tab_obligation" id="tab_link_obligation">(B) Obligation_Details</div>
+            <div class="tab-item disabled" data-tab="tab_income" id="tab_link_income">(C) Source_Income_Details</div>
+            <div class="tab-item disabled" data-tab="tab_agent" id="tab_link_agent">(F) Agent_Details</div>
+        </div>
+        
+        <div class="tab-content-wrapper" id="tabContentContainer">
+            <!-- Tab 1: Amendment Form -->
+            <div class="tab-pane active" id="tab_amend_form">
+                <div class="form-header-banner-wizard">Individual Registration Amendment Form</div>
             
-            <div class="section-group">
-                <div class="section-group-title">PIN Details</div>
+            <div class="section-field">
+                <div class="section-title-legend">PIN Details</div>
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
@@ -100,8 +99,8 @@
                 </table>
             </div>
 
-            <div class="section-group" id="pinAmendmentSection">
-                <div class="section-group-title" style="color: #DA3832 !important; font-weight: bold !important;">PIN(Please select PIN to view the Sections to be amended)</div>
+            <div class="section-field" id="pinAmendmentSection">
+                <div class="section-title-legend" style="color: #DA3832 !important; font-weight: bold !important;">PIN(Please select PIN to view the Sections to be amended)</div>
                 <div style="padding: 10px 5px;">
                     <label class="checkbox-item">
                         <input type="checkbox" id="mainPinCheckbox"> <strong style="color: #000000;">PIN</strong>
@@ -121,8 +120,8 @@
                 </div>
             </div>
 
-            <div class="section-group">
-                <div class="section-group-title" style="color: #DA3832;">ID (Select ID Number to update your details to match National Registry Bureau records,then click Submit)</div>
+            <div class="section-field">
+                <div class="section-title-legend" style="color: #DA3832;">ID (Select ID Number to update your details to match National Registry Bureau records,then click Submit)</div>
                 <div style="padding: 10px;">
                     <label class="checkbox-item">
                         <input type="checkbox"> <strong>ID Number</strong>
@@ -142,10 +141,10 @@
 
         <!-- Tab 2: Basic Information -->
         <div class="tab-pane" id="tab_basic_info">
-            <div class="form-header-banner" style="margin-bottom: 0;">Basic Information</div>
+            <div class="form-header-banner-wizard" style="margin-bottom: 0;">Basic Information</div>
             
-            <div class="section-group">
-                <div class="section-group-title">Residential Details</div>
+            <div class="section-field">
+                <div class="section-title-legend">Residential Details</div>
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
@@ -164,7 +163,7 @@
             <div id="basic_info_section" class="disabled-section">
                 
                 
-                <div class="section-group">
+                <div class="section-field">
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -178,8 +177,8 @@
                     </table>
                 </div>
 
-                <div class="section-group">
-                    <div class="section-group-title">Employee's Profession</div>
+                <div class="section-field">
+                    <div class="section-title-legend">Employee's Profession</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -210,8 +209,8 @@
                     </table>
                 </div>
 
-                <div class="section-group">
-                    <div class="section-group-title">National Id. Details</div>
+                <div class="section-field">
+                    <div class="section-title-legend">National Id. Details</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -223,8 +222,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="section-group">
-                    <div class="section-group-title">NSSF Number</div>
+                <div class="section-field">
+                    <div class="section-title-legend">NSSF Number</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -235,8 +234,8 @@
                     </table>
                 </div>
 
-                <div class="section-group">
-                    <div class="section-group-title">Individual Data</div>
+                <div class="section-field">
+                    <div class="section-title-legend">Individual Data</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -258,8 +257,8 @@
                     </table>
                 </div>
 
-                <div class="section-group">
-                    <div class="section-group-title">Principal Physical Address</div>
+                <div class="section-field">
+                    <div class="section-title-legend">Principal Physical Address</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -312,8 +311,8 @@
                     </table>
                 </div>
 
-                <div class="section-group">
-                    <div class="section-group-title">Principal Contact Details</div>
+                <div class="section-field">
+                    <div class="section-title-legend">Principal Contact Details</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -339,8 +338,8 @@
                 </div>
 
                 <!-- SMS Notification -->
-                <div class="section-group" id="sms_section">
-                    <div class="section-group-title">SMS Notification</div>
+                <div class="section-field" id="sms_section">
+                    <div class="section-title-legend">SMS Notification</div>
                     <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                         <tbody>
                             <tr style="border: none;">
@@ -356,8 +355,8 @@
             </div>
 
             <!-- Section A : Alternative Address and Contact Details -->
-            <div class="section-group">
-                <div class="section-group-title">Alternative Address and Contact Details</div>
+            <div class="section-field">
+                <div class="section-title-legend">Alternative Address and Contact Details</div>
                 <div id="alt_address_section" class="disabled-section" style="padding: 10px;">
                     <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                         <tbody>
@@ -474,8 +473,8 @@
             </div>
 
             <!-- Bank Account Details -->
-            <div class="section-group">
-                <div class="section-group-title">Bank Account Details</div>
+            <div class="section-field">
+                <div class="section-title-legend">Bank Account Details</div>
                 <div id="bank_details_section" class="disabled-section" style="padding: 10px;">
                     <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                         <tbody>
@@ -533,8 +532,8 @@
             </div>
 
             <!-- Partner/Director/Trustee -->
-            <div class="section-group">
-                <div class="section-group-title">Are you a partner, director or trustee in any other entity?</div>
+            <div class="section-field">
+                <div class="section-title-legend">Are you a partner, director or trustee in any other entity?</div>
                 <div id="entity_section" class="disabled-section" style="padding: 10px;">
                     <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                         <tbody>
@@ -611,8 +610,8 @@
             </div>
 
             <!-- Tributary Bonds -->
-            <div class="section-group">
-                <div class="section-group-title">Tributary Bonds</div>
+            <div class="section-field">
+                <div class="section-title-legend">Tributary Bonds</div>
                 <div id="tributary_section" class="disabled-section" style="padding: 10px;">
                     <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                         <tbody>
@@ -633,7 +632,7 @@
                             <tr>
                                 <td class="label-cell" style="width: 25% !important;">Taxpayer PIN<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
-                                    <input type="text" class="form-input-custom" value="A000000000X" style="border: 1px solid #DA3832; width: 100%;" required>
+                                    <input type="text" class="form-input-custom" value="A000000000X" style="width: 100%;" required>
                                 </td>
                                 <td class="label-cell" style="width: 25% !important;">Relationship Type<span class="required-star">*</span></td>
                                 <td class="input-cell" style="width: 25% !important;">
@@ -677,8 +676,8 @@
             </div>
 
             <!-- Details Of Upload Document -->
-            <div class="section-group">
-                <div class="section-group-title">Details Of Upload Document</div>
+            <div class="section-field">
+                <div class="section-title-legend">Details Of Upload Document</div>
                 <div id="upload_section" class="disabled-section" style="padding: 10px;">
                     <table class="inner-profile-table" style="border: none; margin-bottom: 0;">
                         <tbody>
@@ -713,10 +712,10 @@
 
         <!-- Tab 3: Obligation Details -->
         <div class="tab-pane" id="tab_obligation">
-            <div class="form-header-banner" style="margin-bottom: 0;">Taxpayer Obligation</div>
+            <div class="form-header-banner-wizard" style="margin-bottom: 0;">Taxpayer Obligation</div>
             <div id="obligation_section" class="disabled-section">
-                <div class="section-group">
-                <div class="section-group-title">Income Tax</div>
+                <div class="section-field">
+                <div class="section-title-legend">Income Tax</div>
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
@@ -765,9 +764,9 @@
                 </table>
             </div>
 
-            <div class="section-group">
-                <div class="section-group-title">Turnover Details (Applicable only for VAT/Turnover Tax)</div>
-                <div class="section-group-title">Turnover of Goods/Services of Taxable and Exempt Supplies in Kenya and of Exports</div>
+            <div class="section-field">
+                <div class="section-title-legend">Turnover Details (Applicable only for VAT/Turnover Tax)</div>
+                <div class="section-title-legend">Turnover of Goods/Services of Taxable and Exempt Supplies in Kenya and of Exports</div>
                 <table class="form-table-compact" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
                     <thead class="table-header-black">
                         <tr style="font-size: 0.8rem;">
@@ -819,10 +818,10 @@
 
         <!-- Tab 4: Source Income Details -->
         <div class="tab-pane" id="tab_income">
-            <div class="form-header-banner" style="margin-bottom: 0;">Source Income Details</div>
+            <div class="form-header-banner-wizard" style="margin-bottom: 0;">Source Income Details</div>
             <div id="income_section" class="disabled-section">
-                <div class="section-group">
-                    <div class="section-group-title">What are your sources of income?</div>
+                <div class="section-field">
+                    <div class="section-title-legend">What are your sources of income?</div>
                 <table class="inner-profile-table">
                     <tbody>
                         <tr>
@@ -869,10 +868,10 @@
 
         <!-- Tab 5: Agent Details -->
         <div class="tab-pane" id="tab_agent">
-            <div class="form-header-banner" style="margin-bottom: 0;">Agent Details</div>
+            <div class="form-header-banner-wizard" style="margin-bottom: 0;">Agent Details</div>
             <div id="agent_authorized_section" class="disabled-section">
-                <div class="section-group">
-                    <div class="section-group-title">Tax Agent authorized to submit any application on behalf of Taxpayer</div>
+                <div class="section-field">
+                    <div class="section-title-legend">Tax Agent authorized to submit any application on behalf of Taxpayer</div>
                 <table class="inner-profile-table" style="margin-bottom: 5px;">
                     <tbody>
                         <tr>
@@ -942,8 +941,8 @@
 
             <!-- Section F-II -->
             <div id="intermediary_agent_section" class="disabled-section">
-                <div class="section-group">
-                    <div class="section-group-title">Intermediary Agent to submit returns on behalf of the Taxpayer</div>
+                <div class="section-field">
+                    <div class="section-title-legend">Intermediary Agent to submit returns on behalf of the Taxpayer</div>
                 <table class="inner-profile-table" style="margin-bottom: 5px;">
                     <tbody>
                         <tr>

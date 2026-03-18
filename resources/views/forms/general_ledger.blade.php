@@ -3,107 +3,148 @@
 @section('title', 'General Ledger')
 @section('header', 'General Ledger')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header-banner">
-        General Ledger
+<div id="formSectionContainer">
+    <div class="mandatory-notice">
+        All fields marked with <span class="required-star">*</span> are mandatory
     </div>
 
-    <div class="form-body">
-        
-        <div class="form-section">
-            <div class="form-subheader" style="color: #DA3832; font-weight: bold;">Financial Data Grid</div>
-            <table class="table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; border: 1px solid #ddd;">
-                <thead class="table-header-black" style="text-align: center;">
-                    <tr>
-                        <th style="padding: 8px; border: 1px solid #fff;">Date</th>
-                        <th style="padding: 8px; border: 1px solid #fff;">Description</th>
-                        <th class="text-right" style="padding: 8px; border: 1px solid #fff;">Debit (Kes)</th>
-                        <th class="text-right" style="padding: 8px; border: 1px solid #fff;">Credit (Kes)</th>
-                        <th class="text-right" style="padding: 8px; border: 1px solid #fff;">Balance (Kes)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01/02/2026</td>
-                        <td>Opening Balance</td>
-                        <td class="text-right">0.00</td>
-                        <td class="text-right">5,000.00</td>
-                        <td class="text-right">5,000.00</td>
-                    </tr>
-                    <tr>
-                        <td>15/02/2026</td>
-                        <td>Monthly Installment</td>
-                        <td class="text-right">1,200.00</td>
-                        <td class="text-right">0.00</td>
-                        <td class="text-right">3,800.00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="report-card">
-            <h4 style="margin-bottom: 15px; color: #DA3832; border-bottom: 1px solid #DA3832; padding-bottom: 8px;">Taxpayer Details</h4>
-            <div class="info-grid">
-                <div class="info-item">
-                    <label>PIN</label>
-                    <span>A000000000X</span>
-                </div>
-                <div class="info-item">
-                    <label>Name</label>
-                    <span>TAXPAYER NAME</span>
-                </div>
-                <div class="info-item">
-                    <label>Station</label>
-                    <span>NAIROBI NORTH</span>
-                </div>
-                <div class="info-item">
-                    <label>Status</label>
-                    <span style="color: green; font-weight: bold;">ACTIVE</span>
-                </div>
-            </div>
+    <div class="form-container">
+        <div class="form-header-banner">
+            GENERAL LEDGER
         </div>
 
-        <div class="form-section">
-            <div class="form-subheader" style="color: #DA3832; font-weight: bold;">Report Data</div>
-            <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Select a period to view details.</p>
-             <div class="form-search-filter">
-                <label>From:</label>
-                <input type="date" class="form-control" style="width: auto;">
-                <label>To:</label>
-                <input type="date" class="form-control" style="width: auto;">
-                <button class="btn-kra btn-kra-secondary">Generate Report</button>
+        <div class="form-body form-body-padded">
+            <!-- Taxpayer Detail Section -->
+            <div class="section-group">
+                <div class="section-group-title">Taxpayer Detail</div>
+                <table class="inner-profile-table table-4-col">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell" style="width: 25%;">PIN<span class="required-star">*</span></td>
+                            <td class="input-cell" style="width: 25%;">
+                                <input type="text" class="form-input-custom" value="A013758466Z" readonly>
+                            </td>
+                            <td class="label-cell" style="width: 25%;">Name</td>
+                            <td class="input-cell" style="width: 25%;">
+                                <input type="text" class="form-input-custom" value="DAVID KILUNI MWANIKI" readonly>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            
-            <table class="table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; border: 1px solid #ddd;">
-                <thead class="table-header-black" style="text-align: center;">
-                    <tr>
-                        <th style="padding: 8px; border: 1px solid #fff;">Date</th>
-                        <th style="padding: 8px; border: 1px solid #fff;">Transaction Type</th>
-                        <th style="padding: 8px; border: 1px solid #fff;">Reference</th>
-                        <th style="padding: 8px; border: 1px solid #fff;">Amount (Kes)</th>
-                    </tr>
-                </thead>
-                <tbody style="text-align: center;">
-                    <tr>
-                        <td colspan="4" style="padding: 0;">
-                            <div class="empty-state-container">
-                                <i class="fas fa-file-alt"></i>
-                                <span>No Records Found</span>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <!-- Search Parameters Section -->
+            <div class="section-group">
+                <div class="section-group-title">Search Parameters</div>
+                <table class="inner-profile-table table-4-col">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell" style="width: 25%;">Transaction Type</td>
+                            <td class="input-cell" style="width: 25%;">
+                                <select class="form-input-custom">
+                                    <option value="">--Select--</option>
+                                    <option value="Payment">Payment</option>
+                                    <option value="Penalty">Penalty</option>
+                                    <option value="Interest">Interest</option>
+                                    <option value="Fine">Fine</option>
+                                    <option value="Self Assessment">Self Assessment</option>
+                                    <option value="Additional Assessment">Additional Assessment</option>
+                                    <option value="Default Assessment">Default Assessment</option>
+                                </select>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Account Type<span class="required-star">*</span></td>
+                            <td class="input-cell">
+                                <select class="form-input-custom" required>
+                                    <option value="">--Select--</option>
+                                    <option value="Taxpayer Main Account">Taxpayer Main Account</option>
+                                    <option value="Advance Payment">Advance Payment</option>
+                                    <option value="Payment Plan Installment">Payment Plan Installment</option>
+                                    <option value="Refund Payable Account">Refund Payable Account</option>
+                                    <option value="Refund Application Account">Refund Application Account</option>
+                                    <option value="Taxpayer Legacy Account">Taxpayer Legacy Account</option>
+                                </select>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Tax Head/Sub Head<span class="required-star">*</span></td>
+                            <td class="input-cell">
+                                <select class="form-input-custom" required>
+                                    <option value="">--Select--</option>
+                                    <option value="(0101)Income Tax - Resident Individual">(0101)Income Tax - Resident Individual</option>
+                                    <option value="(0602)Agency Notice">(0602)Agency Notice</option>
+                                    <option value="(0501)Advance Tax">(0501)Advance Tax</option>
+                                    <option value="(0601)Excise Cash Bond">(0601)Excise Cash Bond</option>
+                                    <option value="(0202)VAT on Services Imported">(0202)VAT on Services Imported</option>
+                                    <option value="(0105)Income Tax - Withholding">(0105)Income Tax - Withholding</option>
+                                    <option value="(0109)Income Tax - Transmission of Messages">(0109)Income Tax - Transmission of Messages</option>
+                                    <option value="(0203)VAT - Withholding">(0203)VAT - Withholding</option>
+                                    <option value="(0110)Capital Gain Tax (CGT)">(0110)Capital Gain Tax (CGT)</option>
+                                    <option value="(0112)Income Tax - Amnesty">(0112)Income Tax - Amnesty</option>
+                                    <option value="(0113)Income Tax - Rent Income Withholding">(0113)Income Tax - Rent Income Withholding</option>
+                                    <option value="(0601)National Hospital Insurance Fund(NHIF)">(0601)National Hospital Insurance Fund(NHIF)</option>
+                                    <option value="(0121)TOT for Partner">(0121)TOT for Partner</option>
+                                    <option value="(0144)Digital Service Tax (DST)">(0144)Digital Service Tax (DST)</option>
+                                    <option value="(0108)Income Tax Shipping Tax">(0108)Income Tax Shipping Tax</option>
+                                    <option value="(0145)Digital Asset Tax (DAT)">(0145)Digital Asset Tax (DAT)</option>
+                                    <option value="(0111)Income Tax - Rent Income (MRI)">(0111)Income Tax - Rent Income (MRI)</option>
+                                    <option value="(0403)Import Certificate Fees">(0403)Import Certificate Fees</option>
+                                    <option value="(0147)Significant Economic Presence Tax (SEP)">(0147)Significant Economic Presence Tax (SEP)</option>
+                                </select>
+                            </td>
+                            <td class="label-cell">Tax Period<span class="required-star">*</span></td>
+                            <td class="input-cell">
+                                <select class="form-input-custom" required>
+                                    <option value="">--Select--</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Transaction From Date</td>
+                            <td class="input-cell">
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY">
+                            </td>
+                            <td class="label-cell">Transaction To Date</td>
+                            <td class="input-cell">
+                                <input type="text" class="form-input-custom datepicker" placeholder="DD/MM/YYYY">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="btn-row" style="text-align: center; background-color: #fff; padding: 10px; margin-top: 20px;">
+                <button type="submit" class="btn-custom btn-submit-orange" style="margin-right: 10px;">Show Ledger</button>
+                <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+            </div>
         </div>
-    </div>
-    
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary"><i class="fas fa-print"></i> Print</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-download"></i> Export to Excel</button>
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr(".datepicker", {
+                dateFormat: "d/m/Y",
+                allowInput: true,
+                disableMobile: true
+            });
+        });
+    </script>
+@endpush
+
 
 

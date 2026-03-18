@@ -8,57 +8,59 @@
 @endpush
 
 @section('content')
-<div class="mandatory-notice">
-    All fields marked with <span class="required-star">*</span> are mandatory
-</div>
-
-<div class="form-container">
-    <div class="form-header-banner">
-        UPDATE CONTACT DETAILS
+<div id="formSectionContainer">
+    <div class="mandatory-notice">
+        All fields marked with <span class="required-star">*</span> are mandatory
     </div>
-    <div class="form-body" style="padding: 10px;">
-        <div class="section-group">
-            <div class="section-group-title">Contact Details</div>
-            <table class="inner-profile-table">
-                <tbody>
-                    <tr>
-                        <td class="label-cell" style="width: 25%;">PIN</td>
-                        <td class="input-cell" style="width: 25%;">
-                            <input type="text" class="form-input-custom" value="A000000000X" readonly>
-                        </td>
-                        <td class="label-cell" style="width: 25%;">TAXPAYER NAME</td>
-                        <td class="input-cell" style="width: 25%;">
-                            <input type="text" class="form-input-custom" value="TAXPAYER NAME" readonly>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">Main Email Address <span class="required-star">*</span></td>
-                        <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="taxpayer@example.com">
-                        </td>
-                        <td class="label-cell"></td>
-                        <td class="input-cell"></td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">Mobile Number (1) <span class="required-star">*</span></td>
-                        <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="0712345678">
-                        </td>
-                        <td class="label-cell"></td>
-                        <td class="input-cell"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <div class="form-footer-buttons" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
-            <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
-            <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
-            <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+    <div class="form-container">
+        <div class="form-header-banner">
+            UPDATE CONTACT DETAILS
         </div>
+        <div class="form-body">
+            <div class="section-field">
+                <div class="section-title-legend">Contact Details</div>
+                <table class="inner-profile-table">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell" style="width: 25%; ">PIN</td>
+                            <td class="input-cell" style="width: 25%; ">
+                                <input type="text" class="form-input-custom" value="A000000000X" readonly>
+                            </td>
+                            <td class="label-cell" style="width: 25%; ">TAXPAYER NAME</td>
+                            <td class="input-cell" style="width: 25%; ">
+                                <input type="text" class="form-input-custom" value="TAXPAYER NAME" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell" style="">Main Email Address <span class="required-star">*</span></td>
+                            <td class="input-cell" style="">
+                                <input type="text" class="form-input-custom" value="taxpayer@example.com">
+                            </td>
+                            <td class="label-cell" style=""></td>
+                            <td class="input-cell" style=""></td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell" style="">Mobile Number (1) <span class="required-star">*</span></td>
+                            <td class="input-cell" style="">
+                                <input type="text" class="form-input-custom" value="0712345678">
+                            </td>
+                            <td class="label-cell" style=""></td>
+                            <td class="input-cell" style=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+ 
+            <div class="btn-row">
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
+                <button type="button" class="btn-custom btn-primary-blue" onclick="window.location.reload()">Clear</button>
+                <button type="submit" class="btn-custom btn-submit-orange">Submit</button>
+            </div>
         </div>
     </div>
 </div>
 @endsection
+
 
 

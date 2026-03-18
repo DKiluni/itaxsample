@@ -3,40 +3,49 @@
 @section('title', 'FAQ')
 @section('header', 'FAQ')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>FAQ</span>
-        <i class="fas fa-edit"></i>
-    </div>
-
-    <div class="form-body">
-        
-        <div class="form-section">
-            <div class="form-subheader">Frequently Asked Questions</div>
-            <div class="accordion-item" >
-                <div class="accordion-header">
-                    <span>How do I file my return?</span><i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="accordion-body">To file your return, navigate to the 'Returns' menu and select your tax type. Follow the wizard steps to complete.</div>
+<div id="formSectionContainer">
+    <div class="faq-layout">
+        <div class="faq-main form-container">
+            <div class="form-header-banner">
+                Welcome to iTax Online FAQ
             </div>
-            <div class="accordion-item" >
-                <div class="accordion-header">
-                    <span>When is the deadline?</span><i class="fas fa-chevron-down"></i>
+
+            <div class="form-body form-body-padded">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <ul class="faq-list">
+                            <li><a href="#">Introduction to iTax</a></li>
+                            <li><a href="#">Application of Tax clearance Certificate</a></li>
+                            <li><a href="#">Change of PIN Details and Reset of Password</a></li>
+                            <li><a href="#">Filing Returns in iTax</a></li>
+                            <li><a href="#">Tax Obligation</a></li>
+                            <li><a href="#">Advantages of iTax</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="faq-list">
+                            <li><a href="#">Registration in iTax</a></li>
+                            <li><a href="#">Systems Minimum Requirement</a></li>
+                            <li><a href="#">Making Payment in iTax</a></li>
+                            <li><a href="#">Refunds in Itax</a></li>
+                            <li><a href="#">Other General Questions</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="accordion-body">Most returns are due by the 20th of the following month. Please check specific tax type rules.</div>
+                <div style="height: 150px;"></div>
             </div>
         </div>
-    </div>
-    </div>
 
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+        <div class="faq-sidebar">
+            <h4>Search FAQS:</h4>
+            <input type="text" class="form-input-custom" style="margin-bottom: 10px;">
+            <button class="btn-custom btn-primary-blue" style="padding: 2px 10px; font-size: 0.8rem; min-width: 50px;">Go</button>
+        </div>
     </div>
 </div>
 @endsection
-
-

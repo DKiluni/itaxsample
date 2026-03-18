@@ -35,7 +35,7 @@
 .form-input-custom {
     width: 100%;
     padding: 4px 8px;
-    border: 1px solid #DA3832;
+    border: 1px solid #ccc;
     border-radius: 2px;
     font-family: inherit;
     font-size: 0.8rem;
@@ -116,15 +116,26 @@
     background-color: #0069d9;
 }
 
+.btn-submit-orange {
+    background-color: #f39c12;
+}
+
+.btn-submit-orange:hover {
+    background-color: #e67e22;
+}
+
 .btn-custom:hover {
     opacity: 0.8;
 }
 
 /* Main Form Container */
 .form-container {
-    border: 1px solid #da3832;
+    border: 1px solid #ccc;
     background-color: #fff;
     margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
 }
 
 /* Main Form Header Banner */
@@ -138,12 +149,24 @@
     margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-radius: 0;
 }
 
-/* Form Body container */
-.form-body {
-    padding: 10px 0;
+/* Standardized .form-body is defined at the end of the file */
+
+/* Section Divider (Centered text with lines) */
+.section-divider {
+    display: flex;
+    align-items: center;
+    color: #DA3832;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.section-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    margin-left: 10px;
 }
 
 /* Red Background Header (used for main form sections titles) */
@@ -155,6 +178,279 @@
     text-align: center;
     margin-bottom: 0;
 }
+
+/* Report Problem / Support Form wrapper */
+.support-form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.support-form-title {
+    font-weight: 300;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.support-form-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.support-tips-block {
+    margin-bottom: 25px;
+}
+
+.support-tips-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.support-tips-text {
+    margin-left: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+.support-community-link {
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.support-community-link a {
+    color: #DA3832;
+    text-decoration: none;
+}
+
+/* Form group */
+.form-flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group-custom label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group-custom input[type="text"],
+.form-group-custom input[type="email"],
+.form-group-custom textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-group-custom select {
+    width: 300px;
+    padding: 4px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+/* File upload row */
+.file-upload-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-upload-btn {
+    padding: 2px 8px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.file-upload-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Button row - centered */
+.btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Warning box (Generate Tax Password) */
+.warning-box-dark {
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+.warning-icon-header {
+    background-color: #333;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #000;
+}
+
+.warning-icon-header i {
+    color: #ffc107;
+    font-size: 28px;
+}
+
+.warning-message-body {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-top: 1px solid #000;
+}
+
+/* Survey form inner box */
+.survey-inner-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.survey-question {
+    margin-bottom: 25px;
+}
+
+.survey-question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.checkbox-item {
+    margin-bottom: 4px;
+}
+
+/* Centered single-column form wrapper */
+.form-center-wrapper {
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+/* FAQ page layout */
+.faq-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.faq-main {
+    flex: 1;
+}
+
+.faq-sidebar {
+    width: 200px;
+    border: 1px solid #000;
+    padding: 15px;
+    background: #fff;
+}
+
+.faq-sidebar h4 {
+    color: #DA3832;
+    margin-top: 0;
+    font-size: 0.9rem;
+}
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-list li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.faq-list li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Descriptive text block above a form-container */
+.form-description {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* Date cell with calendar icon */
+.date-input-wrapper {
+    position: relative;
+}
+
+.date-input-wrapper .fa-calendar-alt {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000080;
+}
+
+/* Section header (dark, used inside form body) */
+.section-header-dark {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 15px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* Security stamp / captcha row */
+.security-stamp-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.captcha-box {
+    background: #f0f0f0;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.captcha-icon {
+    color: #28a745;
+}
+
+.captcha-question {
+    color: #DA3832;
+    font-weight: bold;
+}
+
+/* Input limited width */
+.input-sm {
+    width: 100px !important;
+}
+
+/* Character count block */
+.char-count {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Form body padded */
+.form-body-padded {
+    padding: 20px;
+}
+
 
 /* Reprint / Download Specific */
 .download-container {
@@ -503,6 +799,134 @@
     color: #DA3832;
 }
 
+/* Section Legend Design (Ref. Image 593) */
+.section-field {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+    background-color: #fff;
+}
+
+.section-title-legend {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: #fff;
+    padding: 0 10px;
+    color: #DA3832;
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* Global table borders for all forms */
+.inner-profile-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inner-profile-table td {
+    border: 1px solid #ccc !important;
+    padding: 8px 10px;
+    height: 35px;
+}
+
+/* Wizard Header & Navigation (Ref. Image 691) */
+/* Redundant border removed from .header-wizard-container */
+
+.tabs-nav-row {
+    display: flex;
+    background: #fff;
+    padding: 8px 10px 0 10px;
+    gap: 5px;
+    align-items: flex-end;
+}
+
+.wizard-form-label {
+    background: #DA3832;
+    color: #fff;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px 4px 0 0; /* Rounded top only */
+    margin-bottom: 0;
+}
+
+.tab-item {
+    padding: 8px 15px;
+    background: #f1f3f3;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #666;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.tab-item.active {
+    background: #DA3832;
+    color: #fff;
+    border-color: #DA3832;
+}
+
+/* Wizard Specific Banner (Flush below tabs) */
+.form-header-banner-wizard {
+    background: #DA3832;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-top: 1px solid #fff; /* Slight separator */
+}
+
+/* Redundant .form-container-red removed */
+
+/* Wizard Content & Panning */
+.tab-content-wrapper {
+    background: #fff;
+    padding: 0;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Wizard Footer & Navigation Buttons */
+.form-footer-wizard {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: transparent;
+}
+
+.btn-wizard {
+    padding: 8px 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn-wizard-next, .btn-wizard-prev { background: #007bff; color: #fff; }
+.btn-wizard-submit { background: #f39c12; color: #fff; }
+.btn-wizard-cancel { background: #DA3832; color: #fff; }
+.btn-wizard-clear { background: #ccc; color: #333; }
+
 /* Modal Styles */
 .modal-overlay {
     position: fixed;
@@ -823,7 +1247,7 @@ span.flatpickr-weekday {
 .form-textarea-custom {
     width: 100%;
     padding: 6px 10px;
-    border: 1px solid #DA3832;
+    border: 1px solid #ccc;
     border-radius: 2px;
     font-family: inherit;
     font-size: 0.9rem;
@@ -1092,7 +1516,7 @@ span.flatpickr-weekday {
 .section-group {
     border: 1px solid #ddd;
     padding: 15px 10px 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     position: relative;
     border-radius: 4px;
 }
@@ -1100,12 +1524,111 @@ span.flatpickr-weekday {
 .section-group-title {
     position: absolute;
     top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 15px;
     background: #fff;
     padding: 0 10px;
-    font-weight: bold;
     color: #DA3832;
-    font-size: 0.85rem;
+    font-weight: bold;
+    font-size: 0.95rem;
     white-space: nowrap;
 }
+
+/* Red Form Container (Standardized) */
+.form-container-red {
+    border: 1px solid #da3832;
+    padding: 0;
+    border-radius: 8px; /* Fully rounded as per standard */
+    background: #fff;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.form-body {
+    padding: 15px 20px;
+}
+
+/* Legend-style Section Fields (Standardized) */
+.section-field {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 30px 20px 20px 20px;
+    border-radius: 4px;
+    position: relative;
+    background-color: #fff;
+}
+
+.section-title-legend {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: #fff;
+    padding: 0 10px;
+    color: #DA3832;
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* Wizard Layout (Premium Standard - Image 1378) */
+.header-wizard-container {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.tabs-nav-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    padding: 10px 15px 0 15px;
+    background: #fff;
+    border-bottom: 1px solid #da3832; /* Separator line between tabs and banner */
+}
+
+.tab-item {
+    padding: 8px 20px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+    margin-bottom: -1px; /* Overlap the red bottom border of nav-row */
+    z-index: 1;
+}
+
+.tab-item.active {
+    background: #DA3832;
+    color: #fff;
+    border-color: #DA3832 !important;
+    font-weight: bold;
+    height: 40px;
+    margin-bottom: -1px;
+    z-index: 5;
+}
+
+.tab-item.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-header-banner-wizard {
+    background: #DA3832;
+    color: #fff;
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+
+.tab-content-wrapper {
+    background: #fff;
+    min-height: 300px;
+}

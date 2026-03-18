@@ -3,46 +3,25 @@
 @section('title', 'ITR for Employment Income Only (Simplified)')
 @section('header', 'ITR for Employment Income Only (Simplified)')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>ITR for Employment Income Only (Simplified)</span>
-        <i class="fas fa-edit"></i>
-    </div>
-
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A000000000X" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
-            </div>
+<div class="form-container" style="padding: 10px;">
+    <div class="unauthorized-v2-container" style="border: none; margin-bottom: 0;">
+        <div class="unauthorized-v2-header">
+            <i class="fas fa-exclamation-triangle"></i>
         </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+        <div class="unauthorized-v2-body">
+            You Do not have ITR for Employment Income Only Obligation.
+        </div>
+        <div class="unauthorized-v2-footer" style="padding-bottom: 20px;">
+            <button type="button" class="btn-custom" style="background-color: #000; color: #fff; padding: 5px 25px; border: none; font-weight: bold;" onclick="window.history.back()">Back</button>
+        </div>
     </div>
 </div>
 @endsection
+
 
 

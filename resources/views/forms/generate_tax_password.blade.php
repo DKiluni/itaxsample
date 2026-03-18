@@ -3,46 +3,31 @@
 @section('title', 'Generate Tax Type Specific Password')
 @section('header', 'Generate Tax Type Specific Password')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Generate Tax Type Specific Password</span>
-        <i class="fas fa-edit"></i>
-    </div>
+<div id="formSectionContainer">
+    <div class="form-container">
+        <div class="form-header-banner">
+            Generate Tax Type Specific Password
+        </div>
 
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A000000000X" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
+        <div class="form-body form-body-padded">
+            <div class="warning-box-dark">
+                <div class="warning-icon-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="warning-message-body">
+                    This facility is not available for Individual Taxpayers.
+                </div>
             </div>
 
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
+            <div class="btn-row">
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.history.back()">Back</button>
             </div>
         </div>
     </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
-    </div>
 </div>
 @endsection
-
-

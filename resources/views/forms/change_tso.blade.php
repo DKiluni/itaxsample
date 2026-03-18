@@ -14,25 +14,25 @@
     </div>
 </div>
 
-<div class="form-container">
-    <!-- Tab Navigation -->
-    <div class="tabs-container">
-        <div class="tso-tab-btn tso-tab-active" id="tab_a" onclick="showSectionA()">Section A</div>
-        <div class="tso-tab-btn tso-tab-inactive" id="tab_b" onclick="showSectionB()">Section B</div>
+<div class="form-container-red">
+    <div class="header-wizard-container" style="margin-top: 0;">
+        <div class="tabs-nav-row">
+            <div class="tab-item active" id="tab_a" onclick="showSectionA()">Section A</div>
+            <div class="tab-item" id="tab_b" onclick="showSectionB()">Section B</div>
+        </div>
+        <div class="form-header-banner-wizard">
+            Change Of TSO Application Form
+        </div>
     </div>
 
-    <div class="form-header-banner">
-        Change Of TSO Application Form
-    </div>
-
-    <div class="form-body" style="padding: 0;">
+    <div class="form-body">
 
         <div class="tab-content-wrapper" style="min-height: auto;">
             
             <!-- Section A -->
             <div id="section_a">
-                <div class="section-group">
-                    <div class="section-group-title">Taxpayer Details</div>
+                <div class="section-field">
+                    <div class="section-title-legend">Taxpayer Details</div>
                     <table class="inner-profile-table" style="margin-bottom: 20px;">
                         <tbody>
                             <tr>
@@ -56,8 +56,9 @@
                             </tr>
                         </tbody>
                     </table>
-
-                    <div style="font-weight: bold; margin: 15px 0 10px; color: #DA3832; border-bottom: 1px solid #eee; padding-bottom: 5px;">Current Station Details</div>
+                </div>
+                <div class="section-field">
+                    <div class="section-title-legend">Current Station Details</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -96,8 +97,8 @@
 
             <!-- Section B -->
             <div id="section_b" style="display: none;">
-                <div class="section-group">
-                    <div class="section-group-title">New Station Details</div>
+                <div class="section-field">
+                    <div class="section-title-legend">New Station Details</div>
                     <table class="inner-profile-table">
                         <tbody>
                             <tr>
@@ -193,7 +194,7 @@
                                 <td class="label-cell" style="width: 40%;">Upload Supporting Document for TSO Change<span class="required-star">*</span></td>
                                 <td class="input-cell">
                                     <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="display: flex; align-items: center; border: 1px solid #7f9db9; background: white; height: 26px;">
+                                        <div style="display: flex; align-items: center; background: white; height: 26px;">
                                             <button type="button" style="background: #eef; border: none; border-right: 1px solid #7f9db9; padding: 0 10px; font-size: 12px; height: 100%; cursor: pointer;" onclick="document.getElementById('tsoDocFixed').click();">Choose File</button>
                                             <span id="tsoDocNameFixed" style="padding: 0 10px; font-size: 12px; color: #000;">No file chosen</span>
                                             <input type="file" id="tsoDocFixed" style="display: none;" onchange="document.getElementById('tsoDocNameFixed').textContent = this.files.length  required> 0 ? this.files[0].name : 'No file chosen';">
@@ -219,15 +220,15 @@
 @push('scripts')
 <script>
     function showSectionA() {
-        document.getElementById('tab_a').className = 'tso-tab-btn tso-tab-active';
-        document.getElementById('tab_b').className = 'tso-tab-btn tso-tab-inactive';
+        document.getElementById('tab_a').className = 'tab-item active';
+        document.getElementById('tab_b').className = 'tab-item';
         document.getElementById('section_a').style.display = 'block';
         document.getElementById('section_b').style.display = 'none';
     }
 
     function showSectionB() {
-        document.getElementById('tab_a').className = 'tso-tab-btn tso-tab-inactive';
-        document.getElementById('tab_b').className = 'tso-tab-btn tso-tab-active';
+        document.getElementById('tab_a').className = 'tab-item';
+        document.getElementById('tab_b').className = 'tab-item active';
         document.getElementById('section_a').style.display = 'none';
         document.getElementById('section_b').style.display = 'block';
     }

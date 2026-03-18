@@ -460,7 +460,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 30px;
     overflow: hidden;
-    border: 1px solid #DA3832;
+    border: 1px solid #ddd;
 }
 
 .form-header {
