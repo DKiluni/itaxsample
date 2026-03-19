@@ -7,23 +7,26 @@
 @endpush
 
 @section('content')
-<div style="max-width: 900px; margin: 30px auto;">
-    <div class="form-container-red" style="padding: 40px 20px;">
-        <div class="alert-panel" style="max-width: 700px; margin: 0 auto;">
-            <div class="alert-panel-header">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
-            <div class="alert-panel-body">
-                <div class="row">
-                    <div class="col-md-6"><strong>PIN:</strong> A000000000X</div>
-                    <div class="col-md-6"><strong>Name:</strong> TAXPAYER NAME</div>
+<div class="form-container-red" style="margin-top: 50px;">
+    <div class="amendment-banner-wizard">
+        Tax Agent Registration
+    </div>
+
+    <div class="form-body">
+        <div class="section-group">
+            <div class="section-group-title">Not Available</div>
+            <div style="padding: 20px; text-align: center; font-weight: bold; font-size: 1.1rem; color: #333;">
+                <i class="fas fa-exclamation-triangle" style="color: #DA3832; font-size: 2rem; margin-bottom: 15px; display: block;"></i>
+                <div style="margin-bottom: 20px;">
+                    <strong>PIN:</strong> A000000000X &nbsp;&nbsp;&nbsp; <strong>Name:</strong> TAXPAYER NAME
                 </div>
                 This facility is not available for Individual Taxpayers.
             </div>
         </div>
-        <div style="text-align: center; margin-top: 25px;">
-            <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'" style="border-radius: 4px; padding: 8px 30px;">Cancel</button>
-        </div>
+    </div>
+
+    <div class="form-footer-grey-area">
+        <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
     </div>
 </div>
 @endsection

@@ -1,24 +1,29 @@
 @extends('layouts.app')
 
-@section('title', 'Excise Service License - Not Allowed')
+@section('title', 'Import Certificate Application - Not Allowed')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
 @endpush
 
 @section('content')
-<div style="max-width: 900px; margin: 30px auto;">
-    <div class="not-allowed-panel">
-        <div class="not-allowed-header">
-            <i class="fas fa-check-circle"></i>
-            <span>Not Allowed</span>
-        </div>
-        <div class="not-allowed-body">
-            Please apply for Tax Compliance Certificate before proceeding with this application.
+<div class="form-container-red" style="margin-top: 50px;">
+    <div class="amendment-banner-wizard">
+        Import Certificate Application
+    </div>
+
+    <div class="form-body">
+        <div class="section-group">
+            <div class="section-group-title">Not Allowed</div>
+            <div style="padding: 20px; text-align: center; font-weight: bold; font-size: 1.1rem; color: #333;">
+                <i class="fas fa-exclamation-triangle" style="color: #DA3832; font-size: 2rem; margin-bottom: 15px; display: block;"></i>
+                Please apply for Tax Compliance Certificate before proceeding with this application.
+            </div>
         </div>
     </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'" style="border-radius: 4px; padding: 8px 30px;">Back</button>
+
+    <div class="form-footer-grey-area">
+        <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
     </div>
 </div>
 @endsection

@@ -77,13 +77,33 @@
     display: inline-block;
 }
 
+.btn-submit-orange,
+.btn-cancel-red,
+.btn-primary-blue,
+.btn-submit-green,
+.btn-next-green,
+.btn-prev-green,
+.btn-next-blue,
+.btn-add-blue,
+.btn-custom {
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 30px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
 .btn-submit-orange {
     background-color: #f39c12;
-    /* Orange */
 }
 
 .btn-submit-orange:hover {
     background-color: #e67e22;
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .btn-cancel-red {
@@ -92,28 +112,36 @@
 
 .btn-cancel-red:hover {
     background-color: #b32a26;
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
+.btn-submit-green,
 .btn-next-green,
-.btn-prev-green,
-.btn-submit-green {
+.btn-prev-green {
     background-color: #28a745;
 }
 
+.btn-submit-green:hover,
 .btn-next-green:hover,
-.btn-prev-green:hover,
-.btn-submit-green:hover {
+.btn-prev-green:hover {
     background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
+.btn-primary-blue,
 .btn-next-blue,
-.btn-add-blue,
-.btn-primary-blue {
+.btn-add-blue {
     background-color: #007bff;
 }
 
-.btn-primary-blue:hover {
+.btn-primary-blue:hover,
+.btn-next-blue:hover,
+.btn-add-blue:hover {
     background-color: #0069d9;
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .btn-submit-orange {
@@ -129,11 +157,12 @@
 }
 
 /* Main Form Container */
-.form-container {
+.form-container,
+.form-container-red {
     border: 1px solid #DA3832;
     background-color: #fff;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 15px; /* More rounded */
     padding: 0;
     overflow: hidden;
 }
@@ -889,7 +918,7 @@
     border-radius: 4px;
     overflow: hidden;
     margin-top: 20px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .warning-header {
@@ -945,7 +974,11 @@
 
 .service-item {
     display: flex;
-    align-items: flex-start; gap: 15px; margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #eee;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
 }
 
 .service-label {
@@ -1572,7 +1605,7 @@ span.flatpickr-weekday {
 
 /* Legend-style Section Group */
 .section-group {
-    border: 1px solid #DA3832;
+    border: 1px solid #ccc;
     padding: 15px 10px 10px;
     margin-top: 30px;
     position: relative;
@@ -1598,7 +1631,17 @@ span.flatpickr-weekday {
     padding: 0;
     margin-top: 10px;
     background-color: #fff;
-    border-radius: 0; /* Match Amend Profile sharp corners for outer container if needed, or 8px if that's the standard */
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.form-footer-grey-area {
+    background-color: #f1f1f1;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid #ccc;
 }
 
 .form-body {
@@ -1714,22 +1757,26 @@ span.flatpickr-weekday {
     transition: all 0.2s;
 }
 
-.btn-wizard-next, .btn-wizard-prev { 
-    background: #007bff; 
-    color: #fff; 
+.btn-wizard-next,
+.btn-wizard-prev {
+    background: #007bff;
+    color: #fff;
 }
 
-.btn-wizard-submit { 
-    background: #f39c12; 
-    color: #fff; 
+.btn-wizard-submit {
+    background: #f39c12;
+    color: #fff;
 }
 
-.btn-wizard-cancel { 
-    background: #DA3832; 
-    color: #fff; 
+.btn-wizard-cancel {
+    background: #DA3832;
+    color: #fff;
 }
 
-.btn-wizard-next:hover, .btn-wizard-prev:hover, .btn-wizard-submit:hover, .btn-wizard-cancel:hover {
+.btn-wizard-next:hover,
+.btn-wizard-prev:hover,
+.btn-wizard-submit:hover,
+.btn-wizard-cancel:hover {
     opacity: 0.9;
     transform: translateY(-1px);
 }
@@ -1739,6 +1786,8 @@ span.flatpickr-weekday {
     border: 1px solid #DA3832;
     background: #fff;
     margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .alert-panel-header {
@@ -1788,9 +1837,11 @@ span.flatpickr-weekday {
 
 /* Warning / Not Allowed Panel (Image 953) */
 .not-allowed-panel {
-    border: 1px solid #000;
+    border: 1px solid #DA3832; /* Changed to red as requested */
     background: #f8f9fa;
     margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .not-allowed-header {
@@ -1807,7 +1858,8 @@ span.flatpickr-weekday {
 }
 
 .not-allowed-header i {
-    color: #8bc34a; /* Green check icon color */
+    color: #8bc34a;
+    /* Green check icon color */
     font-size: 1.2rem;
 }
 
@@ -1890,4 +1942,4 @@ span.flatpickr-weekday {
     margin: 0;
     border-radius: 0;
     text-transform: uppercase;
-}
+}

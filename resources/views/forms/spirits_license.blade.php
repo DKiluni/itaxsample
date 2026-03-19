@@ -2,46 +2,56 @@
 
 @section('title', 'Spirits & Illuminating Kerosene License')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Spirits & Illuminating Kerosene License</span>
-        <i class="fas fa-edit"></i>
+<div class="mandatory-notice">
+    All fields marked with * are mandatory
+</div>
+
+<div class="form-container-red">
+    <div class="amendment-banner-wizard">
+        Spirits & Illuminating Kerosene License
     </div>
 
     <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A000000000X" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
-            </div>
+        <div class="section-group">
+            <div class="section-group-title">General Details</div>
+            <table class="inner-table-custom">
+                <tbody>
+                    <tr>
+                        <td class="label-bg" style="width: 25%;">PIN<span style="color: red;">*</span></td>
+                        <td class="input-bg" style="width: 25%;">
+                            <input type="text" value="A000000000X" class="form-input-custom" readonly>
+                        </td>
+                        <td class="label-bg" style="width: 25%;">Reference<span style="color: red;">*</span></td>
+                        <td class="input-bg" style="width: 25%;">
+                            <input type="text" class="form-input-custom" placeholder="Enter Reference">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-bg">Description</td>
+                        <td colspan="3">
+                            <textarea class="form-input-custom" rows="5" placeholder="Enter description..."></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-bg">Attachment</td>
+                        <td colspan="3">
+                            <input type="file" class="form-input-custom">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+    <div class="form-footer-grey-area">
+        <button type="button" class="btn-primary-blue">Reset</button>
+        <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
+        <button type="button" class="btn-submit-orange">Submit</button>
     </div>
 </div>
 @endsection
-
-
