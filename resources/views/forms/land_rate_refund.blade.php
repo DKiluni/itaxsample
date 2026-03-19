@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Land Rent Refund Application Form')
-@section('header', 'Land Rent Refund Application Form')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

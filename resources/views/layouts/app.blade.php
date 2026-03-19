@@ -336,7 +336,7 @@
     <!-- Main Content Wrapper -->
     <div class="main-wrapper">
         <div class="page-header">
-            <h2 class="page-title">@yield('header', 'Welcome')</h2>
+            <h4 class="page-title">@yield('title', 'Welcome')</h4>
         </div>
         
         <!-- Dynamic Content -->

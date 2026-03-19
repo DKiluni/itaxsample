@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Installment Adjustment Voucher Application Form')
-@section('header', 'Installment Adjustment Voucher Application Form')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
@@ -12,16 +11,13 @@
     All fields marked with <span class="required-star">*</span> are mandatory
 </div>
  
-<div class="form-container-red">
-    <!-- Step 1: Landing -->
-    <div id="step1_landing">
+<div id="step1_landing" class="header-wizard-container">
+    <div class="form-container-red">
+        <div class="form-header-banner-wizard" style="text-transform: uppercase;">
+            INSTALLMENT ADJUSTMENT VOUCHER
+        </div>
         <div class="form-body">
-            <table class="inner-profile-table" style="margin-bottom: 0;">
-                <thead>
-                    <tr>
-                        <th colspan="2" class="table-header-black" style="text-align: left; padding-left: 10px;">Installment Adjustment Voucher</th>
-                    </tr>
-                </thead>
+            <table class="inner-profile-table">
                 <tbody>
                     <tr>
                         <td class="label-cell" style="width: 50%;">Type<span class="required-star">*</span></td>
@@ -38,7 +34,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="label-cell">Taxpayer Name<span class="required-star">*</span></td>
+                        <td class="label-cell">Taxpayer Name</td>
                         <td class="input-cell">
                             <input type="text" class="form-input-custom" value="DAVID KILUNI MWANIKI" readonly style="width: auto; min-width: 200px;">
                         </td>
@@ -46,15 +42,16 @@
                 </tbody>
             </table>
             
-            <div style="display: flex; justify-content: center; gap: 10px; padding: 20px 0;">
-                <button type="button" class="btn-custom" onclick="window.location.href='{{ route('dashboard') }}'" style="background-color: #000; color: #fff; padding: 6px 30px; border: none; font-weight: bold;">Back</button>
-                <button type="button" class="btn-custom" onclick="showWizard();" style="background-color: #000; color: #fff; padding: 6px 30px; border: none; font-weight: bold;">Next</button>
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px; padding-bottom: 20px;">
+                <button type="button" class="btn-custom" onclick="showWizard();" style="background-color: #007bff; color: #fff; padding: 6px 30px; border-radius: 4px; border: none; font-weight: bold;">Next</button>
+                <button type="button" class="btn-custom btn-wizard-cancel" onclick="window.location.href='{{ route('dashboard') }}'" style="background-color: #dc3545; color: #fff; padding: 6px 30px; border-radius: 4px; border: none; font-weight: bold;">Cancel</button>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Step 2: Wizard -->
-    <div id="step2_wizard" style="display: none;">
+<!-- Step 2: Wizard -->
+<div id="step2_wizard" class="form-container-red" style="display: none;">
         <div class="header-wizard-container">
             <div class="tabs-nav-row">
                 <div class="tab-item active" data-tab="tab_basic_info">Basic Info</div>

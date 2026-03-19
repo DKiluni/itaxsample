@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Rent Income Withholding Agent Cancellation')
-@section('header', 'Rent Income Withholding Agent Cancellation')
 
 
 

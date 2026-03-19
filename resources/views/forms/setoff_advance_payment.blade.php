@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Setoff Advance Payment')
-@section('header', 'Setoff Advance Payment')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

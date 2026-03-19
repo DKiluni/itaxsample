@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Close Advance Payment for Export or Ship Stores')
-@section('header', 'Close Advance Payment for Export or Ship Stores')
 
 
 

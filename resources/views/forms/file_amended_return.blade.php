@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'File Amended Return')
-@section('header', 'File Amended Return Filing')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

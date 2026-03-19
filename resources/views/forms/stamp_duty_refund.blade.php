@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Stamp Duty Refund')
-@section('header', 'Stamp Duty Refund Application Form')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

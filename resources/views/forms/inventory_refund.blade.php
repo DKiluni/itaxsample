@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Inventory Refund')
-@section('header', 'Inventory Refund')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

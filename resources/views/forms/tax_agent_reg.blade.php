@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Tax Agent Registration')
-@section('header', 'Tax Agent Registration')
 
 
 

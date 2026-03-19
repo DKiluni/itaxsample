@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'View Sent Messages')
-@section('header', 'View Sent Messages')
 
 
 

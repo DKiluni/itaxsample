@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Objection Application WHT VAT')
-@section('header', 'Objection Application WHT VAT')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

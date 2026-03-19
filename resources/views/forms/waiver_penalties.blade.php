@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Apply for Waiver of Penalties and Interests')
-@section('header', 'Apply for Waiver of Penalties and Interests')
 
 
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Value Added Tax Application')
-@section('header', 'Value Added Tax Application')
 
 
 

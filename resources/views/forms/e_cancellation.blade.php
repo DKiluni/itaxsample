@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'e-Cancellation')
-@section('header', 'e-Cancellation')
 
 
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Consult Reprint Acknowledge Receipt')
-@section('header', 'Consult Reprint Acknowledge Receipt')
 
 
 

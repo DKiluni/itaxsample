@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Reprint PIN Certificate')
-@section('header', 'Reprint PIN Certificate')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'General Ledger Report for Tax Rep')
-@section('header', 'General Ledger Report for Tax Rep')
 
 
 

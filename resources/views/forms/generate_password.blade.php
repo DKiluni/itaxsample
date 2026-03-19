@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Generate Tax Specific Password')
-@section('header', 'Generate Tax Specific Password')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

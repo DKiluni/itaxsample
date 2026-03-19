@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Rental Income Withholding Certificate Cancellation')
-@section('header', 'Rental Income Withholding Certificate Cancellation')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
 @endpush

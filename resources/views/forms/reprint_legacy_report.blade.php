@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Reprint Legacy Migration Balance Report')
-@section('header', 'Reprint Legacy Migration Balance Report')
 
 
 

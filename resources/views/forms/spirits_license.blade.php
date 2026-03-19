@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Spirits & Illuminating Kerosene License')
-@section('header', 'Spirits & Illuminating Kerosene License')
 
 
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Change Accounting Period')
-@section('header', 'Change Accounting Period')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

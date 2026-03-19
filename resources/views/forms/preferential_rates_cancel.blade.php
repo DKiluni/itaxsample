@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Preferential Tax Rate Cancellation')
-@section('header', 'Preferential Tax Rate Cancellation')
 
 
 

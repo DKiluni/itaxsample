@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Objection Application')
-@section('header', 'Objection Application')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

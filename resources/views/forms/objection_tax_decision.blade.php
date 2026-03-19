@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Objection to Tax Decision')
-@section('header', 'Objection to Tax Decision')
 
 
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Turnover Tax Cancellation')
-@section('header', 'Turnover Tax Cancellation')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Consultation of Previous Payments')
-@section('header', 'Consultation of Previous Payments')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

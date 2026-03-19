@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'VAT Withholding Exemption')
-@section('header', 'VAT Withholding Exemption')
 
 
 

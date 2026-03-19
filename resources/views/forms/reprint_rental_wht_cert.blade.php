@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Reprint Rental Income Withholding Certificate')
-@section('header', 'Reprint Rental Income Withholding Certificate')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
     <!-- Flatpickr CSS -->

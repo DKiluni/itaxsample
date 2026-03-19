@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'IT Exemption')
-@section('header', 'IT Exemption')
 
 
 

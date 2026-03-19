@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Account Details')
-@section('header', 'Account Details')
 
 
 

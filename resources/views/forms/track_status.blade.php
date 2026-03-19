@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Track Status of Application')
-@section('header', 'Track Status of Application')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

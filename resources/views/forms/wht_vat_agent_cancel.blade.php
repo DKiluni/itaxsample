@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Withholding VAT Agent Cancellation')
-@section('header', 'Withholding VAT Agent Cancellation')
 
 
 

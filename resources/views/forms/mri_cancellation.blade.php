@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'MRI Cancellation')
-@section('header', 'MRI Cancellation')
 
 
 

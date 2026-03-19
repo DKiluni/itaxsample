@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'e-Reactivation')
-@section('header', 'e-Reactivation')
 
 
 

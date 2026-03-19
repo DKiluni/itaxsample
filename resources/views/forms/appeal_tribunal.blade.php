@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Notice of intention to Appeal')
-@section('header', 'Notice of intention to Appeal')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

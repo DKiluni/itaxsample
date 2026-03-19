@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'PIN Registration')
-@section('header', 'Taxpayer Registration')
 
 @section('content')
 <div class="form-container">

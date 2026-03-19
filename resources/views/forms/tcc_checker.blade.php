@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'TCC Checker')
-@section('header', 'TCC Checker')
 
 
 

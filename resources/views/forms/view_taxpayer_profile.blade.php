@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'View Taxpayer Profile')
-@section('header', 'Tax Payer Profile')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

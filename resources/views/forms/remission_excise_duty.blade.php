@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Remission of Excise Duty on Denatured Spirit')
-@section('header', 'Remission of Excise Duty on Denatured Spirit')
 
 
 

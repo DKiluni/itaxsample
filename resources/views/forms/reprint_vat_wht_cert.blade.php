@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Reprint VAT Withholding Certificate')
-@section('header', 'Reprint VAT Withholding Certificate')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
     <!-- Flatpickr CSS -->

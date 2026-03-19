@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'WHT Checker')
-@section('header', 'WHT Checker')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

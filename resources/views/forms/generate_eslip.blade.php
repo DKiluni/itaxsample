@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Generate E-Slip for Previous Registration')
-@section('header', 'Generate E-Slip for Previous Registration')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'VAT Return')
-@section('header', 'Value Added Tax (VAT) Return Filing')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

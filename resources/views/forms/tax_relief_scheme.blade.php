@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Tax Relief Scheme')
-@section('header', 'Tax Relief Scheme')
 
 
 

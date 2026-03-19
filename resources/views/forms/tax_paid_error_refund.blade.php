@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Refund Application for Tax Paid In Error')
-@section('header', 'Refund Application for Tax Paid In Error')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

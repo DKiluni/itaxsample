@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Turnover tax (TOT) (Simplified)')
-@section('header', 'Turnover tax (TOT) (Simplified)')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

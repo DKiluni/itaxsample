@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'File Nil Return')
-@section('header', 'File Nil Return Filing')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

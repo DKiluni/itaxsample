@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Update Contact Details')
-@section('header', 'Update Contact Details')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

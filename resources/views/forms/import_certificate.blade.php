@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Import Certificate Application')
-@section('header', 'Import Certificate Application')
 
 
 

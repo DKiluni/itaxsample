@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Application for Tax Compliance Certificate')
-@section('header', 'Application for Tax Compliance Certificate')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
 @endpush

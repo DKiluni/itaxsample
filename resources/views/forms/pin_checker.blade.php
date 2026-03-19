@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'PIN Checker')
-@section('header', 'PIN Checker')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

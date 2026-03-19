@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'View Filed Return')
-@section('header', 'View Filed Return')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

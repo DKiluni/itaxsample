@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Turnover Tax Refund Application Form')
-@section('header', 'Turnover Tax Refund Application Form')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

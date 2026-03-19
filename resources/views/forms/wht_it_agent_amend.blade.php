@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Withholding IT Agent Amendment')
-@section('header', 'Withholding IT Agent Amendment')
 
 @section('content')
 <div class="form-container">

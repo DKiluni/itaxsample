@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'ADR Application')
-@section('header', 'ADR Application')
 
 
 

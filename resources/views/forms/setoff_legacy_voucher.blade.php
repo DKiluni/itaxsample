@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Setoff Legacy Credit Voucher')
-@section('header', 'Setoff Legacy Credit Voucher')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

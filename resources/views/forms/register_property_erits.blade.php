@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Register/Update Property in eRits')
-@section('header', 'Register/Update Property in eRits')
 
 
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Consult and Reprint Acknowledgement Receipt and Certificates')
-@section('header', 'Consult and Reprint Acknowledgement Receipt and Certificates')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
 @endpush

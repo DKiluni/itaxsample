@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'TCC/Exemption Checker')
-@section('header', 'TCC/Exemption Checker')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

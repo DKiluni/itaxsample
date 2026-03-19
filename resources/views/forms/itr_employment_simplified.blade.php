@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'ITR for Employment Income Only (Simplified)')
-@section('header', 'ITR for Employment Income Only (Simplified)')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

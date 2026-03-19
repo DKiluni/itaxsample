@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Rent Income Withholding Agent Amendment')
-@section('header', 'Rent Income Withholding Agent Amendment')
 
 @section('content')
 <div class="form-container">

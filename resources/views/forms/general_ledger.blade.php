@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'General Ledger')
-@section('header', 'General Ledger')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

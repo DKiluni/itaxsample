@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Management Sub Agents')
-@section('header', 'Management Sub Agents')
 
 
 

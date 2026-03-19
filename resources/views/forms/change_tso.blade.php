@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Change Tax Service Office')
-@section('header', 'Change Tax Service Office')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">

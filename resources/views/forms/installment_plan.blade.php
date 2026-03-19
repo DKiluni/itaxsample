@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Apply for Installment Plan')
-@section('header', 'Apply for Installment Plan')
 
 
 

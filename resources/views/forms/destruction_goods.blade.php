@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Application for Destruction of Excisable Goods')
-@section('header', 'Application for Destruction of Excisable Goods')
 
 
 

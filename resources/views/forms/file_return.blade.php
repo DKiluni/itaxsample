@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'File Return')
-@section('header', 'File Return')
 
 
 

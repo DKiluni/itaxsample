@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Download PAYE CSV')
-@section('header', 'Download PAYE CSV Filing')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
