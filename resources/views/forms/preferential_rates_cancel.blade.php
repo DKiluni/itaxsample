@@ -2,46 +2,57 @@
 
 @section('title', 'Preferential Tax Rate Cancellation')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Preferential Tax Rate Cancellation</span>
-        <i class="fas fa-edit"></i>
+<div class="mandatory-notice">
+    All fields marked with * are mandatory
+</div>
+
+<div class="form-container-red">
+    <div class="amendment-banner-wizard">
+        Preferential Tax Rate Cancellation
     </div>
 
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A000000000X" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
-            </div>
-        </div>
+    <div class="section-group">
+        <div class="section-group-title">Taxpayer Details</div>
+        <table class="inner-table-custom">
+            <tbody>
+                <tr>
+                    <td class="label-bg" style="width: 25%;">PIN<span style="color: red;">*</span></td>
+                    <td class="input-bg" style="width: 25%;">
+                        <input type="text" value="A000000000X" class="form-input-custom" readonly>
+                    </td>
+                    <td class="input-bg" style="width: 25%; font-weight: bold; background: #f8f9fa;">
+                        TAXPAYER NAME
+                    </td>
+                    <td class="input-bg" style="width: 25%;">
+                        <input type="text" value="TAXPAYER NAME" class="form-input-custom" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-bg">Main Email Address<span style="color: red;">*</span></td>
+                    <td class="input-bg">
+                        <input type="text" value="taxpayer@example.com" class="form-input-custom">
+                    </td>
+                    <td class="label-bg" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td class="label-bg">Mobile Number (1)<span style="color: red;">*</span></td>
+                    <td class="input-bg">
+                        <input type="text" value="0712345678" class="form-input-custom">
+                    </td>
+                    <td class="label-bg" colspan="2"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+    <div style="text-align: center; margin-top: 20px; padding-bottom: 20px;">
+        <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'" style="border-radius: 4px; padding: 8px 30px;">Back</button>
+        <button type="button" class="btn-submit-orange" style="border-radius: 4px; padding: 8px 30px; margin-left: 10px;">Submit</button>
     </div>
 </div>
 @endsection
-
-

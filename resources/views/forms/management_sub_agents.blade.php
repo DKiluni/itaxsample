@@ -1,48 +1,29 @@
 @extends('layouts.app')
 
-@section('title', 'Management Sub Agents')
+@section('title', 'Management Sub Agents - Not Available')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Management Sub Agents</span>
-        <i class="fas fa-file-invoice"></i>
-    </div>
-
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">Information</div>
-            <p style="color: #666; margin-bottom: 20px;">This is the dedicated form for <strong>Management Sub Agents</strong>.</p>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">National ID / PIN</label>
-                <input type="text" class="form-control" placeholder="Enter identification number">
+<div style="max-width: 900px; margin: 30px auto;">
+    <div class="form-container-red" style="padding: 40px 20px;">
+        <div class="alert-panel" style="max-width: 700px; margin: 0 auto;">
+            <div class="alert-panel-header">
+                <i class="fas fa-exclamation-triangle"></i>
             </div>
-
-            <div class="form-group">
-                <label class="form-label mandatory">Name</label>
-                <input type="text" class="form-control" placeholder="As per KRA records">
-            </div>
-            
-             <div class="form-group">
-                <label class="form-label">Reference Number</label>
-                <input type="text" class="form-control" placeholder="If applicable">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Details</label>
-                <textarea class="form-control" rows="4" placeholder="Enter more details here..."></textarea>
+            <div class="alert-panel-body">
+                <div class="row">
+                    <div class="col-md-6"><strong>PIN:</strong> A000000000X</div>
+                    <div class="col-md-6"><strong>Name:</strong> TAXPAYER NAME</div>
+                </div>
+                This facility is not available for Individual Taxpayers.
             </div>
         </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary"><i class="fas fa-arrow-left"></i> Back</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-save"></i> Save Changes</button>
+        <div style="text-align: center; margin-top: 25px;">
+            <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'" style="border-radius: 4px; padding: 8px 30px;">Cancel</button>
+        </div>
     </div>
 </div>
 @endsection
-
-

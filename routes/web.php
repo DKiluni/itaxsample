@@ -110,6 +110,7 @@ Route::get('/forms/tot-refund', function () { return view('forms.tot_refund'); }
 Route::get('/forms/track-status', function () { return view('forms.track_status'); })->name('forms.track-status');
 Route::get('/forms/vat-refund', function () { return view('forms.vat_refund'); })->name('forms.vat-refund');
 Route::get('/forms/vat-return', function () { return view('forms.vat_return'); })->name('forms.vat-return');
+Route::get('/forms/vat-application', function () { return view('forms.vat_application'); })->name('forms.vat-application');
 Route::get('/forms/vat-wht-exemption', function () { return view('forms.vat_wht_exemption'); })->name('forms.vat-wht-exemption');
 Route::get('/forms/view-sent-messages', function () { return view('forms.view_sent_messages'); })->name('forms.view-sent-messages');
 Route::get('/forms/waiver-penalties', function () { return view('forms.waiver_penalties'); })->name('forms.waiver-penalties');

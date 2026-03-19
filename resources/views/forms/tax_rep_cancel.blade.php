@@ -1,47 +1,25 @@
 @extends('layouts.app')
 
-@section('title', 'Tax Representative Registration')
+@section('title', 'Tax Representative Cancellation - Not Available')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Tax Representative Registration</span>
-        <i class="fas fa-edit"></i>
-    </div>
-
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A000000000X" disabled>
+<div style="max-width: 900px; margin: 30px auto;">
+    <div class="form-container-red" style="padding: 40px 20px;">
+        <div class="alert-panel" style="max-width: 700px; margin: 0 auto;">
+            <div class="alert-panel-header">
+                <i class="fas fa-exclamation-triangle"></i>
             </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
+            <div class="alert-panel-body">
+                This facility is not available for Individual Taxpayers.
             </div>
         </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
+        <div style="text-align: center; margin-top: 25px;">
+            <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'" style="border-radius: 4px; padding: 8px 30px;">Cancel</button>
+        </div>
     </div>
 </div>
 @endsection
-
-

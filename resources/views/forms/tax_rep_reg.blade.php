@@ -1,56 +1,29 @@
 @extends('layouts.app')
 
-@section('title', 'Tax Representative Registration')
+@section('title', 'Tax Representative Registration - Not Available')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Tax Representative Registration</span>
-        <i class="fas fa-tasks"></i>
-    </div>
-
-    <div class="form-body">
-        
-                <div class="wizard-steps">
-            <div class="step-item active"><div class="step-circle">1</div><div class="step-label">Specifics</div></div>
-            <div class="step-item"><div class="step-circle">2</div><div class="step-label">Declaration</div></div>
-        </div>
-        <!-- Wizard Navigation -->
-        
-    
-        <div class="form-section">
-            <div class="form-subheader">Step 1: Basic Information</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">Taxpayer PIN</label>
-                <input type="text" class="form-control" value="A000000000X" readonly style="background: #eee;">
+<div style="max-width: 900px; margin: 30px auto;">
+    <div class="form-container-red" style="padding: 40px 20px;">
+        <div class="alert-panel" style="max-width: 700px; margin: 0 auto;">
+            <div class="alert-panel-header">
+                <i class="fas fa-exclamation-triangle"></i>
             </div>
-
-            <div class="form-group">
-                <label class="form-label mandatory">TAXPAYER NAME</label>
-                <input type="text" class="form-control" value="TAXPAYER NAME" readonly style="background: #eee;">
-            </div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">Type of Application</label>
-                <select class="form-control">
-                    <option>Select Type...</option>
-                    <option>New Application</option>
-                    <option>Renewal</option>
-                    <option>Amendment</option>
-                </select>
+            <div class="alert-panel-body">
+                <div class="row">
+                    <div class="col-md-6"><strong>PIN:</strong> A000000000X</div>
+                    <div class="col-md-6"><strong>Name:</strong> TAXPAYER NAME</div>
+                </div>
+                This facility is not available for Individual Taxpayers.
             </div>
         </div>
-    </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary" onclick="window.location.href='{{ route('dashboard') }}'"><i class="fas fa-times-circle"></i> Cancel</button>
-        <button class="btn-kra btn-kra-primary">Next <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-left: 5px;"></i></button>
+        <div style="text-align: center; margin-top: 25px;">
+            <button type="button" class="btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'" style="border-radius: 4px; padding: 8px 30px;">Cancel</button>
+        </div>
     </div>
 </div>
 @endsection
-
-

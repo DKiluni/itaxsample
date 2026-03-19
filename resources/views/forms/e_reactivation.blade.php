@@ -2,44 +2,108 @@
 
 @section('title', 'e-Reactivation')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+    <style>
+        .red-fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 4px;
+        }
+        .red-legend {
+            color: #DA3832;
+            font-weight: bold;
+            font-size: 1rem;
+            width: auto;
+            padding: 0 5px;
+            border: none;
+            margin-bottom: 0;
+        }
+    </style>
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>e-Reactivation</span>
-        <i class="fas fa-edit"></i>
+<div id="formSectionContainer">
+    <div class="mandatory-notice">
+        All fields marked with <span class="required-star">*</span> are mandatory
     </div>
 
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A000000000X" disabled>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
+    <div class="form-container" style="border: 1px solid #DA3832; border-radius: 4px; box-shadow: none; overflow: hidden; margin-top: 5px;">
+        <div class="form-header-banner" style="background-color: #DA3832; color: #fff; text-align: center; padding: 10px; font-weight: bold; font-size: 1.1rem; text-transform: uppercase;">
+            E-REACTIVATION
+        </div>
 
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
+        <div class="form-body" style="padding: 5px;">
+            <!-- Applicant Information Section -->
+            <fieldset class="red-fieldset">
+                <legend class="red-legend">Applicant Information</legend>
+                <table class="inner-profile-table">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell" style="width: 30%;">Applicant Type<span class="required-star">*</span></td>
+                            <td class="input-cell" style="width: 70%;">
+                                <select class="form-select-custom" style="width: 250px;">
+                                    <option value="">--Select--</option>
+                                    <option value="">Agent</option>
+                                    <option value="">Legal Representative</option>
+                                    <option value="">Sub Agent</option>
+                                    <option value="">Tax Payer</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
+                            <td class="input-cell">
+                                <input type="text" class="form-input-custom" style="width: 250px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Taxpayer Name</td>
+                            <td class="input-cell">
+                                <input type="text" class="form-input-custom" style="width: 250px;" readonly>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <!-- Reactivation Scope Section -->
+            <fieldset class="red-fieldset">
+                <legend class="red-legend">PIN /Tax Obligation(s) to be Reactivated<span class="required-star">*</span></legend>
+                <table class="inner-profile-table">
+                    <thead>
+                        <tr>
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: left; width: 50%;">Tax Obligation(s)</th>
+                            <th style="padding: 8px; border: 1px solid #ccc; text-align: left; width: 50%;">Reason for Reactivation<span class="required-star">*</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="obligations-tbody">
+                        <!-- Dynamic rows go here -->
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <!-- Upload Document Section -->
+            <fieldset class="red-fieldset">
+                <legend class="red-legend">Details Of Upload Document</legend>
+                <div style="border: 1px solid #eee; padding: 15px; background-color: #fafafa;">
+                    <div style="font-weight: bold; margin-bottom: 10px; font-size: 0.95rem;">Upload Document</div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <span style="font-size: 0.9rem;">Upload Supporting Document for Registration<span class="required-star">*</span></span>
+                        <input type="file" style="font-size: 0.9rem;">
+                    </div>
+                    <div style="color: #DA3832; font-size: 0.85rem; font-weight: 500;">
+                        All file types are allowed. Allowed File Size:-5 MB
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-footer" style="background: transparent; border-top: none; padding-bottom: 20px; display: flex; justify-content: center; gap: 15px;">
+                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
+                <button type="button" class="btn-custom btn-submit-orange">Submit</button>
             </div>
         </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
     </div>
 </div>
 @endsection

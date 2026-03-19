@@ -2,46 +2,34 @@
 
 @section('title', 'Rent Income Withholding Agent Cancellation')
 
-
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
+    <style>
+        .red-fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 4px;
+        }
+    </style>
+@endpush
 
 @section('content')
-<div class="form-container">
-    <div class="form-header">
-        <span>Rent Income Withholding Agent Cancellation</span>
-        <i class="fas fa-edit"></i>
+<div class="form-container" style="border: 1px solid #DA3832; border-radius: 4px; box-shadow: none; overflow: hidden; margin-top: 20px;">
+    <div class="form-header-banner" style="background-color: #DA3832; color: #fff; text-align: center; padding: 10px; font-weight: bold; font-size: 1.1rem; text-transform: uppercase;">
+        Rent Income Withholding Agent Cancellation
     </div>
 
-    <div class="form-body">
-        <div class="form-section">
-            <div class="form-subheader">General Details</div>
-            
-             <div class="form-group">
-                <label class="form-label mandatory">PIN</label>
-                <input type="text" class="form-control" value="A000000000X" disabled>
+    <div class="form-body" style="padding: 5px;">
+        <fieldset class="red-fieldset">
+            <div style="text-align: center; padding: 25px 15px 15px 15px; font-size: 15px; color: #333;">
+                The PIN is not registered as Rent Income Withholding Agent. Please consult KRA Station/ nearest Itax Support Centre to be assisted.
             </div>
-            
-            <div class="form-group">
-                <label class="form-label mandatory">Reference</label>
-                <input type="text" class="form-control" placeholder="Enter Reference">
-            </div>
+        </fieldset>
 
-            <div class="form-group">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="form-label">Attachment</label>
-                <input type="file" class="form-control">
-            </div>
+        <div class="form-footer" style="background: transparent; border-top: none; padding-bottom: 20px; display: flex; justify-content: center; gap: 15px;">
+            <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
         </div>
-    </div>
-
-    <div class="form-footer">
-        <button class="btn-kra btn-kra-secondary">Reset</button>
-        <button class="btn-kra btn-kra-primary"><i class="fas fa-check-circle"></i> Submit</button>
     </div>
 </div>
 @endsection
-
-

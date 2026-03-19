@@ -799,6 +799,190 @@
     color: #DA3832;
 }
 
+/* Specialized Excise Forms Styles */
+.form-container-red {
+    border: 1px solid #DA3832;
+    padding: 1px;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.black-section-header {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.inner-table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.inner-table-custom td {
+    padding: 8px 12px;
+    border: 1px solid #eee;
+}
+
+.label-bg {
+    background-color: #fcfcfc;
+    width: 25%;
+    font-size: 0.95rem;
+}
+
+.input-bg {
+    width: 25%;
+}
+
+.data-table-custom {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table-custom th {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border: 1px solid #444;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.data-table-custom td {
+    padding: 8px;
+    border: 1px solid #eee;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Tabbed Interface (Black/Gray Theme) */
+.tab-btn {
+    padding: 10px 25px;
+    border: 1px solid #ccc;
+    background: #eee;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.tab-btn.active {
+    background: #333;
+    color: #fff;
+    border-bottom: none;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Warning Layout (Not Allowed) */
+.warning-container {
+    border: 1px solid #DA3832;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.warning-header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.warning-header i {
+    color: #28a745;
+    font-size: 1.5rem;
+}
+
+.warning-body {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.warning-footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Miscellaneous Helpers */
+.sub-header-center {
+    background-color: #f0f0f0;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #eee;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.services-list {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start; gap: 15px; margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #eee;
+}
+
+.service-label {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.btn-black {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 35px;
+    border: none;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-black:hover {
+    opacity: 0.8;
+}
+
+.upload-section-padded {
+    background-color: #fcfcfc;
+    padding: 15px;
+    border: 1px solid #eee;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.upload-info-text {
+    font-size: 0.9rem;
+    color: #333;
+    font-style: italic;
+}
+
 /* Outdated Wizard styles removed to prevent conflicts with Premium Standard at end of file */
 
 /* Modal Styles */
@@ -1388,11 +1572,12 @@ span.flatpickr-weekday {
 
 /* Legend-style Section Group */
 .section-group {
-    border: 1px solid #ddd;
+    border: 1px solid #DA3832;
     padding: 15px 10px 10px;
     margin-top: 30px;
     position: relative;
     border-radius: 4px;
+    background-color: #fff;
 }
 
 .section-group-title {
@@ -1403,19 +1588,17 @@ span.flatpickr-weekday {
     padding: 0 10px;
     color: #DA3832;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     white-space: nowrap;
 }
 
 /* Red Form Container (Standardized) */
 .form-container-red {
-    border: 1px solid #da3832;
+    border: 1px solid #DA3832;
     padding: 0;
-    border-radius: 8px;
-    /* Fully rounded as per standard */
-    background: #fff;
-    margin-bottom: 30px;
-    overflow: hidden;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 0; /* Match Amend Profile sharp corners for outer container if needed, or 8px if that's the standard */
 }
 
 .form-body {
@@ -1602,3 +1785,109 @@ span.flatpickr-weekday {
     font-weight: bold;
     color: #fff;
 }
+
+/* Warning / Not Allowed Panel (Image 953) */
+.not-allowed-panel {
+    border: 1px solid #000;
+    background: #f8f9fa;
+    margin-bottom: 20px;
+}
+
+.not-allowed-header {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.not-allowed-header i {
+    color: #8bc34a; /* Green check icon color */
+    font-size: 1.2rem;
+}
+
+.not-allowed-body {
+    padding: 15px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-top: 1px solid #000;
+    background: #fff;
+}
+
+/* Premium Amendment Form Layout Styles */
+.form-footer-amendment {
+    background-color: #f1f1f1;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.btn-amendment-next {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-amendment-next:hover {
+    background-color: #0056b3;
+}
+
+.btn-amendment-submit {
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-amendment-submit:hover {
+    background-color: #218838;
+}
+
+.btn-amendment-back {
+    background-color: #DA3832;
+    color: #fff;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-amendment-back:hover {
+    background-color: #b32a26;
+}
+
+.amendment-banner-wizard {
+    background: #DA3832;
+    color: #fff;
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+}

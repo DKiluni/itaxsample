@@ -77,7 +77,7 @@
                              <a href="{{ route('forms.e-reactivation') }}" class="dropdown-item" role="menuitem" tabindex="0"><span class="nav-label">e-Reactivation</span></a>
                             <a href="{{ route('forms.e-dormancy') }}" class="dropdown-item" role="menuitem" tabindex="0"><span class="nav-label">e-Dormance</span></a>
                             <a href="{{ route('forms.e-cancellation') }}" class="dropdown-item" role="menuitem" tabindex="0"><span class="nav-label">e-Cancellation</span></a>
-                            <a href="{{ route('forms.vat-return') }}" class="dropdown-item" role="menuitem" tabindex="0"><span class="nav-label">Value Added Tax Application</span></a>
+                            <a href="{{ route('forms.vat-application') }}" class="dropdown-item" role="menuitem" tabindex="0"><span class="nav-label">Value Added Tax Application</span></a>
                             <div class="has-dropdown sub-dropdown" role="navigation" aria-label="Excise, Remissions & Import Certificate submenu">
                                 <button class="dropdown-item" role="menuitem" aria-haspopup="true" aria-expanded="false">
                                     <span class="nav-label">Excise, Remissions & Import Certificate</span>

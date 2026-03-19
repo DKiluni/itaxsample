@@ -1,246 +1,148 @@
 @extends('layouts.app')
 
-@section('title', 'Turnover Tax Cancellation')
+@section('title', 'TOT Cancellation')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/forms-custom.css') }}">
-    <!-- Flatpickr CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        .red-fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 4px;
+        }
+        .red-legend {
+            color: #DA3832;
+            font-weight: bold;
+            font-size: 1rem;
+            width: auto;
+            padding: 0 5px;
+            border: none;
+            margin-bottom: 0;
+        }
+    </style>
 @endpush
 
 @section('content')
-<div id="totFormSection">
-    <div class="mandatory-notice">
-        All fields marked with <span class="required-star">*</span> are mandatory
+<div class="mandatory-notice" style="color: red; font-weight: bold; margin-bottom: 10px;">
+    All fields marked with <span class="required-star">*</span> are mandatory
+</div>
+
+<div class="form-container" style="border: 1px solid #DA3832; border-radius: 4px; box-shadow: none; overflow: hidden; margin-top: 5px;">
+    <div class="form-header-banner" style="background-color: #DA3832; color: #fff; text-align: center; padding: 10px; font-weight: bold; font-size: 1.1rem; text-transform: uppercase;">
+        OPTED OUT TOT REGISTRATION
     </div>
 
-    <!-- Step 1: Applicant Selection -->
-    <div id="step1" class="form-container">
-        <div class="form-header-banner">
-            Turnover Tax Cancellation
-        </div>
-
-        <div class="form-body">
+    <div class="form-body" style="padding: 5px;">
+        <fieldset class="red-fieldset">
+            <legend class="red-legend">Applicant Information</legend>
             <table class="inner-profile-table">
                 <tbody>
                     <tr>
-                        <td class="label-cell">Applicant Type<span class="required-star">*</span></td>
-                        <td class="input-cell">
-                            <select id="applicantType" class="form-select-custom" required>
-                                <option value="">--Select--</option>
-                                <option value="Taxpayer">Taxpayer</option>
+                        <td class="label-cell" style="width: 30%;">Applicant Type<span class="required-star">*</span></td>
+                        <td class="input-cell" style="width: 70%;">
+                            <select id="applicantTypeSelection" class="form-select-custom" style="width: 250px;" onchange="updateTOTFields()">
+                                <option value="Taxpayer" selected>Taxpayer</option>
                                 <option value="Agent">Agent</option>
                                 <option value="Sub Agent">Sub Agent</option>
                             </select>
                         </td>
                     </tr>
                     
-                    <tr class="row-agent row-subagent hidden">
+                    <!-- Applicant PIN/Name Rows (Visible for Agent/Sub Agent) -->
+                    <tr id="totApplicantPinRow" style="display: none;">
                         <td class="label-cell">Applicant PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="A000000000X" readonly>
+                            <input type="text" value="A013758466Z" class="form-input-custom" style="width: 250px; background-color: #eee;" readonly>
                         </td>
                     </tr>
-                    <tr class="row-agent row-subagent hidden">
+                    <tr id="totApplicantNameRow" style="display: none;">
                         <td class="label-cell">Applicant Name</td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" value="User" readonly>
+                            <input type="text" value="David Kiluni Mwaniki" class="form-input-custom" style="width: 250px; background-color: #eee;" readonly>
                         </td>
                     </tr>
-                    
-                    <tr class="row-subagent hidden">
+
+                    <!-- Agent PIN/Name Rows (Visible for Sub Agent) -->
+                    <tr id="totAgentPinRow" style="display: none;">
                         <td class="label-cell">Agent Pin<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" required>
+                            <input type="text" class="form-input-custom" style="width: 250px;">
                         </td>
                     </tr>
-                    <tr class="row-subagent hidden">
+                    <tr id="totAgentNameRow" style="display: none;">
                         <td class="label-cell">Agent Name<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" class="form-input-custom" readonly>
+                            <input type="text" class="form-input-custom" style="width: 250px; background-color: #eee;" readonly>
                         </td>
                     </tr>
-                    
-                    <tr class="row-taxpayer row-agent row-subagent hidden">
+
+                    <!-- Taxpayer PIN/Name Rows (Always visible, but logic changes) -->
+                    <tr>
                         <td class="label-cell">Taxpayer PIN<span class="required-star">*</span></td>
                         <td class="input-cell">
-                            <input type="text" id="taxpayerPinInput" class="form-input-custom" required>
+                            <input type="text" id="totTaxpayerPinInput" class="form-input-custom" style="width: 250px;">
                         </td>
                     </tr>
-                    <tr class="row-taxpayer row-agent row-subagent hidden">
-                        <td class="label-cell">TAXPAYER NAME</td>
+                    <tr>
+                        <td class="label-cell">Taxpayer Name</td>
                         <td class="input-cell">
-                            <input type="text" id="taxpayerNameInput" class="form-input-custom" readonly>
+                            <input type="text" id="totTaxpayerNameInput" class="form-input-custom" style="width: 250px; background-color: #eee;" readonly>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            
-            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                <button type="button" class="btn-custom btn-next-blue" id="btnNext">Next</button>
-                <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Cancel</button>
-            </div>
-        </div>
-    </div>
+        </fieldset>
 
-    <!-- Step 2: Turnover Details -->
-    <div id="step2" class="form-container hidden">
-        <div class="form-header-banner">
-            Opted Out TOT Registration
-        </div>
-
-        <div class="form-body" style="padding: 15px;">
-            <!-- Section A -->
-            <div class="section-group">
-                <div class="section-group-title">Taxpayer Details</div>
-                <table class="inner-profile-table table-4-col">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell">PIN<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="A000000000X" readonly></td>
-                            <td class="label-cell">TAXPAYER NAME<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="TAXPAYER NAME" readonly></td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Email Address<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="taxpayer@example.com" readonly></td>
-                            <td class="label-cell">Descriptive Address<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <textarea class="form-textarea-custom" rows="4" readonly>SAMPLE RESIDENTIAL ADDRESS, NAIROBI, KENYA</textarea>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <!-- Section B -->
-            <div class="section-group">
-                <div class="section-group-title">Turnover Income Details</div>
-                <table class="inner-profile-table table-4-col">
-                    <tbody>
-                        <tr>
-                            <td class="label-cell">Monthly Turnover Declared in Last Return (Ksh)<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="0.0" required></td>
-                            <td class="label-cell">Expected Yearly Turnover (Ksh)<span class="required-star">*</span></td>
-                            <td class="input-cell"><input type="text" class="form-input-custom" value="0.0" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Opted Out Effective Date<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <div style="display: flex; align-items: center; gap: 5px;">
-                                    <input type="text" class="form-input-custom datepicker" style="width: 150px;" placeholder="DD/MM/YYYY" required>
-                                </div>
-                            </td>
-                            <td class="label-cell">Application Remarks<span class="required-star">*</span></td>
-                            <td class="input-cell">
-                                <div style="display: flex; flex-direction: column; gap: 5px;">
-                                    <textarea class="form-textarea-custom" rows="3" required></textarea>
-                                    <div style="font-size: 10px; color: #666;">(Maximum characters: 500)</div>
-                                    <div style="font-size: 10px; color: #333;">You have <input type="text" value="500" style="width: 30px; border: 1px solid #ccc; text-align: center;" readonly> characters left.</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label-cell">Upload Document<span class="required-star">*</span></td>
-                            <td class="input-cell" colspan="3">
-                                <div style="display: flex; flex-direction: column; gap: 5px;">
-                                    <input type="file" class="form-input-custom" required>
-                                    <div style="font-size: 10px; color: #333; font-style: italic;">Only .pdf, .doc, .docx, .jpg, .gif, .png formats of maximum size of 400 KB.</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px; margin-bottom: 15px;">
-                <button type="button" class="btn-custom btn-submit-green" id="btnSubmit">Submit</button>
-                <button type="button" class="btn-custom btn-cancel-red" id="btnBack">Back</button>
-                <button type="button" class="btn-custom btn-cancel-red" id="btnClear" style="background-color: #333;">Clear</button>
-            </div>
+        <div class="form-footer" style="background: transparent; border-top: none; padding-bottom: 20px; display: flex; justify-content: center; gap: 15px;">
+            <button type="button" class="btn-custom btn-cancel-red" onclick="window.location.href='{{ route('dashboard') }}'">Back</button>
+            <button type="submit" class="btn-custom btn-submit-orange">Next</button>
         </div>
     </div>
 </div>
 
-@push('scripts')
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const applicantTypeSelect = document.getElementById('applicantType');
-        const btnNext = document.getElementById('btnNext');
-        const btnBack = document.getElementById('btnBack');
-        const step1 = document.getElementById('step1');
-        const step2 = document.getElementById('step2');
-        
-        const taxpayerPinInput = document.getElementById('taxpayerPinInput');
-        const taxpayerNameInput = document.getElementById('taxpayerNameInput');
+function updateTOTFields() {
+    var type = document.getElementById('applicantTypeSelection').value;
+    var appPinRow = document.getElementById('totApplicantPinRow');
+    var appNameRow = document.getElementById('totApplicantNameRow');
+    var agentPinRow = document.getElementById('totAgentPinRow');
+    var agentNameRow = document.getElementById('totAgentNameRow');
+    var tpPinInput = document.getElementById('totTaxpayerPinInput');
+    var tpNameInput = document.getElementById('totTaxpayerNameInput');
 
-        applicantTypeSelect.addEventListener('change', function() {
-            const val = this.value;
-            
-            // Hide all dynamic rows first
-            document.querySelectorAll('.row-agent, .row-subagent, .row-taxpayer').forEach(row => {
-                row.classList.add('hidden');
-            });
-            
+    // Reset visibility
+    appPinRow.style.display = 'none';
+    appNameRow.style.display = 'none';
+    agentPinRow.style.display = 'none';
+    agentNameRow.style.display = 'none';
 
-            if (val === 'Taxpayer') {
-                document.querySelectorAll('.row-taxpayer').forEach(row => row.classList.remove('hidden'));
-                taxpayerPinInput.value = 'A00000000000p';
-                taxpayerNameInput.value = 'User';
-            } else if (val === 'Agent') {
-                document.querySelectorAll('.row-agent').forEach(row => row.classList.remove('hidden'));
-                taxpayerPinInput.value = '';
-                taxpayerNameInput.value = '';
-            } else if (val === 'Sub Agent') {
-                document.querySelectorAll('.row-subagent').forEach(row => row.classList.remove('hidden'));
-                taxpayerPinInput.value = '';
-                taxpayerNameInput.value = '';
-            }
-        });
+    if (type === 'Taxpayer') {
+        tpPinInput.value = 'A013758466Z';
+        tpPinInput.readOnly = true;
+        tpPinInput.style.backgroundColor = '#eee';
+        tpNameInput.value = 'David Kiluni Mwaniki';
+    } else if (type === 'Agent') {
+        appPinRow.style.display = 'table-row';
+        appNameRow.style.display = 'table-row';
+        tpPinInput.value = '';
+        tpPinInput.readOnly = false;
+        tpPinInput.style.backgroundColor = '#fff';
+        tpNameInput.value = '';
+    } else if (type === 'Sub Agent') {
+        appPinRow.style.display = 'table-row';
+        appNameRow.style.display = 'table-row';
+        agentPinRow.style.display = 'table-row';
+        agentNameRow.style.display = 'table-row';
+        tpPinInput.value = '';
+        tpPinInput.readOnly = false;
+        tpPinInput.style.backgroundColor = '#fff';
+        tpNameInput.value = '';
+    }
+}
 
-        btnNext.addEventListener('click', function() {
-            if (applicantTypeSelect.value) {
-                step1.classList.add('hidden');
-                step2.classList.remove('hidden');
-                window.scrollTo(0, 0);
-            } else {
-                alert('Please select Applicant Type');
-            }
-        });
-
-        btnBack.addEventListener('click', function() {
-            step2.classList.add('hidden');
-            step1.classList.remove('hidden');
-            window.scrollTo(0, 0);
-        });
-        
-        document.getElementById('btnClear').addEventListener('click', function() {
-            if(confirm('Are you sure you want to clear the form?')) {
-                alert('Form cleared');
-            }
-        });
-        
-        document.getElementById('btnSubmit').addEventListener('click', function() {
-            if(confirm('Do you want to submit your request?')) {
-                alert('Application submitted successfully!');
-                window.location.href = '{{ route("dashboard") }}';
-            }
-        });
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    updateTOTFields();
+});
 </script>
-    <!-- Flatpickr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            flatpickr(".datepicker", {
-                dateFormat: "d/m/Y",
-                allowInput: true,
-                disableMobile: true
-            });
-        });
-    </script>
-@endpush
 @endsection
-
-
-
